@@ -63,7 +63,7 @@
             .specialty-card { break-inside: avoid; }
         }
         .home-button {
-            background-color: #2563eb; /* Azul */
+            background-color: #000000; /* Preto */
             color: white;
             font-weight: bold;
             padding: 8px 16px;
@@ -75,7 +75,7 @@
             right: 20px;
         }
         .home-button:hover {
-            background-color: #1d4ed8; /* Azul mais escuro no hover */
+            background-color: #333333; /* Preto mais escuro no hover */
         }
     </style>
 </head>
@@ -162,21 +162,7 @@
         <!-- Specialties Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="specialtiesGrid">
             <!-- Low Demand Specialties -->
-            <div class="specialty-card low-demand bg-white rounded-2xl p-6 shadow-sm border hover:shadow-lg" data-demand="low">
-                <div class="flex items-start justify-between mb-4">
-                    <h3 class="text-lg font-semibold text-gray-800 flex-1">
-                        <i class="fas fa-acorn mr-2 text-green-600"></i>
-                        ACUPUNTURA
-                    </h3>
-                    <span class="status-badge low-demand px-3 py-1 rounded-full text-xs font-medium ml-2">
-                        Baixa Demanda
-                    </span>
-                </div>
-                <div class="text-gray-700 text-sm leading-relaxed">
-                    <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Agenda direto no sistema/Tipo de serviço acupuntura/ Em proc. escolhe a região
-                </div>
-            </div>
+
 
             <div class="specialty-card low-demand bg-white rounded-2xl p-6 shadow-sm border hover:shadow-lg" data-demand="low">
                 <div class="flex items-start justify-between mb-4">
@@ -190,7 +176,7 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Agenda direto no sistema/ Aba consulta especializada
+                    Agendamento realizado direto no sistema/ Tela da solicitação, tipo de serviço, media complexidade.
                     <br><strong>Critério:</strong> Mulheres 50 a 69 anos - Bienal
                 </div>
             </div>
@@ -207,7 +193,7 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Agenda direto no sistema/ Aba média complexidade
+                    Agendamento realizado direto no sistema/ Tela da solicitação, Aba média complexidade.
                 </div>
             </div>
 
@@ -223,7 +209,7 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Não passa por regulação
+                    Não passa por regulação, agendamento realizado no sistema - Tela da solicitação - tipo de serviço - média complexidade.
                     <br><strong>Critério:</strong> Após 22 semanas de gestação
                 </div>
             </div>
@@ -240,7 +226,7 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Não passa por regulação
+                    Agendamento realizado direto no sistema/ Tela da solicitação, tipo de serviço, media complexidade.
                     <br><strong>Critério:</strong> 11 a 14 semanas de gestação
                 </div>
             </div>
@@ -257,7 +243,7 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Agenda direto no sistema clique na aba tipo de serviço e escolhe a região
+                    Agendamento é realizado direto no sistema Vivver, Tela solicitação de procedimento de serviço, em tipo de serviço escolha a região.
                 </div>
             </div>
 
@@ -278,19 +264,19 @@
             </div>
 
             <!-- High Demand Specialties -->
-            <div class="specialty-card high-demand bg-white rounded-2xl p-6 shadow-sm border hover:shadow-lg" data-demand="high">
+            <div class="specialty-card low-demand bg-white rounded-2xl p-6 shadow-sm border hover:shadow-lg" data-demand="low">
                 <div class="flex items-start justify-between mb-4">
                     <h3 class="text-lg font-semibold text-gray-800 flex-1">
-                        <i class="fas fa-cut mr-2 text-amber-600"></i>
+                        <i class="fas fa-cut mr-2 text-green-600"></i>
                         CIR. VASCULAR - PÉ DIABÉTICO
                     </h3>
-                    <span class="status-badge high-demand px-3 py-1 rounded-full text-xs font-medium ml-2">
-                        Alta Demanda
+                    <span class="status-badge low-demand px-3 py-1 rounded-full text-xs font-medium ml-2">
+                        Baixa Demanda
                     </span>
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Inserir a guia de angiologia e encaminha para o CEAPS
+                    Agendamento realizado direto no sistema, não tem fila de espera.
                 </div>
             </div>
 
@@ -322,7 +308,7 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/CMC passa por regulação
+                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
                 </div>
             </div>
 
@@ -338,7 +324,7 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/CMC passa por regulação
+                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
                 </div>
             </div>
 
@@ -354,7 +340,7 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/CMC passa por regulação
+                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
                 </div>
             </div>
 
@@ -370,7 +356,7 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/CMC passa por regulação
+                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
                 </div>
             </div>
 
@@ -386,7 +372,7 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/CMC passa por regulação
+                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
                 </div>
             </div>
 
@@ -402,7 +388,7 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/CMC passa por regulação
+                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
                 </div>
             </div>
 
@@ -418,7 +404,7 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/CMC passa por regulação
+                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
                 </div>
             </div>
 
@@ -434,7 +420,7 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/CMC passa por regulação
+                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
                 </div>
             </div>
 
@@ -450,7 +436,7 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/CMC passa por regulação
+                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
                 </div>
             </div>
 
@@ -466,7 +452,7 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/CMC passa por regulação
+                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
                 </div>
             </div>
 
@@ -482,7 +468,7 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/CMC passa por regulação
+                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
                 </div>
             </div>
 
@@ -498,7 +484,7 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/CMC passa por regulação
+                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
                 </div>
             </div>
 
@@ -514,7 +500,7 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/CMC passa por regulação
+                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
                 </div>
             </div>
 
@@ -530,7 +516,7 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/CMC passa por regulação
+                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
                 </div>
             </div>
 
@@ -546,7 +532,7 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/CMC passa por regulação
+                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
                 </div>
             </div>
 
@@ -562,7 +548,7 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/CMC passa por regulação
+                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
                 </div>
             </div>
 
@@ -578,7 +564,7 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/CMC passa por regulação
+                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
                 </div>
             </div>
 
@@ -594,7 +580,7 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/CMC passa por regulação
+                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
                 </div>
             </div>
 
@@ -610,7 +596,7 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/CMC passa por regulação
+                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
                 </div>
             </div>
 
@@ -626,7 +612,7 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/CMC passa por regulação
+                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
                 </div>
             </div>
 
@@ -642,7 +628,7 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/CMC passa por regulação
+                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
                 </div>
             </div>
 
@@ -658,7 +644,7 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/CMC passa por regulação
+                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
                 </div>
             </div>
 
@@ -674,7 +660,7 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/CMC passa por regulação
+                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
                 </div>
             </div>
 
@@ -690,7 +676,7 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/CMC passa por regulação
+                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
                 </div>
             </div>
 
@@ -706,7 +692,7 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/CMC passa por regulação
+                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
                 </div>
             </div>
 
@@ -722,7 +708,7 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/CMC passa por regulação
+                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
                 </div>
             </div>
 
@@ -738,7 +724,7 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/CMC passa por regulação
+                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
                 </div>
             </div>
 
@@ -754,7 +740,7 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/CMC passa por regulação
+                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
                 </div>
             </div>
 
@@ -770,7 +756,7 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/CMC passa por regulação
+                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
                 </div>
             </div>
 
@@ -786,7 +772,7 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/CMC passa por regulação
+                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
                 </div>
             </div>
 
@@ -802,25 +788,11 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/CMC passa por regulação
+                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
                 </div>
             </div>
 
-            <div class="specialty-card high-demand bg-white rounded-2xl p-6 shadow-sm border hover:shadow-lg" data-demand="high">
-                <div class="flex items-start justify-between mb-4">
-                    <h3 class="text-lg font-semibold text-gray-800 flex-1">
-                        <i class="fas fa-heartbeat mr-2 text-amber-600"></i>
-                        PNAR
-                    </h3>
-                    <span class="status-badge high-demand px-3 py-1 rounded-full text-xs font-medium ml-2">
-                        Alta Demanda
-                    </span>
-                </div>
-                <div class="text-gray-700 text-sm leading-relaxed">
-                    <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/CMC passa por regulação
-                </div>
-            </div>
+
 
             <div class="specialty-card high-demand bg-white rounded-2xl p-6 shadow-sm border hover:shadow-lg" data-demand="high">
                 <div class="flex items-start justify-between mb-4">
@@ -834,7 +806,7 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/CMC passa por regulação
+                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
                 </div>
             </div>
 
@@ -850,7 +822,7 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/CMC passa por regulação
+                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
                 </div>
             </div>
 
@@ -866,7 +838,7 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/CMC passa por regulação
+                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
                 </div>
             </div>
 
@@ -882,7 +854,7 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/CMC passa por regulação
+                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
                 </div>
             </div>
 
@@ -898,7 +870,7 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/CMC passa por regulação
+                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
                 </div>
             </div>
         </div>
