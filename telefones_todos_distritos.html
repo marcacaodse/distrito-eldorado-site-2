@@ -25,12 +25,24 @@
             background-color: #f3f4f6;
             transform: scale(1.02);
         }
+        .home-button {
+            background-color: #2563eb; /* Azul */
+            color: white;
+            font-weight: bold;
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .home-button:hover {
+            background-color: #1d4ed8; /* Azul mais escuro no hover */
+        }
     </style>
 </head>
 <body class="bg-white min-h-screen">
     <div class="container mx-auto px-4 py-8 max-w-6xl">
         <!-- Header -->
-        <div class="text-center mb-12">
+        <div class="text-center mb-12 relative">
             <h1 class="text-4xl font-bold text-gray-800 mb-4">
                 <i class="fas fa-map-marker-alt text-blue-600 mr-3"></i>
                 Distritos - Informações de Contato
@@ -39,6 +51,7 @@
                 Encontre os números de telefone para contato com os diferentes distritos da região
             </p>
             <div class="w-24 h-1 bg-blue-600 mx-auto mt-4 rounded-full"></div>
+            <a href="index.html" class="home-button absolute top-0 right-0">Tela Inicial</a>
         </div>
 
         <!-- Districts Grid -->
@@ -257,4 +270,5 @@
     </div>
 </body>
 </html>
+
 

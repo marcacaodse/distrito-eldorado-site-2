@@ -26,17 +26,30 @@
             height: 3px;
             border-radius: 2px;
         }
+        .home-button {
+            background-color: #2563eb; /* Azul */
+            color: white;
+            font-weight: bold;
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .home-button:hover {
+            background-color: #1d4ed8; /* Azul mais escuro no hover */
+        }
     </style>
 </head>
 <body class="bg-white">
     <!-- Header -->
     <header class="gradient-bg text-white py-8 mb-8">
-        <div class="container mx-auto px-6">
-            <div class="text-center">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="text-center flex-grow">
                 <i class="fas fa-hospital-alt text-5xl mb-4"></i>
                 <h1 class="text-4xl font-bold mb-2">Distritos de Saúde</h1>
                 <p class="text-xl opacity-90">Guia Completo de Contatos</p>
             </div>
+            <a href="index.html" class="home-button">Tela Inicial</a>
         </div>
     </header>
 
@@ -355,4 +368,5 @@
     </footer>
 </body>
 </html>
+
 
