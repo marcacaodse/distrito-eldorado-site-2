@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distritos - Informações de Contato</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .district-card {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .district-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .phone-number {
+            transition: all 0.2s ease-in-out;
+        }
+        .phone-number:hover {
+            background-color: #f3f4f6;
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body class="bg-white min-h-screen">
+    <div class="container mx-auto px-4 py-8 max-w-6xl">
+        <!-- Header -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-gray-800 mb-4">
+                <i class="fas fa-map-marker-alt text-blue-600 mr-3"></i>
+                Distritos - Informações de Contato
+            </h1>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                Encontre os números de telefone para contato com os diferentes distritos da região
+            </p>
+            <div class="w-24 h-1 bg-blue-600 mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <!-- Districts Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Distrito Eldorado -->
+            <div class="district-card bg-white rounded-xl shadow-lg border border-gray-100 p-6">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-building text-white text-lg"></i>
+                    </div>
+                    <h2 class="text-xl font-semibold text-gray-800 ml-3">Distrito Eldorado</h2>
+                </div>
+                <div class="space-y-2">
+                    <div class="phone-number bg-gray-50 rounded-lg p-3 flex items-center">
+                        <i class="fas fa-phone text-blue-500 mr-3"></i>
+                        <span class="font-medium text-gray-700">3391-2195</span>
+                    </div>
+                    <div class="phone-number bg-gray-50 rounded-lg p-3 flex items-center">
+                        <i class="fas fa-phone text-blue-500 mr-3"></i>
+                        <span class="font-medium text-gray-700">3392-2137</span>
+                    </div>
+                    <div class="phone-number bg-gray-50 rounded-lg p-3 flex items-center">
+                        <i class="fas fa-phone text-blue-500 mr-3"></i>
+                        <span class="font-medium text-gray-700">3356-6270</span>
+                    </div>
+                    <div class="phone-number bg-gray-50 rounded-lg p-3 flex items-center">
+                        <i class="fas fa-phone text-blue-500 mr-3"></i>
+                        <span class="font-medium text-gray-700">6290</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Distrito Industrial -->
+            <div class="district-card bg-white rounded-xl shadow-lg border border-gray-100 p-6">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-green-600 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-industry text-white text-lg"></i>
+                    </div>
+                    <h2 class="text-xl font-semibold text-gray-800 ml-3">Distrito Industrial</h2>
+                </div>
+                <div class="space-y-2">
+                    <div class="phone-number bg-gray-50 rounded-lg p-3 flex items-center">
+                        <i class="fas fa-phone text-green-500 mr-3"></i>
+                        <span class="font-medium text-gray-700">3384-3882</span>
+                    </div>
+                    <div class="phone-number bg-gray-50 rounded-lg p-3 flex items-center">
+                        <i class="fas fa-phone text-green-500 mr-3"></i>
+                        <span class="font-medium text-gray-700">8885</span>
+                    </div>
+                    <div class="phone-number bg-gray-50 rounded-lg p-3 flex items-center">
+                        <i class="fas fa-phone text-green-500 mr-3"></i>
+                        <span class="font-medium text-gray-700">3592</span>
+                    </div>
+                    <div class="phone-number bg-gray-50 rounded-lg p-3 flex items-center">
+                        <i class="fas fa-phone text-green-500 mr-3"></i>
+                        <span class="font-medium text-gray-700">6290</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Distrito Nacional -->
+            <div class="district-card bg-white rounded-xl shadow-lg border border-gray-100 p-6">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-flag text-white text-lg"></i>
+                    </div>
+                    <h2 class="text-xl font-semibold text-gray-800 ml-3">Distrito Nacional</h2>
+                </div>
+                <div class="space-y-2">
+                    <div class="phone-number bg-gray-50 rounded-lg p-3 flex items-center">
+                        <i class="fas fa-phone text-purple-500 mr-3"></i>
+                        <span class="font-medium text-gray-700">3354-8772</span>
+                    </div>
+                    <div class="phone-number bg-gray-50 rounded-lg p-3 flex items-center">
+                        <i class="fas fa-phone text-purple-500 mr-3"></i>
+                        <span class="font-medium text-gray-700">5720</span>
+                    </div>
+                    <div class="phone-number bg-gray-50 rounded-lg p-3 flex items-center">
+                        <i class="fas fa-phone text-purple-500 mr-3"></i>
+                        <span class="font-medium text-gray-700">6154</span>
+                    </div>
+                    <div class="phone-number bg-gray-50 rounded-lg p-3 flex items-center">
+                        <i class="fas fa-phone text-purple-500 mr-3"></i>
+                        <span class="font-medium text-gray-700">5863</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Distrito Petrolandia -->
+            <div class="district-card bg-white rounded-xl shadow-lg border border-gray-100 p-6">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-gradient-to-r from-orange-500 to-orange-600 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-oil-well text-white text-lg"></i>
+                    </div>
+                    <h2 class="text-xl font-semibold text-gray-800 ml-3">Distrito Petrolandia</h2>
+                </div>
+                <div class="space-y-2">
+                    <div class="phone-number bg-gray-50 rounded-lg p-3 flex items-center">
+                        <i class="fas fa-phone text-orange-500 mr-3"></i>
+                        <span class="font-medium text-gray-700">3352-5794</span>
+                    </div>
+                    <div class="phone-number bg-gray-50 rounded-lg p-3 flex items-center">
+                        <i class="fas fa-phone text-orange-500 mr-3"></i>
+                        <span class="font-medium text-gray-700">5267</span>
+                    </div>
+                    <div class="phone-number bg-gray-50 rounded-lg p-3 flex items-center">
+                        <i class="fas fa-phone text-orange-500 mr-3"></i>
+                        <span class="font-medium text-gray-700">9132</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Distrito Ressaca -->
+            <div class="district-card bg-white rounded-xl shadow-lg border border-gray-100 p-6">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-gradient-to-r from-red-500 to-red-600 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-water text-white text-lg"></i>
+                    </div>
+                    <h2 class="text-xl font-semibold text-gray-800 ml-3">Distrito Ressaca</h2>
+                </div>
+                <div class="space-y-2">
+                    <div class="phone-number bg-gray-50 rounded-lg p-3 flex items-center">
+                        <i class="fas fa-phone text-red-500 mr-3"></i>
+                        <span class="font-medium text-gray-700">3354-6221</span>
+                    </div>
+                    <div class="phone-number bg-gray-50 rounded-lg p-3 flex items-center">
+                        <i class="fas fa-phone text-red-500 mr-3"></i>
+                        <span class="font-medium text-gray-700">6220</span>
+                    </div>
+                    <div class="phone-number bg-gray-50 rounded-lg p-3 flex items-center">
+                        <i class="fas fa-phone text-red-500 mr-3"></i>
+                        <span class="font-medium text-gray-700">5419</span>
+                    </div>
+                    <div class="phone-number bg-gray-50 rounded-lg p-3 flex items-center">
+                        <i class="fas fa-phone text-red-500 mr-3"></i>
+                        <span class="font-medium text-gray-700">5247</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Distrito Riacho -->
+            <div class="district-card bg-white rounded-xl shadow-lg border border-gray-100 p-6">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-gradient-to-r from-teal-500 to-teal-600 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-stream text-white text-lg"></i>
+                    </div>
+                    <h2 class="text-xl font-semibold text-gray-800 ml-3">Distrito Riacho</h2>
+                </div>
+                <div class="space-y-2">
+                    <div class="phone-number bg-gray-50 rounded-lg p-3 flex items-center">
+                        <i class="fas fa-phone text-teal-500 mr-3"></i>
+                        <span class="font-medium text-gray-700">3911-7176</span>
+                    </div>
+                    <div class="phone-number bg-gray-50 rounded-lg p-3 flex items-center">
+                        <i class="fas fa-phone text-teal-500 mr-3"></i>
+                        <span class="font-medium text-gray-700">7180</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Distrito Sede -->
+            <div class="district-card bg-white rounded-xl shadow-lg border border-gray-100 p-6">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-gradient-to-r from-indigo-500 to-indigo-600 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-city text-white text-lg"></i>
+                    </div>
+                    <h2 class="text-xl font-semibold text-gray-800 ml-3">Distrito Sede</h2>
+                </div>
+                <div class="space-y-2">
+                    <div class="phone-number bg-gray-50 rounded-lg p-3 flex items-center">
+                        <i class="fas fa-phone text-indigo-500 mr-3"></i>
+                        <span class="font-medium text-gray-700">3352-5823</span>
+                    </div>
+                    <div class="phone-number bg-gray-50 rounded-lg p-3 flex items-center">
+                        <i class="fas fa-phone text-indigo-500 mr-3"></i>
+                        <span class="font-medium text-gray-700">1803</span>
+                    </div>
+                    <div class="phone-number bg-gray-50 rounded-lg p-3 flex items-center">
+                        <i class="fas fa-phone text-indigo-500 mr-3"></i>
+                        <span class="font-medium text-gray-700">5811</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Distrito Vargem Das Flores -->
+            <div class="district-card bg-white rounded-xl shadow-lg border border-gray-100 p-6">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-gradient-to-r from-pink-500 to-pink-600 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-seedling text-white text-lg"></i>
+                    </div>
+                    <h2 class="text-xl font-semibold text-gray-800 ml-3">Distrito Vargem Das Flores</h2>
+                </div>
+                <div class="space-y-2">
+                    <div class="phone-number bg-gray-50 rounded-lg p-3 flex items-center">
+                        <i class="fas fa-phone text-pink-500 mr-3"></i>
+                        <span class="font-medium text-gray-700">3352-8834</span>
+                    </div>
+                    <div class="phone-number bg-gray-50 rounded-lg p-3 flex items-center">
+                        <i class="fas fa-phone text-pink-500 mr-3"></i>
+                        <span class="font-medium text-gray-700">8710</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="text-center mt-12 py-8 border-t border-gray-200">
+            <p class="text-gray-600 text-sm">
+                <i class="fas fa-info-circle mr-2"></i>
+                Para melhor atendimento, entre em contato durante o horário comercial
+            </p>
+            <p class="text-gray-500 text-xs mt-2">
+                Informações atualizadas em {{ new Date().toLocaleDateString('pt-BR') }}
+            </p>
+        </div>
+    </div>
+</body>
+</html>
+
