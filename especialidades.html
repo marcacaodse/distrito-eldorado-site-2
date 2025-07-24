@@ -4,166 +4,173 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guia de Especialidades Médicas - Sistema de Agendamento</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        @import url(\'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap\');
+        .home-btn {
+            background: black;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
         
-        body {
-            font-family: \'Inter\', sans-serif;
-            background-color: #ffffff;
+        .home-btn:hover {
+            background: #333;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+        }
+        
+        .filter-btn {
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: 2px solid #e5e7eb;
+            background: white;
+            color: #6b7280;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .filter-btn.active {
+            background: #3b82f6;
+            color: white;
+            border-color: #3b82f6;
+        }
+        
+        .filter-btn:hover:not(.active) {
+            border-color: #3b82f6;
+            color: #3b82f6;
+        }
+        
+        .status-badge.low-demand {
+            background: #dcfce7;
+            color: #166534;
+        }
+        
+        .status-badge.high-demand {
+            background: #fef3c7;
+            color: #92400e;
         }
         
         .specialty-card {
             transition: all 0.3s ease;
-            border-left: 4px solid transparent;
-        }
-        
-        .specialty-card.low-demand {
-            border-left-color: #10b981;
-            background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
-        }
-        
-        .specialty-card.high-demand {
-            border-left-color: #f59e0b;
-            background: linear-gradient(135deg, #fffbeb 0%, #ffffff 100%);
         }
         
         .specialty-card:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
         }
         
-        .status-badge.low-demand {
-            background: linear-gradient(135deg, #10b981, #059669);
-            color: white;
+        .stats-card {
+            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+            border: 1px solid #e2e8f0;
         }
         
-        .status-badge.high-demand {
-            background: linear-gradient(135deg, #f59e0b, #d97706);
-            color: white;
+        .stats-card.low-demand {
+            background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+            border-color: #bbf7d0;
         }
         
-        .search-container {
-            background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
-        }
-        
-        .header-gradient {
-            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
-        }
-        
-        .filter-btn.active {
-            background: linear-gradient(135deg, #3b82f6, #1e40af);
-            color: white;
-            transform: scale(1.05);
-        }
-        
-        @media print {
-            body { print-color-adjust: exact; }
-            .specialty-card { break-inside: avoid; }
-        }
-        .home-button {
-            background-color: #000000; /* Preto */
-            color: white;
-            font-weight: bold;
-            padding: 8px 16px;
-            border-radius: 8px;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-            position: absolute;
-            top: 20px;
-            right: 20px;
-        }
-        .home-button:hover {
-            background-color: #333333; /* Preto mais escuro no hover */
+        .stats-card.high-demand {
+            background: linear-gradient(135deg, #fffbeb, #fef3c7);
+            border-color: #fde68a;
         }
     </style>
 </head>
-<body class="bg-white">
+<body class="bg-gray-50 min-h-screen">
     <!-- Header -->
-    <header class="header-gradient text-white py-8 mb-8 relative">
-        <div class="container mx-auto px-6 relative">
-            <div class="absolute top-0 left-0 mt-4 ml-4">
-                <a href="index.html" class="text-white text-lg"><i class="fas fa-home"></i> Tela Inicial</a>
-            </div>
-            <div class="text-center">
-                <h1 class="text-4xl font-bold mb-2">
-                    <i class="fas fa-user-md mr-3"></i>
-                    Guia de Especialidades Médicas
-                </h1>
-                <p class="text-xl opacity-90">Sistema de Agendamento e Procedimentos</p>
+    <header class="bg-gradient-to-r from-blue-600 to-blue-700 text-white py-6 shadow-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-4">
+                    <a href="index.html" class="home-btn">
+                        <i class="fas fa-home"></i>
+                        Tela Inicial
+                    </a>
+                </div>
+                <div class="text-center flex-1">
+                    <div class="flex items-center justify-center gap-3 mb-2">
+                        <i class="fas fa-user-md text-2xl"></i>
+                        <h1 class="text-2xl md:text-3xl font-bold">Guia de Especialidades Médicas</h1>
+                    </div>
+                    <p class="text-blue-100">Sistema de Agendamento e Procedimentos</p>
+                </div>
+                <div class="w-32"></div> <!-- Spacer for balance -->
             </div>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <div class="container mx-auto px-6 pb-8">
+    <div class="container mx-auto px-4 py-8">
         <!-- Search and Filter Section -->
-        <div class="search-container rounded-2xl p-6 mb-8 shadow-sm border">
-            <div class="flex flex-col lg:flex-row gap-6 items-center">
-                <div class="flex-1 w-full">
-                    <div class="relative">
-                        <i class="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
-                        <input type="text" id="searchInput" placeholder="Buscar especialidade..." 
-                               class="w-full pl-12 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all">
-                    </div>
+        <div class="mb-8">
+            <div class="flex flex-col md:flex-row gap-4 items-center justify-center">
+                <!-- Search Input -->
+                <div class="relative flex-1 max-w-md">
+                    <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                    <input 
+                        type="text" 
+                        id="searchInput"
+                        placeholder="Buscar especialidade..." 
+                        class="w-full pl-10 pr-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:outline-none"
+                    >
                 </div>
-                <div class="flex gap-3">
-                    <button onclick="filterSpecialties(\'all\')" class="filter-btn px-6 py-3 rounded-xl border border-gray-200 font-medium transition-all hover:bg-gray-50 active">
-                        <i class="fas fa-list mr-2"></i>Todas
+                
+                <!-- Filter Buttons -->
+                <div class="flex gap-2">
+                    <button class="filter-btn active" onclick="filterSpecialties('all')">
+                        <i class="fas fa-list mr-2"></i>
+                        Todas
+                        <span class="ml-2 bg-white bg-opacity-20 px-2 py-1 rounded-full text-xs">46</span>
                     </button>
-                    <button onclick="filterSpecialties(\'low\')" class="filter-btn px-6 py-3 rounded-xl border border-gray-200 font-medium transition-all hover:bg-gray-50">
-                        <i class="fas fa-arrow-down mr-2 text-green-600"></i>Baixa Demanda
+                    <button class="filter-btn" onclick="filterSpecialties('low')">
+                        <i class="fas fa-arrow-down mr-2"></i>
+                        Baixa Demanda
+                        <span class="ml-2 bg-white bg-opacity-20 px-2 py-1 rounded-full text-xs">6</span>
                     </button>
-                    <button onclick="filterSpecialties(\'high\')" class="filter-btn px-6 py-3 rounded-xl border border-gray-200 font-medium transition-all hover:bg-gray-50">
-                        <i class="fas fa-arrow-up mr-2 text-amber-600"></i>Alta Demanda
+                    <button class="filter-btn" onclick="filterSpecialties('high')">
+                        <i class="fas fa-arrow-up mr-2"></i>
+                        Alta Demanda
+                        <span class="ml-2 bg-white bg-opacity-20 px-2 py-1 rounded-full text-xs">40</span>
                     </button>
                 </div>
             </div>
         </div>
 
-        <!-- Statistics -->
+        <!-- Statistics Cards -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-            <div class="bg-gradient-to-br from-blue-50 to-white p-6 rounded-2xl border border-blue-100">
-                <div class="flex items-center">
-                    <div class="p-3 bg-blue-100 rounded-xl">
-                        <i class="fas fa-hospital text-blue-600 text-xl"></i>
-                    </div>
-                    <div class="ml-4">
-                        <p class="text-gray-600 text-sm">Total de Especialidades</p>
-                        <p class="text-2xl font-bold text-gray-800" id="totalCount">46</p>
-                    </div>
+            <div class="stats-card rounded-xl p-6 text-center">
+                <div class="flex items-center justify-center mb-3">
+                    <i class="fas fa-chart-bar text-3xl text-blue-600"></i>
                 </div>
+                <h3 class="text-gray-600 font-medium mb-1">Total de Especialidades</h3>
+                <p class="text-3xl font-bold text-gray-800" id="totalCount">46</p>
             </div>
-            <div class="bg-gradient-to-br from-green-50 to-white p-6 rounded-2xl border border-green-100">
-                <div class="flex items-center">
-                    <div class="p-3 bg-green-100 rounded-xl">
-                        <i class="fas fa-arrow-down text-green-600 text-xl"></i>
-                    </div>
-                    <div class="ml-4">
-                        <p class="text-gray-600 text-sm">Baixa Demanda</p>
-                        <p class="text-2xl font-bold text-green-600" id="lowDemandCount">6</p>
-                    </div>
+            
+            <div class="stats-card low-demand rounded-xl p-6 text-center">
+                <div class="flex items-center justify-center mb-3">
+                    <i class="fas fa-arrow-down text-3xl text-green-600"></i>
                 </div>
+                <h3 class="text-gray-600 font-medium mb-1">Baixa Demanda</h3>
+                <p class="text-3xl font-bold text-green-700" id="lowDemandCount">6</p>
             </div>
-            <div class="bg-gradient-to-br from-amber-50 to-white p-6 rounded-2xl border border-amber-100">
-                <div class="flex items-center">
-                    <div class="p-3 bg-amber-100 rounded-xl">
-                        <i class="fas fa-arrow-up text-amber-600 text-xl"></i>
-                    </div>
-                    <div class="ml-4">
-                        <p class="text-gray-600 text-sm">Alta Demanda</p>
-                        <p class="text-2xl font-bold text-amber-600" id="highDemandCount">40</p>
-                    </div>
+            
+            <div class="stats-card high-demand rounded-xl p-6 text-center">
+                <div class="flex items-center justify-center mb-3">
+                    <i class="fas fa-arrow-up text-3xl text-amber-600"></i>
                 </div>
+                <h3 class="text-gray-600 font-medium mb-1">Alta Demanda</h3>
+                <p class="text-3xl font-bold text-amber-700" id="highDemandCount">40</p>
             </div>
         </div>
 
         <!-- Specialties Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="specialtiesGrid">
             <!-- Low Demand Specialties -->
-
-
             <div class="specialty-card low-demand bg-white rounded-2xl p-6 shadow-sm border hover:shadow-lg" data-demand="low">
                 <div class="flex items-start justify-between mb-4">
                     <h3 class="text-lg font-semibold text-gray-800 flex-1">
@@ -177,14 +184,15 @@
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
                     Agendamento realizado direto no sistema/ Tela da solicitação, tipo de serviço, media complexidade.
-                    <br><strong>Critério:</strong> Mulheres 50 a 69 anos - Bienal
+                    <br><br>
+                    <strong>Critério:</strong> Mulheres 50 a 69 anos - Bienal
                 </div>
             </div>
 
-             <div class="specialty-card low-demand bg-white rounded-2xl p-6 shadow-sm border hover:shadow-lg" data-demand="low">
+            <div class="specialty-card low-demand bg-white rounded-2xl p-6 shadow-sm border hover:shadow-lg" data-demand="low">
                 <div class="flex items-start justify-between mb-4">
                     <h3 class="text-lg font-semibold text-gray-800 flex-1">
-                        <i class="fas fa-x-ray mr-2 text-green-600"></i>
+                        <i class="fas fa-stethoscope mr-2 text-green-600"></i>
                         MASTOLOGIA
                     </h3>
                     <span class="status-badge low-demand px-3 py-1 rounded-full text-xs font-medium ml-2">
@@ -226,7 +234,8 @@
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
                     Não passa por regulação, agendamento realizado no sistema - Tela da solicitação - tipo de serviço - média complexidade.
-                    <br><strong>Critério:</strong> Após 22 semanas de gestação
+                    <br><br>
+                    <strong>Critério:</strong> Após 22 semanas de gestação
                 </div>
             </div>
 
@@ -243,7 +252,8 @@
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
                     Agendamento realizado direto no sistema/ Tela da solicitação, tipo de serviço, media complexidade.
-                    <br><strong>Critério:</strong> 11 a 14 semanas de gestação
+                    <br><br>
+                    <strong>Critério:</strong> 11 a 14 semanas de gestação
                 </div>
             </div>
 
@@ -274,12 +284,11 @@
                     </span>
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
-                    <i class="fas fa-phone text-blue-500 mr-2"></i>
+                    <i class="fas fa-info-circle text-blue-500 mr-2"></i>
                     Agendamento realizado por telefone/Ligar no CCE IRIA DINIZ
                 </div>
             </div>
 
-            <!-- High Demand Specialties -->
             <div class="specialty-card low-demand bg-white rounded-2xl p-6 shadow-sm border hover:shadow-lg" data-demand="low">
                 <div class="flex items-start justify-between mb-4">
                     <h3 class="text-lg font-semibold text-gray-800 flex-1">
@@ -296,6 +305,7 @@
                 </div>
             </div>
 
+            <!-- High Demand Specialties -->
             <div class="specialty-card high-demand bg-white rounded-2xl p-6 shadow-sm border hover:shadow-lg" data-demand="high">
                 <div class="flex items-start justify-between mb-4">
                     <h3 class="text-lg font-semibold text-gray-800 flex-1">
@@ -315,7 +325,7 @@
             <div class="specialty-card high-demand bg-white rounded-2xl p-6 shadow-sm border hover:shadow-lg" data-demand="high">
                 <div class="flex items-start justify-between mb-4">
                     <h3 class="text-lg font-semibold text-gray-800 flex-1">
-                        <i class="fas fa-microscope mr-2 text-amber-600"></i>
+                        <i class="fas fa-female mr-2 text-amber-600"></i>
                         COLPOSCOPIA
                     </h3>
                     <span class="status-badge high-demand px-3 py-1 rounded-full text-xs font-medium ml-2">
@@ -347,7 +357,7 @@
             <div class="specialty-card high-demand bg-white rounded-2xl p-6 shadow-sm border hover:shadow-lg" data-demand="high">
                 <div class="flex items-start justify-between mb-4">
                     <h3 class="text-lg font-semibold text-gray-800 flex-1">
-                        <i class="fas fa-heart-pulse mr-2 text-amber-600"></i>
+                        <i class="fas fa-heartbeat mr-2 text-amber-600"></i>
                         ANGIOLOGIA
                     </h3>
                     <span class="status-badge high-demand px-3 py-1 rounded-full text-xs font-medium ml-2">
@@ -379,7 +389,7 @@
             <div class="specialty-card high-demand bg-white rounded-2xl p-6 shadow-sm border hover:shadow-lg" data-demand="high">
                 <div class="flex items-start justify-between mb-4">
                     <h3 class="text-lg font-semibold text-gray-800 flex-1">
-                        <i class="fas fa-heartbeat mr-2 text-amber-600"></i>
+                        <i class="fas fa-child mr-2 text-amber-600"></i>
                         CARDIOLOGIA INFANTIL
                     </h3>
                     <span class="status-badge high-demand px-3 py-1 rounded-full text-xs font-medium ml-2">
@@ -427,7 +437,7 @@
             <div class="specialty-card high-demand bg-white rounded-2xl p-6 shadow-sm border hover:shadow-lg" data-demand="high">
                 <div class="flex items-start justify-between mb-4">
                     <h3 class="text-lg font-semibold text-gray-800 flex-1">
-                        <i class="fas fa-procedures mr-2 text-amber-600"></i>
+                        <i class="fas fa-cut mr-2 text-amber-600"></i>
                         CIRURGIA GERAL
                     </h3>
                     <span class="status-badge high-demand px-3 py-1 rounded-full text-xs font-medium ml-2">
@@ -459,7 +469,7 @@
             <div class="specialty-card high-demand bg-white rounded-2xl p-6 shadow-sm border hover:shadow-lg" data-demand="high">
                 <div class="flex items-start justify-between mb-4">
                     <h3 class="text-lg font-semibold text-gray-800 flex-1">
-                        <i class="fas fa-magic mr-2 text-amber-600"></i>
+                        <i class="fas fa-user-md mr-2 text-amber-600"></i>
                         CIRURGIA PLÁSTICA
                     </h3>
                     <span class="status-badge high-demand px-3 py-1 rounded-full text-xs font-medium ml-2">
@@ -491,7 +501,7 @@
             <div class="specialty-card high-demand bg-white rounded-2xl p-6 shadow-sm border hover:shadow-lg" data-demand="high">
                 <div class="flex items-start justify-between mb-4">
                     <h3 class="text-lg font-semibold text-gray-800 flex-1">
-                        <i class="fas fa-stomach mr-2 text-amber-600"></i>
+                        <i class="fas fa-procedures mr-2 text-amber-600"></i>
                         COLOPROCTOLOGIA
                     </h3>
                     <span class="status-badge high-demand px-3 py-1 rounded-full text-xs font-medium ml-2">
@@ -507,7 +517,7 @@
             <div class="specialty-card high-demand bg-white rounded-2xl p-6 shadow-sm border hover:shadow-lg" data-demand="high">
                 <div class="flex items-start justify-between mb-4">
                     <h3 class="text-lg font-semibold text-gray-800 flex-1">
-                        <i class="fas fa-bandage mr-2 text-amber-600"></i>
+                        <i class="fas fa-hand-paper mr-2 text-amber-600"></i>
                         DERMATOLOGIA - HANSENÍASE
                     </h3>
                     <span class="status-badge high-demand px-3 py-1 rounded-full text-xs font-medium ml-2">
@@ -523,7 +533,7 @@
             <div class="specialty-card high-demand bg-white rounded-2xl p-6 shadow-sm border hover:shadow-lg" data-demand="high">
                 <div class="flex items-start justify-between mb-4">
                     <h3 class="text-lg font-semibold text-gray-800 flex-1">
-                        <i class="fas fa-hand-paper mr-2 text-amber-600"></i>
+                        <i class="fas fa-user-md mr-2 text-amber-600"></i>
                         DERMATOLOGIA GERAL
                     </h3>
                     <span class="status-badge high-demand px-3 py-1 rounded-full text-xs font-medium ml-2">
@@ -539,7 +549,7 @@
             <div class="specialty-card high-demand bg-white rounded-2xl p-6 shadow-sm border hover:shadow-lg" data-demand="high">
                 <div class="flex items-start justify-between mb-4">
                     <h3 class="text-lg font-semibold text-gray-800 flex-1">
-                        <i class="fas fa-dna mr-2 text-amber-600"></i>
+                        <i class="fas fa-weight mr-2 text-amber-600"></i>
                         ENDOCRINOLOGIA ADULTO
                     </h3>
                     <span class="status-badge high-demand px-3 py-1 rounded-full text-xs font-medium ml-2">
@@ -631,11 +641,11 @@
                     Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
                 </div>
             </div>
-            
+
             <div class="specialty-card high-demand bg-white rounded-2xl p-6 shadow-sm border hover:shadow-lg" data-demand="high">
                 <div class="flex items-start justify-between mb-4">
                     <h3 class="text-lg font-semibold text-gray-800 flex-1">
-                        <i class="fas fa-kidney mr-2 text-amber-600"></i>
+                        <i class="fas fa-kidneys mr-2 text-amber-600"></i>
                         NEFROLOGIA ADULTO
                     </h3>
                     <span class="status-badge high-demand px-3 py-1 rounded-full text-xs font-medium ml-2">
@@ -792,8 +802,6 @@
                 </div>
             </div>
 
-
-
             <div class="specialty-card high-demand bg-white rounded-2xl p-6 shadow-sm border hover:shadow-lg" data-demand="high">
                 <div class="flex items-start justify-between mb-4">
                     <h3 class="text-lg font-semibold text-gray-800 flex-1">
@@ -845,7 +853,39 @@
             <div class="specialty-card high-demand bg-white rounded-2xl p-6 shadow-sm border hover:shadow-lg" data-demand="high">
                 <div class="flex items-start justify-between mb-4">
                     <h3 class="text-lg font-semibold text-gray-800 flex-1">
-                        <i class="fas fa-bone mr-2 text-amber-600"></i>
+                        <i class="fas fa-brain mr-2 text-amber-600"></i>
+                        PSIQUIATRIA
+                    </h3>
+                    <span class="status-badge high-demand px-3 py-1 rounded-full text-xs font-medium ml-2">
+                        Alta Demanda
+                    </span>
+                </div>
+                <div class="text-gray-700 text-sm leading-relaxed">
+                    <i class="fas fa-info-circle text-blue-500 mr-2"></i>
+                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
+                </div>
+            </div>
+
+            <div class="specialty-card high-demand bg-white rounded-2xl p-6 shadow-sm border hover:shadow-lg" data-demand="high">
+                <div class="flex items-start justify-between mb-4">
+                    <h3 class="text-lg font-semibold text-gray-800 flex-1">
+                        <i class="fas fa-brain mr-2 text-amber-600"></i>
+                        PSICOLOGIA
+                    </h3>
+                    <span class="status-badge high-demand px-3 py-1 rounded-full text-xs font-medium ml-2">
+                        Alta Demanda
+                    </span>
+                </div>
+                <div class="text-gray-700 text-sm leading-relaxed">
+                    <i class="fas fa-info-circle text-blue-500 mr-2"></i>
+                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
+                </div>
+            </div>
+
+            <div class="specialty-card high-demand bg-white rounded-2xl p-6 shadow-sm border hover:shadow-lg" data-demand="high">
+                <div class="flex items-start justify-between mb-4">
+                    <h3 class="text-lg font-semibold text-gray-800 flex-1">
+                        <i class="fas fa-kidneys mr-2 text-amber-600"></i>
                         REUMATOLOGIA
                     </h3>
                     <span class="status-badge high-demand px-3 py-1 rounded-full text-xs font-medium ml-2">
@@ -889,25 +929,25 @@
 
     <script>
         // Set current date
-        document.getElementById(\'currentDate\').textContent = new Date().toLocaleDateString(\'pt-BR\');
+        document.getElementById('currentDate').textContent = new Date().toLocaleDateString('pt-BR');
 
         // Search functionality
-        const searchInput = document.getElementById(\'searchInput\');
-        const specialtyCards = document.querySelectorAll(\'.specialty-card\');
+        const searchInput = document.getElementById('searchInput');
+        const specialtyCards = document.querySelectorAll('.specialty-card');
 
-        searchInput.addEventListener(\'input\', function() {
+        searchInput.addEventListener('input', function() {
             const searchTerm = this.value.toLowerCase();
             let visibleCount = 0;
 
             specialtyCards.forEach(card => {
-                const specialtyName = card.querySelector(\'h3\').textContent.toLowerCase();
-                const observation = card.querySelector(\'.text-gray-700\').textContent.toLowerCase();
+                const specialtyName = card.querySelector('h3').textContent.toLowerCase();
+                const observation = card.querySelector('.text-gray-700').textContent.toLowerCase();
                 
                 if (specialtyName.includes(searchTerm) || observation.includes(searchTerm)) {
-                    card.style.display = \'block\';
+                    card.style.display = 'block';
                     visibleCount++;
                 } else {
-                    card.style.display = \'none\';
+                    card.style.display = 'none';
                 }
             });
 
@@ -915,25 +955,25 @@
         });
 
         // Filter functionality
-        let currentFilter = \'all\';
+        let currentFilter = 'all';
 
         function filterSpecialties(filter) {
             currentFilter = filter;
             
             // Update active button
-            document.querySelectorAll(\'.filter-btn\').forEach(btn => {
-                btn.classList.remove(\'active\');
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
             });
-            event.target.classList.add(\'active\');
+            event.target.classList.add('active');
 
             // Filter cards
             specialtyCards.forEach(card => {
                 const demand = card.dataset.demand;
                 
-                if (filter === \'all\' || demand === filter) {
-                    card.style.display = \'block\';
+                if (filter === 'all' || demand === filter) {
+                    card.style.display = 'block';
                 } else {
-                    card.style.display = \'none\';
+                    card.style.display = 'none';
                 }
             });
 
@@ -943,45 +983,47 @@
         // Update statistics counts
         function updateCounts() {
             const visibleCards = Array.from(specialtyCards).filter(card => 
-                card.style.display !== \'none\'
+                card.style.display !== 'none'
             );
             
             const lowDemandVisible = visibleCards.filter(card => 
-                card.classList.contains(\'low-demand\')
+                card.classList.contains('low-demand')
             ).length;
             
             const highDemandVisible = visibleCards.filter(card => 
-                card.classList.contains(\'high-demand\')
+                card.classList.contains('high-demand')
             ).length;
 
-            document.getElementById(\'totalCount\').textContent = visibleCards.length;
-            document.getElementById(\'lowDemandCount\').textContent = lowDemandVisible;
-            document.getElementById(\'highDemandCount\').textContent = highDemandVisible;
+            document.getElementById('totalCount').textContent = visibleCards.length;
+            document.getElementById('lowDemandCount').textContent = lowDemandVisible;
+            document.getElementById('highDemandCount').textContent = highDemandVisible;
         }
 
         // Initialize counts
         updateCounts();
 
         // Add smooth scrolling for better user experience
-        document.addEventListener(\'DOMContentLoaded\', function() {
+        document.addEventListener('DOMContentLoaded', function() {
             // Add fade-in animation to cards
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
-                        entry.target.style.opacity = \'1\';
-                        entry.target.style.transform = \'translateY(0)\';
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
                     }
                 });
             });
 
             specialtyCards.forEach((card) => {
-                card.style.opacity = \'0\';
-                card.style.transform = \'translateY(20px)\';
-                card.style.transition = \'opacity 0.6s ease, transform 0.6s ease\';
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
                 observer.observe(card);
             });
         });
     </script>
+
 </body>
 </html>
+
 
