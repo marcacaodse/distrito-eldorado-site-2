@@ -50,27 +50,6 @@
             background: linear-gradient(145deg, #ffffff, #f8fafc);
             border-left: 4px solid #3b82f6;
         }
-        .btn-home {
-            background-color: #000000;
-            color: white;
-            font-weight: bold;
-            padding: 10px 20px;
-            border-radius: 6px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
-        .btn-home:hover {
-            background-color: #333333;
-            color: white;
-            text-decoration: none;
-            transform: translateY(-1px);
-        }
-        .footer-info {
-            font-size: 12px;
-            color: #6b7280;
-            line-height: 1.4;
-        }
         @media print {
             body { font-size: 12px; }
             .no-print { display: none; }
@@ -80,24 +59,18 @@
 <body class="bg-white text-gray-800 leading-relaxed">
     <!-- Header -->
     <header class="gradient-header text-white py-16 mb-8">
-        <div class="container mx-auto px-6">
-            <div class="flex justify-between items-center mb-4">
-
-                <div class="text-xs opacity-80 text-white">
-
-                </div>
-                <div class="text-center flex-1">
-                    <h1 class="text-4xl font-bold mb-4">
-                        <i class="fas fa-calendar-check mr-3"></i>
-                        Fluxo de Marcação
-                    </h1>
-                    <p class="text-xl opacity-90">Consultas Especializadas e Exames</p>
-                    <div class="mt-6 text-sm opacity-80">
-                        <i class="fas fa-info-circle mr-2"></i>
-                        Sistema de Regulação e Agendamentos
-                    </div>
-                </div>
-
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl font-bold mb-4">
+                <i class="fas fa-calendar-check mr-3"></i>
+                Fluxo de Marcação
+            </h1>
+            <p class="text-xl opacity-90">Consultas Especializadas e Exames</p>
+            <div class="mt-6 text-sm opacity-80">
+                <i class="fas fa-info-circle mr-2"></i>
+                Sistema de Regulação e Agendamentos
+            </div>
+        </div>
+    </header>
 
     <div class="container mx-auto px-6 max-w-6xl">
         <!-- Resumo -->
@@ -106,6 +79,7 @@
                 <h2 class="section-title text-3xl font-bold mb-6">
                     <i class="fas fa-file-medical mr-3"></i>
                     Resumo do Fluxo de Marcação
+Criado por Ana P. A. Silva /Suporte Vivver/Distrito Eldorado
                 </h2>
                 <p class="text-lg text-gray-700 leading-relaxed">
                     Este documento apresenta o fluxo completo para marcação de consultas especializadas e exames, 
@@ -132,37 +106,34 @@
                     </h3>
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
-                        <div class="bg-white p-4 rounded-lg border border-gray-200">
-                            <h4 class="font-semibold text-blue-800 mb-2">ACUPUNTURA</h4>
-                            <p class="text-sm text-gray-600">AGENDA DIRETO NO SISTEMA/TIPO DE SERVIÇO ACUPUNTURA/ EM PROC. ESCOLHE A REGIÃO</p>
-                        </div>
+                     </div>
                         
                         <div class="bg-white p-4 rounded-lg border border-gray-200">
                             <h4 class="font-semibold text-blue-800 mb-2">MAMOGRAFIA BILATERAL PARA RASTREAMENTO</h4>
-                            <p class="text-sm text-gray-600">AGENDA DIRETO NO SISTEMA/ ABA MEDIA COMPLEXIDADE</p>
+                            <p class="text-sm text-gray-600">AGENDAMENTO REALIZADO DIRETO NO SISTEMA/ TELA SOLICITAÇÃO DE PROCEDIMENTO DE SERVIÇO/TIPO DE SERVIÇO/ICONE MEDIA COMPLEXIDADE</p>
                             <p class="text-xs text-blue-600 mt-1">(Critério: Mulheres 50 A 69 anos - Bienal)</p>
                         </div>
                         
                         <div class="bg-white p-4 rounded-lg border border-gray-200">
                             <h4 class="font-semibold text-blue-800 mb-2">RETOSSIGMOIDOSCOPIA</h4>
-                            <p class="text-sm text-gray-600">AGENDA DIRETO NO SISTEMA/ ABA MÉDIA COMPLEXIDADE</p>
+                            <p class="text-sm text-gray-600">AGENDAMENTO REALIZADO DIRETO NO SISTEMA/  TELA SOLICITAÇÃO DE PROCEDIMENTO DE SERVIÇO/TIPO DE SERVIÇO/ICONE MEDIA COMPLEXIDADE</p>
                         </div>
                         
                         <div class="bg-white p-4 rounded-lg border border-gray-200">
                             <h4 class="font-semibold text-blue-800 mb-2">ULTRASSONOGRAFIA OBSTETRICA</h4>
-                            <p class="text-sm text-gray-600">NÃO PASSA POR REGULAÇÃO, AGENDA DIRETO NO SISTEMA, ABA MEDIA COMPLEXIDADE</p>
+                            <p class="text-sm text-gray-600">NÃO PASSA POR REGULAÇÃO, AGENDAMENTO REALIZADO DIRETO NO SISTEMA TELA SOLICITAÇÃO DE PROCEDIMENTO DE SERVIÇO/TIPO DE SERVIÇO/ICONE MEDIA COMPLEXIDADE</p>
                             <p class="text-xs text-blue-600 mt-1">(Critério: Após 22 semanas de gestação)</p>
                         </div>
                         
                         <div class="bg-white p-4 rounded-lg border border-gray-200">
                             <h4 class="font-semibold text-blue-800 mb-2">ULTRASSONOGRAFIA TRANSLUCENCIA NUCAL</h4>
-                            <p class="text-sm text-gray-600">NÃO PASSA POR REGULAÇÃO, AGENDA DIRETO NO SISTEMA, ABA MEDIA COMPLEXIDADE</p>
+                            <p class="text-sm text-gray-600">NÃO PASSA POR REGULAÇÃO, AGENDAMENTO REALIZADO DIRETO NO SISTEMA,  TELA SOLICITAÇÃO DE PROCEDIMENTO DE SERVIÇO/TIPO DE SERVIÇO/ICONE MEDIA COMPLEXIDADE</p>
                             <p class="text-xs text-blue-600 mt-1">(11 a 14 semanas de gestação)</p>
                         </div>
                         
                         <div class="bg-white p-4 rounded-lg border border-gray-200">
                             <h4 class="font-semibold text-blue-800 mb-2">FISIOTERAPIA</h4>
-                            <p class="text-sm text-gray-600">AGENDA DIRETO NO SISTEMA, CLICAR NA ABA TIPO DE SERVIÇO E ESCOLHER A REGIÃO</p>
+                            <p class="text-sm text-gray-600">AGENDAMENTO REALIZADO DIRETO NO SISTEMA, TELA SOLICITAÇÃO DE PROCEDIMENTO DE SERVIÇO/TIPO DE SERVIÇO E ESCOLHER A REGIÃO</p>
                         </div>
                         
                         <div class="bg-white p-4 rounded-lg border border-gray-200">
@@ -185,193 +156,191 @@
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
                         <div class="bg-white p-3 rounded-lg border border-gray-200">
+                            
+                        
+                        <div class="bg-white p-3 rounded-lg border border-gray-200">
                             <h4 class="font-semibold text-blue-800 text-sm">ELETROENCEFALOGRAMA</h4>
-                            <p class="text-xs text-gray-600">MÉDIA COMPLEXIDADE/ ENCAMINHAR PARA O CEAPS</p>
+                            <p class="text-xs text-gray-600">MÉDIA COMPLEXIDADE/ COLOCAR O NÚMERO DO PRONTUÁRIO DO SISTEMA NO PEDIDO/ENCAMINHAR PARA O CEAPS</p>
                         </div>
                         
                         <div class="bg-white p-3 rounded-lg border border-gray-200">
                             <h4 class="font-semibold text-blue-800 text-sm">COLPOSCOPIA</h4>
-                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CMC - SOLICITAÇÃO PASSA POR REGULAÇÃO</p>
+                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CENTRAL DE MARCAÇÃO DE CONSULTAS, ESPECIALIDADE DEVE SER REGULADA PELO MÉDICO REGULADOR, VERIFICAR SE ESTÁ LANÇADA NO SISTEMA ANTES DE ENVIAR.</p>
                         </div>
                         
                         <div class="bg-white p-3 rounded-lg border border-gray-200">
                             <h4 class="font-semibold text-blue-800 text-sm">ALERGISTA/ADULTO E INFANTIL</h4>
-                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CMC - SOLICITAÇÃO PASSA POR REGULAÇÃO</p>
+                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CENTRAL DE MARCAÇÃO DE CONSULTAS, ESPECIALIDADE DEVE SER REGULADA PELO MÉDICO REGULADOR, VERIFICAR SE ESTÁ LANÇADA NO SISTEMA ANTES DE ENVIAR.</p>
                         </div>
                         
                         <div class="bg-white p-3 rounded-lg border border-gray-200">
                             <h4 class="font-semibold text-blue-800 text-sm">ANGIOLOGIA</h4>
-                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CMC - SOLICITAÇÃO PASSA POR REGULAÇÃO</p>
+                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CENTRAL DE MARCAÇÃO DE CONSULTAS, ESPECIALIDADE DEVE SER REGULADA PELO MÉDICO REGULADOR, VERIFICAR SE ESTÁ LANÇADA NO SISTEMA ANTES DE ENVIAR.</p>
                         </div>
                         
                         <div class="bg-white p-3 rounded-lg border border-gray-200">
                             <h4 class="font-semibold text-blue-800 text-sm">CARDIOLOGIA ADULTO</h4>
-                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CMC - SOLICITAÇÃO PASSA POR REGULAÇÃO</p>
+                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CENTRAL DE MARCAÇÃO DE CONSULTAS, ESPECIALIDADE DEVE SER REGULADA PELO MÉDICO REGULADOR, VERIFICAR SE ESTÁ LANÇADA NO SISTEMA ANTES DE ENVIAR.</p>
                         </div>
                         
                         <div class="bg-white p-3 rounded-lg border border-gray-200">
                             <h4 class="font-semibold text-blue-800 text-sm">CARDIOLOGIA INFANTIL</h4>
-                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CMC - SOLICITAÇÃO PASSA POR REGULAÇÃO</p>
+                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CENTRAL DE MARCAÇÃO DE CONSULTAS, ESPECIALIDADE DEVE SER REGULADA PELO MÉDICO REGULADOR, VERIFICAR SE ESTÁ LANÇADA NO SISTEMA ANTES DE ENVIAR.</p>
                         </div>
                         
                         <div class="bg-white p-3 rounded-lg border border-gray-200">
                             <h4 class="font-semibold text-blue-800 text-sm">CIRURGIA AMBULATORIAL</h4>
-                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CMC - SOLICITAÇÃO PASSA POR REGULAÇÃO</p>
+                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CENTRAL DE MARCAÇÃO DE CONSULTAS, ESPECIALIDADE DEVE SER REGULADA PELO MÉDICO REGULADOR, VERIFICAR SE ESTÁ LANÇADA NO SISTEMA ANTES DE ENVIAR.</p>
                         </div>
                         
                         <div class="bg-white p-3 rounded-lg border border-gray-200">
                             <h4 class="font-semibold text-blue-800 text-sm">CIRURGIA CABEÇA E PESCOÇO</h4>
-                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CMC - SOLICITAÇÃO PASSA POR REGULAÇÃO</p>
+                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CENTRAL DE MARCAÇÃO DE CONSULTAS, ESPECIALIDADE DEVE SER REGULADA PELO MÉDICO REGULADOR, VERIFICAR SE ESTÁ LANÇADA NO SISTEMA ANTES DE ENVIAR.</p>
                         </div>
                         
                         <div class="bg-white p-3 rounded-lg border border-gray-200">
                             <h4 class="font-semibold text-blue-800 text-sm">CIRURGIA GERAL</h4>
-                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CMC - SOLICITAÇÃO PASSA POR REGULAÇÃO</p>
+                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CENTRAL DE MARCAÇÃO DE CONSULTAS, ESPECIALIDADE DEVE SER REGULADA PELO MÉDICO REGULADOR, VERIFICAR SE ESTÁ LANÇADA NO SISTEMA ANTES DE ENVIAR.</p>
                         </div>
                         
                         <div class="bg-white p-3 rounded-lg border border-gray-200">
                             <h4 class="font-semibold text-blue-800 text-sm">CIRURGIA INFANTIL</h4>
-                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CMC - SOLICITAÇÃO PASSA POR REGULAÇÃO</p>
+                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CENTRAL DE MARCAÇÃO DE CONSULTAS, ESPECIALIDADE DEVE SER REGULADA PELO MÉDICO REGULADOR, VERIFICAR SE ESTÁ LANÇADA NO SISTEMA ANTES DE ENVIAR.</p>
                         </div>
                         
                         <div class="bg-white p-3 rounded-lg border border-gray-200">
                             <h4 class="font-semibold text-blue-800 text-sm">CIRURGIA PLÁSTICA</h4>
-                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CMC - SOLICITAÇÃO PASSA POR REGULAÇÃO</p>
+                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CENTRAL DE MARCAÇÃO DE CONSULTAS, ESPECIALIDADE DEVE SER REGULADA PELO MÉDICO REGULADOR, VERIFICAR SE ESTÁ LANÇADA NO SISTEMA ANTES DE ENVIAR.</p>
                         </div>
                         
                         <div class="bg-white p-3 rounded-lg border border-gray-200">
                             <h4 class="font-semibold text-blue-800 text-sm">CIRURGIA TORÁCICA</h4>
-                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CMC - SOLICITAÇÃO PASSA POR REGULAÇÃO</p>
+                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CENTRAL DE MARCAÇÃO DE CONSULTAS, ESPECIALIDADE DEVE SER REGULADA PELO MÉDICO REGULADOR, VERIFICAR SE ESTÁ LANÇADA NO SISTEMA ANTES DE ENVIAR.</p>
                         </div>
                         
                         <div class="bg-white p-3 rounded-lg border border-gray-200">
                             <h4 class="font-semibold text-blue-800 text-sm">COLOPROCTOLOGIA</h4>
-                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CMC - SOLICITAÇÃO PASSA POR REGULAÇÃO</p>
+                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CENTRAL DE MARCAÇÃO DE CONSULTAS, ESPECIALIDADE DEVE SER REGULADA PELO MÉDICO REGULADOR, VERIFICAR SE ESTÁ LANÇADA NO SISTEMA ANTES DE ENVIAR.</p>
                         </div>
                         
                         <div class="bg-white p-3 rounded-lg border border-gray-200">
                             <h4 class="font-semibold text-blue-800 text-sm">DERMATOLOGIA - HANSIENÍASE</h4>
-                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CMC - SOLICITAÇÃO PASSA POR REGULAÇÃO</p>
+                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CENTRAL DE MARCAÇÃO DE CONSULTAS, ESPECIALIDADE DEVE SER REGULADA PELO MÉDICO REGULADOR, VERIFICAR SE ESTÁ LANÇADA NO SISTEMA ANTES DE ENVIAR.</p>
                         </div>
                         
                         <div class="bg-white p-3 rounded-lg border border-gray-200">
                             <h4 class="font-semibold text-blue-800 text-sm">DERMATOLOGIA GERAL</h4>
-                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CMC - SOLICITAÇÃO PASSA POR REGULAÇÃO</p>
+                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CENTRAL DE MARCAÇÃO DE CONSULTAS, ESPECIALIDADE DEVE SER REGULADA PELO MÉDICO REGULADOR, VERIFICAR SE ESTÁ LANÇADA NO SISTEMA ANTES DE ENVIAR.</p>
                         </div>
                         
                         <div class="bg-white p-3 rounded-lg border border-gray-200">
                             <h4 class="font-semibold text-blue-800 text-sm">ENDOCRINOLOGIA ADULTO</h4>
-                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CMC - SOLICITAÇÃO PASSA POR REGULAÇÃO</p>
+                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CENTRAL DE MARCAÇÃO DE CONSULTAS, ESPECIALIDADE DEVE SER REGULADA PELO MÉDICO REGULADOR, VERIFICAR SE ESTÁ LANÇADA NO SISTEMA ANTES DE ENVIAR.</p>
                         </div>
                         
                         <div class="bg-white p-3 rounded-lg border border-gray-200">
                             <h4 class="font-semibold text-blue-800 text-sm">ENDOCRINOLOGIA INFANTIL</h4>
-                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CMC - SOLICITAÇÃO PASSA POR REGULAÇÃO</p>
+                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CENTRAL DE MARCAÇÃO DE CONSULTAS, ESPECIALIDADE DEVE SER REGULADA PELO MÉDICO REGULADOR, VERIFICAR SE ESTÁ LANÇADA NO SISTEMA ANTES DE ENVIAR.</p>
                         </div>
                         
                         <div class="bg-white p-3 rounded-lg border border-gray-200">
                             <h4 class="font-semibold text-blue-800 text-sm">GASTROENTEROLOGIA ADULTO</h4>
-                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CMC - SOLICITAÇÃO PASSA POR REGULAÇÃO</p>
+                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CENTRAL DE MARCAÇÃO DE CONSULTAS, ESPECIALIDADE DEVE SER REGULADA PELO MÉDICO REGULADOR, VERIFICAR SE ESTÁ LANÇADA NO SISTEMA ANTES DE ENVIAR.</p>
                         </div>
                         
                         <div class="bg-white p-3 rounded-lg border border-gray-200">
                             <h4 class="font-semibold text-blue-800 text-sm">GERIATRIA</h4>
-                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CMC - SOLICITAÇÃO PASSA POR REGULAÇÃO</p>
+                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CENTRAL DE MARCAÇÃO DE CONSULTAS, ESPECIALIDADE DEVE SER REGULADA PELO MÉDICO REGULADOR, VERIFICAR SE ESTÁ LANÇADA NO SISTEMA ANTES DE ENVIAR.</p>
                         </div>
                         
                         <div class="bg-white p-3 rounded-lg border border-gray-200">
                             <h4 class="font-semibold text-blue-800 text-sm">HEMATOLOGIA</h4>
-                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CMC - SOLICITAÇÃO PASSA POR REGULAÇÃO</p>
+                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CENTRAL DE MARCAÇÃO DE CONSULTAS, ESPECIALIDADE DEVE SER REGULADA PELO MÉDICO REGULADOR, VERIFICAR SE ESTÁ LANÇADA NO SISTEMA ANTES DE ENVIAR.</p>
                         </div>
                         
                         <div class="bg-white p-3 rounded-lg border border-gray-200">
                             <h4 class="font-semibold text-blue-800 text-sm">INFECTOLOGIA ADULTO</h4>
-                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CMC - SOLICITAÇÃO PASSA POR REGULAÇÃO</p>
+                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CENTRAL DE MARCAÇÃO DE CONSULTAS, ESPECIALIDADE DEVE SER REGULADA PELO MÉDICO REGULADOR, VERIFICAR SE ESTÁ LANÇADA NO SISTEMA ANTES DE ENVIAR.</p>
                         </div>
                         
                         <div class="bg-white p-3 rounded-lg border border-gray-200">
                             <h4 class="font-semibold text-blue-800 text-sm">MASTOLOGIA</h4>
-                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CMC - SOLICITAÇÃO PASSA POR REGULAÇÃO</p>
+                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CENTRAL DE MARCAÇÃO DE CONSULTAS, ESPECIALIDADE DEVE SER REGULADA PELO MÉDICO REGULADOR, VERIFICAR SE ESTÁ LANÇADA NO SISTEMA ANTES DE ENVIAR.</p>
                         </div>
                         
                         <div class="bg-white p-3 rounded-lg border border-gray-200">
                             <h4 class="font-semibold text-blue-800 text-sm">NEFROLOGIA ADULTO</h4>
-                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CMC - SOLICITAÇÃO PASSA POR REGULAÇÃO</p>
+                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CENTRAL DE MARCAÇÃO DE CONSULTAS, ESPECIALIDADE DEVE SER REGULADA PELO MÉDICO REGULADOR, VERIFICAR SE ESTÁ LANÇADA NO SISTEMA ANTES DE ENVIAR.</p>
                         </div>
                         
                         <div class="bg-white p-3 rounded-lg border border-gray-200">
                             <h4 class="font-semibold text-blue-800 text-sm">NEFROLOGIA INFANTIL</h4>
-                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CMC - SOLICITAÇÃO PASSA POR REGULAÇÃO</p>
+                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CENTRAL DE MARCAÇÃO DE CONSULTAS, ESPECIALIDADE DEVE SER REGULADA PELO MÉDICO REGULADOR, VERIFICAR SE ESTÁ LANÇADA NO SISTEMA ANTES DE ENVIAR.</p>
                         </div>
                         
                         <div class="bg-white p-3 rounded-lg border border-gray-200">
                             <h4 class="font-semibold text-blue-800 text-sm">NEUROCIRURGIA</h4>
-                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CMC - SOLICITAÇÃO PASSA POR REGULAÇÃO</p>
+                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CENTRAL DE MARCAÇÃO DE CONSULTAS, ESPECIALIDADE DEVE SER REGULADA PELO MÉDICO REGULADOR, VERIFICAR SE ESTÁ LANÇADA NO SISTEMA ANTES DE ENVIAR.</p>
                         </div>
                         
                         <div class="bg-white p-3 rounded-lg border border-gray-200">
                             <h4 class="font-semibold text-blue-800 text-sm">NEUROLOGIA ADULTO</h4>
-                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CMC - SOLICITAÇÃO PASSA POR REGULAÇÃO</p>
+                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CENTRAL DE MARCAÇÃO DE CONSULTAS, ESPECIALIDADE DEVE SER REGULADA PELO MÉDICO REGULADOR, VERIFICAR SE ESTÁ LANÇADA NO SISTEMA ANTES DE ENVIAR.</p>
                         </div>
                         
                         <div class="bg-white p-3 rounded-lg border border-gray-200">
                             <h4 class="font-semibold text-blue-800 text-sm">NEUROLOGIA INFANTIL</h4>
-                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CMC - SOLICITAÇÃO PASSA POR REGULAÇÃO</p>
+                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CENTRAL DE MARCAÇÃO DE CONSULTAS, ESPECIALIDADE DEVE SER REGULADA PELO MÉDICO REGULADOR, VERIFICAR SE ESTÁ LANÇADA NO SISTEMA ANTES DE ENVIAR.</p>
                         </div>
                         
                         <div class="bg-white p-3 rounded-lg border border-gray-200">
                             <h4 class="font-semibold text-blue-800 text-sm">ODONTOLOGIA</h4>
-                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CMC - SOLICITAÇÃO PASSA POR REGULAÇÃO</p>
+                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CENTRAL DE MARCAÇÃO DE CONSULTAS, ESPECIALIDADE DEVE SER REGULADA PELO MÉDICO REGULADOR, VERIFICAR SE ESTÁ LANÇADA NO SISTEMA ANTES DE ENVIAR.</p>
                         </div>
                         
                         <div class="bg-white p-3 rounded-lg border border-gray-200">
                             <h4 class="font-semibold text-blue-800 text-sm">OFTALOMOLOGIA</h4>
-                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CMC - SOLICITAÇÃO PASSA POR REGULAÇÃO</p>
+                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CENTRAL DE MARCAÇÃO DE CONSULTAS, ESPECIALIDADE DEVE SER REGULADA PELO MÉDICO REGULADOR, VERIFICAR SE ESTÁ LANÇADA NO SISTEMA ANTES DE ENVIAR.</p>
                         </div>
                         
                         <div class="bg-white p-3 rounded-lg border border-gray-200">
                             <h4 class="font-semibold text-blue-800 text-sm">ORTOPEDIA</h4>
-                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CMC - SOLICITAÇÃO PASSA POR REGULAÇÃO</p>
+                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CENTRAL DE MARCAÇÃO DE CONSULTAS, ESPECIALIDADE DEVE SER REGULADA PELO MÉDICO REGULADOR, VERIFICAR SE ESTÁ LANÇADA NO SISTEMA ANTES DE ENVIAR.</p>
                         </div>
                         
                         <div class="bg-white p-3 rounded-lg border border-gray-200">
                             <h4 class="font-semibold text-blue-800 text-sm">OTORRINO</h4>
-                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CMC - SOLICITAÇÃO PASSA POR REGULAÇÃO</p>
+                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CENTRAL DE MARCAÇÃO DE CONSULTAS, ESPECIALIDADE DEVE SER REGULADA PELO MÉDICO REGULADOR, VERIFICAR SE ESTÁ LANÇADA NO SISTEMA ANTES DE ENVIAR.</p>
                         </div>
                         
                         <div class="bg-white p-3 rounded-lg border border-gray-200">
                             <h4 class="font-semibold text-blue-800 text-sm">PEQUENAS CIRURGIAS ÚROLOGICAS</h4>
-                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CMC - SOLICITAÇÃO PASSA POR REGULAÇÃO</p>
+                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CENTRAL DE MARCAÇÃO DE CONSULTAS, ESPECIALIDADE DEVE SER REGULADA PELO MÉDICO REGULADOR, VERIFICAR SE ESTÁ LANÇADA NO SISTEMA ANTES DE ENVIAR.</p>
                         </div>
-                        
-                        <div class="bg-white p-3 rounded-lg border border-gray-200">
-                            <h4 class="font-semibold text-blue-800 text-sm">PNAR</h4>
-                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CMC - SOLICITAÇÃO PASSA POR REGULAÇÃO</p>
-                        </div>
-                        
+                                               
                         <div class="bg-white p-3 rounded-lg border border-gray-200">
                             <h4 class="font-semibold text-blue-800 text-sm">PNEUMOLOGIA ADULTO</h4>
-                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CMC - SOLICITAÇÃO PASSA POR REGULAÇÃO</p>
+                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CENTRAL DE MARCAÇÃO DE CONSULTAS, ESPECIALIDADE DEVE SER REGULADA PELO MÉDICO REGULADOR, VERIFICAR SE ESTÁ LANÇADA NO SISTEMA ANTES DE ENVIAR.</p>
                         </div>
                         
                         <div class="bg-white p-3 rounded-lg border border-gray-200">
                             <h4 class="font-semibold text-blue-800 text-sm">PNEUMOLOGIA INFANTIL</h4>
-                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CMC - SOLICITAÇÃO PASSA POR REGULAÇÃO</p>
+                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CENTRAL DE MARCAÇÃO DE CONSULTAS, ESPECIALIDADE DEVE SER REGULADA PELO MÉDICO REGULADOR, VERIFICAR SE ESTÁ LANÇADA NO SISTEMA ANTES DE ENVIAR.</p>
                         </div>
                         
                         <div class="bg-white p-3 rounded-lg border border-gray-200">
                             <h4 class="font-semibold text-blue-800 text-sm">PROCEDIMENTOS HEMATÓLOGICOS</h4>
-                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CMC - SOLICITAÇÃO PASSA POR REGULAÇÃO</p>
+                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CENTRAL DE MARCAÇÃO DE CONSULTAS, ESPECIALIDADE DEVE SER REGULADA PELO MÉDICO REGULADOR, VERIFICAR SE ESTÁ LANÇADA NO SISTEMA ANTES DE ENVIAR.</p>
                         </div>
                         
                         <div class="bg-white p-3 rounded-lg border border-gray-200">
                             <h4 class="font-semibold text-blue-800 text-sm">REUMATOLOGIA</h4>
-                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CMC - SOLICITAÇÃO PASSA POR REGULAÇÃO</p>
+                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CENTRAL DE MARCAÇÃO DE CONSULTAS, ESPECIALIDADE DEVE SER REGULADA PELO MÉDICO REGULADOR, VERIFICAR SE ESTÁ LANÇADA NO SISTEMA ANTES DE ENVIAR.</p>
                         </div>
                         
                         <div class="bg-white p-3 rounded-lg border border-gray-200">
                             <h4 class="font-semibold text-blue-800 text-sm">UROLOGIA</h4>
-                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CMC - SOLICITAÇÃO PASSA POR REGULAÇÃO</p>
+                            <p class="text-xs text-gray-600">ENCAMINHAR PARA O CEAPS/CENTRAL DE MARCAÇÃO DE CONSULTAS, ESPECIALIDADE DEVE SER REGULADA PELO MÉDICO REGULADOR, VERIFICAR SE ESTÁ LANÇADA NO SISTEMA ANTES DE ENVIAR.</p>
                         </div>
                     </div>
                 </div>
@@ -392,7 +361,7 @@
                     </p>
                     <p class="text-gray-700 leading-relaxed">
                         Para remarcações a solicitação deverá ser enviada por e-mail à Central de Marcação de Consultas (CMC), 
-                        com a justificativa do cancelamento. A CMC será responsável ela inserção do paciente na fila de espera.
+                        com a justificativa do cancelamento. A CMC será responsável pela inserção do paciente na fila de espera.
                     </p>
                 </div>
             </div>
@@ -409,27 +378,27 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="bg-white p-6 rounded-lg border border-gray-200">
                         <h3 class="subsection-title text-xl font-semibold mb-4">Solicitações de Retornos para Médicos – CCE Ressaca</h3>
-                        <p class="text-gray-700">Agendamentos podem ser solicitados via WhatsApp 3394-7213.</p>
+                        <p class="text-gray-700">Agendamentos podem ser solicitados via WhatsApp telefone: 3394-7213.</p>
                     </div>
                     
                     <div class="bg-white p-6 rounded-lg border border-gray-200">
-                        <h3 class="subsection-title text-xl font-semibold mb-4">Solicitações de Retorno para o CISMEP</h3>
-                        <p class="text-gray-700">Inserir a solicitação no sistema Vivver</p>
+                        <h3 class="subsection-title text-xl font-semibold mb-4">Solicitações de Retorno para o CISMEP:</h3>
+                        <p class="text-gray-700">Inserir a solicitação no sistema Vivver.</p>
                     </div>
                     
                     <div class="bg-white p-6 rounded-lg border border-gray-200">
-                        <h3 class="subsection-title text-xl font-semibold mb-4">Retornos com exames prontos</h3>
+                        <h3 class="subsection-title text-xl font-semibold mb-4">Retornos com exames prontos:</h3>
                         <p class="text-gray-700">Encaminhar solicitação por email para a central de marcação de consultas, informando que os mesmos foram realizados.</p>
                     </div>
                     
                     <div class="bg-white p-6 rounded-lg border border-gray-200">
-                        <h3 class="subsection-title text-xl font-semibold mb-4">Retornos para Médicos Fora da Rede</h3>
-                        <p class="text-gray-700">Devem ser encaminhados por e-mail para Central de Marcação de Consultas realizar a inserção no sistema.</p>
+                        <h3 class="subsection-title text-xl font-semibold mb-4">Retornos para Médicos Fora da Rede:</h3>
+                        <p class="text-gray-700">As solicitações devem ser encaminhados por e-mail para Central de Marcação de Consultas realizar a inserção no sistema. Email: cmceldorado@gmail.com</p>
                     </div>
                 </div>
                 
                 <div class="bg-blue-50 border-l-4 border-blue-400 p-6 mt-6 rounded-r-lg">
-                    <h3 class="subsection-title text-xl font-semibold mb-4">Retornos de Colposcopia Dra. Ivana Vilela</h3>
+                    <h3 class="subsection-title text-xl font-semibold mb-4">Retornos de Colposcopia Dra. Ivana Vilela:</h3>
                     <p class="text-gray-700 mb-2">Assistente Administrativo solicita entrando em contato pelo Wattsapp.</p>
                     <p class="text-blue-700 font-semibold">
                         <i class="fas fa-phone mr-2"></i>Telefone: 99257-2517 (Flores do Iria) Agendamentos e esclarecimentos de dúvidas.
@@ -511,7 +480,7 @@
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mr-3 mt-1"></i>
-                            A UBS receberá relatório, via email e impresso via malote informando dados e locais dos atendimentos.
+                            A UBS receberá relatório, via email e impresso via malote informando os dados e os locais dos atendimentos.
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mr-3 mt-1"></i>
@@ -931,23 +900,20 @@
                 </div>
             </div>
         </section>
-    </div>
 
-    <!-- Footer -->
-    <footer class="bg-gray-100 mt-12 py-8 border-t-4 border-blue-800">
-        <div class="container mx-auto px-6 text-center">
-            <div class="footer-info">
-                <p class="mb-2">Central de Marcação de consultas 3198-6768</p>
-                <p class="mb-2">Agendamento de retornos CCE Ressaca: 3394-7213</p>
-                <p class="mb-2">COLONOSCOPIA/CEAPS 3198-6788</p>
-                <p class="mb-2">OFTALMOLOGIA 3198-6761</p>
-                <p class="mb-2">FLORES DO IRIA 99257-2517</p>
-                <p class="mb-2">Laboratório de Coletas Especiais: END: Rua Antônio Augusto, 115 Bairro Nossa Senhora de Fátima</p>
-                <p class="mt-4 font-semibold">Site criado por Ana P. A. Silva – Suporte Sistema Vivver – Distrito Eldorado</p>
-
+        <!-- Footer -->
+        <footer class="bg-gray-50 rounded-lg p-8 text-center border-t-4 border-blue-500">
+            <div class="mb-4">
+                <i class="fas fa-info-circle text-blue-500 text-2xl"></i>
             </div>
-        </div>
-    </footer>
+            <p class="text-gray-600 text-lg font-medium">
+                Sistema de Fluxo de Marcação - Consultas Especializadas e Exames
+            </p>
+            <p class="text-gray-500 text-sm mt-2">
+                Documento de orientação para unidades básicas de saúde
+            </p>
+        </footer>
+    </div>
 
     <script>
         // Smooth scrolling for better navigation
