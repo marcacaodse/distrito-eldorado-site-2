@@ -1,146 +1,151 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="translated-ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resumo dos Fluxos de Marcação - Distrito Sanitário Eldorado -
-    Resumo dos Fluxos de Consultas Especializadas e Exames</title>
+    <title>Resumo dos Fluxos de Marcação - Distrito Sanitário Eldorado - Resumo dos Fluxos de Consultas Especializadas e Exames</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #ffffff;
+            background-color: #f0f4f8; /* Fundo suave */
+            color: #333; /* Cor de texto padrão */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte moderna */
         }
-        .gradient-header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+        .header-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100% ); /* Gradiente de azul para roxo */
+            color: white;
+            padding: 2rem;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
-        .card-shadow {
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        }
-        .button-light {
-            background: linear-gradient(145deg, #f8fafc, #e2e8f0);
-            border: 1px solid #cbd5e0;
-            transition: all 0.3s ease;
-        }
-        .button-light:hover {
-            background: linear-gradient(145deg, #e2e8f0, #cbd5e0);
-            transform: translateY(-1px);
-        }
+
         .section-title {
-            color: #1e40af;
-            border-bottom: 3px solid #3b82f6;
-            display: inline-block;
-            padding-bottom: 8px;
+            color: #4a5568; /* Cor de título de seção */
+            border-bottom: 3px solid #667eea; /* Linha de destaque */
+            padding-bottom: 0.5rem;
         }
+
         .subsection-title {
-            color: #1e3a8a;
+            color: #2c5282; /* Cor de subtítulo */
         }
-        .demand-badge-low {
-            background: linear-gradient(135deg, #d1fae5, #a7f3d0);
-            color: #065f46;
-            border: 1px solid #10b981;
+
+        .card-shadow {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08), 0 6px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+            transition: transform 0.3s ease-in-out;
         }
-        .demand-badge-high {
-            background: linear-gradient(135deg, #fef3c7, #fde68a);
-            color: #92400e;
-            border: 1px solid #f59e0b;
+
+        .card-shadow:hover {
+            transform: translateY(-5px); /* Efeito de elevação */
         }
-        .info-card {
-            background: linear-gradient(145deg, #ffffff, #f8fafc);
-            border-left: 4px solid #3b82f6;
+
+        .button-light {
+            background-color: #f7fafc; /* Fundo de botão claro */
+            border: 1px solid #e2e8f0; /* Borda sutil */
         }
-        @media print {
-            body { font-size: 12px; }
-            .no-print { display: none; }
+
+        .button-dark {
+            background-color: #2d3748; /* Fundo de botão escuro */
+            color: white;
         }
-</style>
+
+        .button-dark:hover {
+            background-color: #1a202c; /* Efeito hover */
+        }
+
+        .info-box {
+            background-color: #e3f2fd; /* Fundo de caixa de informação */
+            border-left: 5px solid #4299e1; /* Destaque azul */
+            padding: 1rem;
+            border-radius: 8px;
+        }
+    </style>
+<link type="text/css" rel="stylesheet" charset="UTF-8" href="https://www.gstatic.com/_/translate_http/_/ss/k=translate_http.tr.26tY-h_O1EY.L.W.O.R.AD.E.V2.T.Zz.rs.AODwvb7M2d_j2-sV_ros_CR2b2sSg4VHow.es.Oa_3KnCi5bI.I.X.cc.V.L.D.R.O.B.A.Z.ex.true.T.lg.nt.ALL.ns.zl.Zd.U.I.CE.S.Z.du.ab.LC.hv.AG.PL.pr.R.Vi.Ua.Ak.gl.UD.I.ia.auto.json.css">
 </head>
-<body class="bg-white text-gray-800 leading-relaxed">
-    <!-- Header -->
-    <header class="gradient-header text-white py-16 mb-8">
-        <div class="container mx-auto px-6 text-center relative">
-            <a href="index.html" class="home-button">
-                <i class="fas fa-home"></i>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+    <header class="header-bg text-white p-8 rounded-b-2xl shadow-lg">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+            <div class="text-center md:text-left mb-4 md:mb-0">
+                <h1 class="text-3xl md:text-5xl font-extrabold mb-2">
+                    <i class="fas fa-calendar-check mr-3"></i>
+                    Resumo do Fluxo de Marcação
+                </h1>
+                <p class="text-lg md:text-xl font-light mb-4">
+                    Distrito Sanitário Eldorado - Resumo do fluxo de Consultas Especializadas e Exames
+                </p>
+                <p class="text-xs md:text-sm opacity-80">
+                    <i class="fas fa-info-circle mr-2"></i>
+                    Sistema de Regulação e Agendamentos /Página Criada por Ana P. A. Silva/ Suporte Vivver/ Distrito Eldorado
+                </p>
+            </div>
+            <a href="https://marcacaodse.github.io/distrito-eldorado-site-2/" class="bg-black text-white py-3 px-6 rounded-full shadow-md transition-transform transform hover:scale-105 hover:bg-gray-800">
+                <i class="fas fa-home mr-2"></i>
                 Tela Inicial
             </a>
-            <h1 class="text-4xl font-bold mb-4">
-                <i class="fas fa-calendar-check mr-3"></i>
-                Resumo do Fluxo de Marcação
-            </h1>
-            <p class="text-xl opacity-90"> Distrito Sanitário Eldorado - 
-            Resumo do fluxo de Consultas Especializadas e Exames</p>
-            <div class="mt-6 text-sm opacity-80">
-                <i class="fas fa-info-circle mr-2"></i>
-                Sistema de Regulação e Agendamentos
-                /Página Criada por Ana P. A. Silva/ Suporte Vivver/ Distrito Eldorado
-            </div>
         </div>
     </header>
 
-    <div class="container mx-auto px-6 max-w-6xl">
-        <!-- Resumo -->
+    <div class="container mx-auto p-8">
+
+        <!-- Resumo dos Fluxos -->
         <section class="mb-12">
-            <div class="info-card p-8 rounded-lg card-shadow">
+            <div class="bg-white p-8 rounded-lg card-shadow">
                 <h2 class="section-title text-3xl font-bold mb-6">
-                    <i class="fas fa-file-medical mr-3"></i>
+                    <i class="fas fa-file-alt mr-3"></i>
                     Resumo dos Fluxos de Marcação de Consultas e Exames
                 </h2>
-                <p class="text-lg text-gray-700 leading-relaxed">
-                    Este documento apresenta o resumo dos fluxos para marcação de consultas especializadas e exames, 
-                    organizando os procedimentos por demanda e especificando os canais apropriados para cada tipo de serviço.
-                    
+                <p class="text-gray-700 leading-relaxed">
+                    Este documento apresenta o resumo dos fluxos para marcação de consultas especializadas e exames, organizando os procedimentos por demanda e especificando os canais apropriados para cada tipo de serviço.
+                </p>
             </div>
         </section>
 
         <!-- Consultas Especializadas -->
         <section class="mb-12">
-            <h2 class="section-title text-3xl font-bold mb-8">
-                <i class="fas fa-user-md mr-3"></i>
-                Consultas Especializadas
-            </h2>
-
-        </section>
-
-                 <!-- Inserção de Primeira Consulta/Alta e Baixa Demanda -->
-        <section class="mb-12">
             <div class="button-light p-6 rounded-lg card-shadow">
                 <h2 class="section-title text-3xl font-bold mb-6">
-                    <i class="fas fa-redo mr-3"></i>
-                    Inserção de Primeira Consulta/Alta e Baixa Demanda
+                    <i class="fas fa-user-md mr-3"></i>
+                    Consultas Especializadas
                 </h2>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Inserção de Primeira Consulta -->
                     <div class="bg-white p-6 rounded-lg border border-gray-200">
-                        <h3 class="subsection-title text-xl font-semibold mb-4">Baixa Demanda</h3>
-                        <p class="text-gray-700">Caso haja disponibilidade de vagas a Unidade Basica de Saúde pode entrar no sistema e realizar o agendamento.</p>
-                         </h2>
-                         <h3 class="subsection-title text-xl font-semibold mb-4">Alta Demanda</h3>
-                        <p class="text-gray-700"> Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser 
-                            regulada pelo médico regulador, verificar se a guia está lançada no sistema antes de enviar.</p>
-                        </h2>
-                        <h3 class="subsection-title text-xl font-semibold mb-4">Para Acessar a Lista das Especialidades clique no Botão
-                        "Especialidades Alta e Baixa Demanda na Tela Inicial</h3>
+                        <h3 class="subsection-title text-xl font-semibold mb-4">Inserção de Primeira Consulta/Alta e Baixa Demanda</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-semibold text-blue-800 mb-2">Baixa Demanda</h4>
+                                <p class="text-gray-700">Caso haja disponibilidade de vagas a Unidade Basica de Saúde pode entrar no sistema e realizar o agendamento.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-blue-800 mb-2">Alta Demanda</h4>
+                                <p class="text-gray-700">Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se a guia está lançada no sistema antes de enviar.</p>
+                            </div>
+                            <div class="info-box mt-4">
+                                <p class="text-blue-800 font-semibold">
+                                    Para Acessar a Lista das Especialidades clique no Botão "Especialidades Alta e Baixa Demanda na Tela Inicial
+                                </p>
+                            </div>
+                        </div>
                     </div>
 
-        <!-- Cancelamentos -->
-        <section class="mb-12">
-            <div class="button-light p-6 rounded-lg card-shadow">
-                <h2 class="section-title text-3xl font-bold mb-6">
-                    <i class="fas fa-times-circle mr-3"></i>
-                    Cancelamentos - Consultas Especializadas
-                </h2>
-                <div class="bg-white p-6 rounded-lg border border-gray-200">
-                    <h3 class="subsection-title text-xl font-semibold mb-4">Cancelamentos Primeira Consulta</h3>
-                    <p class="text-gray-700 leading-relaxed mb-4">
-                        Os cancelamentos devem ser realizados pelo assistente administrativo da unidade de saúde por meio do sistema Vivver. 
-                        <strong>Observação:</strong> É essencial manter a priorização da guia antes do cancelamento.
-                    </p>
-                    <p class="text-gray-700 leading-relaxed">
-                        Para remarcações a solicitação deverá ser enviada por e-mail à Central de Marcação de Consultas (CMC), 
-                        com a justificativa do cancelamento. A CMC será responsável pela inserção do paciente na fila de espera.
-                    </p>
+                    <!-- Cancelamentos -->
+                    <div class="bg-white p-6 rounded-lg border border-gray-200">
+                        <h3 class="subsection-title text-xl font-semibold mb-4">
+                            <i class="fas fa-times-circle mr-2 text-red-500"></i>
+                            Cancelamentos - Consultas Especializadas
+                        </h3>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-semibold text-blue-800 mb-2">Cancelamentos Primeira Consulta</h4>
+                                <p class="text-gray-700">Os cancelamentos devem ser realizados pelo assistente administrativo da unidade de saúde por meio do sistema Vivver. <strong>Observação:</strong> É essencial manter a priorização da guia antes do cancelamento.</p>
+                                <p class="text-gray-700 mt-2">Para remarcações a solicitação deverá ser enviada por e-mail à Central de Marcação de Consultas (CMC ), com a justificativa do cancelamento. A CMC será responsável pela inserção do paciente na fila de espera.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -149,138 +154,82 @@
         <section class="mb-12">
             <div class="button-light p-6 rounded-lg card-shadow">
                 <h2 class="section-title text-3xl font-bold mb-6">
-                    <i class="fas fa-redo mr-3"></i>
+                    <i class="fas fa-sync-alt mr-3"></i>
                     Inserção de Retornos
                 </h2>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <div class="bg-white p-6 rounded-lg border border-gray-200">
-                        <h3 class="subsection-title text-xl font-semibold mb-4">Solicitações de Retornos para Médicos – CCE Ressaca</h3>
+                        <h3 class="subsection-title text-lg font-semibold mb-3">Solicitações de Retornos para Médicos – CCE Ressaca</h3>
                         <p class="text-gray-700">Agendamentos podem ser solicitados via WhatsApp telefone: 3394-7213.</p>
                     </div>
-                    
                     <div class="bg-white p-6 rounded-lg border border-gray-200">
-                        <h3 class="subsection-title text-xl font-semibold mb-4">Solicitações de Retorno para o CISMEP:</h3>
+                        <h3 class="subsection-title text-lg font-semibold mb-3">Solicitações de Retorno para o CISMEP:</h3>
                         <p class="text-gray-700">Inserir a solicitação no sistema Vivver.</p>
                     </div>
-                    
                     <div class="bg-white p-6 rounded-lg border border-gray-200">
-                        <h3 class="subsection-title text-xl font-semibold mb-4">Retornos com exames prontos:</h3>
+                        <h3 class="subsection-title text-lg font-semibold mb-3">Retornos com exames prontos:</h3>
                         <p class="text-gray-700">Encaminhar solicitação por email para a central de marcação de consultas, informando que os mesmos foram realizados.</p>
                     </div>
-                    
                     <div class="bg-white p-6 rounded-lg border border-gray-200">
-                        <h3 class="subsection-title text-xl font-semibold mb-4">Retornos para Médicos Fora da Rede:</h3>
+                        <h3 class="subsection-title text-lg font-semibold mb-3">Retornos para Médicos Fora da Rede:</h3>
                         <p class="text-gray-700">As solicitações devem ser encaminhados por e-mail para Central de Marcação de Consultas realizar a inserção no sistema. Email: cmceldorado@gmail.com</p>
                     </div>
-                </div>
-                
-                <div class="bg-blue-50 border-l-4 border-blue-400 p-6 mt-6 rounded-r-lg">
-                    <h3 class="subsection-title text-xl font-semibold mb-4">Retornos de Colposcopia Dra. Ivana Vilela:</h3>
-                    <p class="text-gray-700 mb-2">Assistente Administrativo solicita entrando em contato pelo Wattsapp.</p>
-                    <p class="text-blue-700 font-semibold">
-                        <i class="fas fa-phone mr-2"></i>Telefone: 99257-2517 (Flores do Iria) Agendamentos e esclarecimentos de dúvidas.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Pré-natal de Alto Risco -->
-        <section class="mb-12">
-            <div class="button-light p-6 rounded-lg card-shadow">
-                <h2 class="section-title text-3xl font-bold mb-6">
-                    <i class="fas fa-baby mr-3"></i>
-                    Pré-natal de Alto Risco
-                </h2>
-                <div class="bg-white p-6 rounded-lg border border-gray-200">
-                    <ul class="space-y-3 text-gray-700">
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mr-3 mt-1"></i>
-                            O profissional de nível superior deverá inserir a solicitação com a justificativa no sistema Vivver.
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mr-3 mt-1"></i>
-                            A guia deverá ser arquivada na unidade de saúde para monitoramento até o agendamento.
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mr-3 mt-1"></i>
-                            A unidade de básica de saúde será responsável por monitorar o status da solicitação no sistema, garantindo que não fique pendente.
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mr-3 mt-1"></i>
-                            A UBS receberá um relatório impresso por email e via malote com os dados dos agendamentos.
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mr-3 mt-1"></i>
-                            O assistente administrativo deverá imprimir o agendamento, anexar a guia e entregá-la ao paciente.
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-exclamation-triangle text-yellow-500 mr-3 mt-1"></i>
-                            Caso ocorram pendências, a UBS deverá verificar e resolver rapidamente, sendo a tarefa exclusiva dos profissionais de nível superior.
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Sangramento Uterino Anormal -->
-        <section class="mb-12">
-            <div class="button-light p-6 rounded-lg card-shadow">
-                <h2 class="section-title text-3xl font-bold mb-6">
-                    <i class="fas fa-female mr-3"></i>
-                    Sangramento Uterino Anormal
-                </h2>
-                <div class="bg-white p-6 rounded-lg border border-gray-200">
-                    <p class="text-gray-700 leading-relaxed">
-                        O procedimento é semelhante ao do pré-natal de alto risco: o profissional de nível superior insere a solicitação 
-                        com justificativa no Vivver, arquiva a guia e a unidade de saúde acompanha para garantir que não haja pendências.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Acupuntura -->
-        <section class="mb-12">
-            <div class="button-light p-6 rounded-lg card-shadow">
-                <h2 class="section-title text-3xl font-bold mb-6">
-                    <i class="fas fa-hand-holding-medical mr-3"></i>
-                    Acupuntura
-                </h2>
-                <div class="bg-white p-6 rounded-lg border border-gray-200">
-                    <ul class="space-y-3 text-gray-700 mb-4">
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mr-3 mt-1"></i>
-                            O profissional de nível superior deverá realizar uma solicitação com justificativa no sistema Viver e arquivar um guia para monitoramento.
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mr-3 mt-1"></i>
-                            A unidade básica de saúde acompanha a solicitação para evitar pendências.
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mr-3 mt-1"></i>
-                            A UBS receberá relatório, via email e impresso via malote informando os dados e os locais dos atendimentos.
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mr-3 mt-1"></i>
-                            O assistente administrativo deverá imprimir o agendamento, anexá-lo à guia e entregar ao paciente.
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-exclamation-triangle text-yellow-500 mr-3 mt-1"></i>
-                            Pendências devem ser verificadas e solucionadas diariamente pela UBS, exclusivamente por profissionais de nível superior.
-                        </li>
-                    </ul>
-                    
-                    <div class="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg">
-                        <p class="text-blue-800 font-semibold">
-                            <strong>Ressalva:</strong> Solicitações efetuadas por profissionais externos, as mesmas podem ser inseridas 
-                            pelo assistente administrativo, desde que a guia seja anexada para regulação.
-                        </p>
+                    <div class="bg-white p-6 rounded-lg border border-gray-200">
+                        <h3 class="subsection-title text-lg font-semibold mb-3">Retornos de Colposcopia Dra. Ivana Vilela:</h3>
+                        <p class="text-gray-700">Assistente Administrativo solicita entrando em contato pelo Wattsapp.</p>
+                        <p class="text-gray-700">Telefone: 99257-2517 (Flores do Iria) Agendamentos e esclarecimentos de dúvidas.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Fisioterapia -->
+        <!-- Fluxos Específicos -->
+        <section class="mb-12">
+            <div class="button-light p-6 rounded-lg card-shadow">
+                <h2 class="section-title text-3xl font-bold mb-6">
+                    <i class="fas fa-project-diagram mr-3"></i>
+                    Fluxos Específicos
+                </h2>
+                
+                <div class="space-y-6">
+                    <div class="bg-white p-6 rounded-lg border border-gray-200">
+                        <h3 class="subsection-title text-xl font-semibold mb-4">Pré-natal de Alto Risco</h3>
+                        <ul class="list-disc list-inside text-gray-700 space-y-2">
+                            <li>O profissional de nível superior deverá inserir a solicitação com a justificativa no sistema Vivver.</li>
+                            <li>A guia deverá ser arquivada na unidade de saúde para monitoramento até o agendamento.</li>
+                            <li>A unidade de básica de saúde será responsável por monitorar o status da solicitação no sistema, garantindo que não fique pendente.</li>
+                            <li>A UBS receberá um relatório impresso por email e via malote com os dados dos agendamentos.</li>
+                            <li>O assistente administrativo deverá imprimir o agendamento, anexar a guia e entregá-la ao paciente.</li>
+                            <li>Caso ocorram pendências, a UBS deverá verificar e resolver rapidamente, sendo a tarefa exclusiva dos profissionais de nível superior.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg border border-gray-200">
+                        <h3 class="subsection-title text-xl font-semibold mb-4">Sangramento Uterino Anormal</h3>
+                        <p class="text-gray-700">O procedimento é semelhante ao do pré-natal de alto risco: o profissional de nível superior insere a solicitação com justificativa no Vivver, arquiva a guia e a unidade de saúde acompanha para garantir que não haja pendências.</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg border border-gray-200">
+                        <h3 class="subsection-title text-xl font-semibold mb-4">Acupuntura</h3>
+                        <ul class="list-disc list-inside text-gray-700 space-y-2">
+                            <li>O profissional de nível superior deverá realizar uma solicitação com justificativa no sistema Viver e arquivar um guia para monitoramento.</li>
+                            <li>A unidade básica de saúde acompanha a solicitação para evitar pendências.</li>
+                            <li>A UBS receberá relatório, via email e impresso via malote informando os dados e os locais dos atendimentos.</li>
+                            <li>O assistente administrativo deverá imprimir o agendamento, anexá-lo à guia e entregar ao paciente.</li>
+                            <li>Pendências devem ser verificadas e solucionadas diariamente pela UBS, exclusivamente por profissionais de nível superior.</li>
+                        </ul>
+                        <div class="info-box mt-4">
+                            <p class="text-blue-800 font-semibold">
+                                <strong>Ressalva:</strong> Solicitações efetuadas por profissionais externos, as mesmas podem ser inseridas pelo assistente administrativo, desde que a guia seja anexada para regulação.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Orientações de Fisioterapia -->
         <section class="mb-12">
             <div class="button-light p-6 rounded-lg card-shadow">
                 <h2 class="section-title text-3xl font-bold mb-6">
@@ -290,67 +239,54 @@
                 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div class="bg-white p-6 rounded-lg border border-gray-200">
-                        <h3 class="subsection-title text-xl font-semibold mb-4">Fisioterapia Geral</h3>
-                        <p class="text-gray-700">
-                            Os agendamentos devem ser feitos pela UBS via sistema Vivver. Caso não haja vagas no distrito, 
-                            a UBS pode agendar em outros distritos, desde que o paciente concorde com o local.
-                        </p>
+                        <h3 class="subsection-title text-lg font-semibold mb-3">Fisioterapia Geral</h3>
+                        <p class="text-gray-700">Os agendamentos devem ser feitos pela UBS via sistema Vivver. Caso não haja vagas no distrito, a UBS pode agendar em outros distritos, desde que o paciente concorde com o local.</p>
                     </div>
-                    
                     <div class="bg-white p-6 rounded-lg border border-gray-200">
-                        <h3 class="subsection-title text-xl font-semibold mb-4">Fisioterapia Buco-Maxilo</h3>
-                        <p class="text-gray-700">
-                            A UBS é responsável por acessar o sistema Vivver e agendar para a clínica Fisiovida.
-                        </p>
+                        <h3 class="subsection-title text-lg font-semibold mb-3">Fisioterapia Buco-Maxilo</h3>
+                        <p class="text-gray-700">A UBS é responsável por acessar o sistema Vivver e agendar para a clínica Fisiovida.</p>
                     </div>
-                    
                     <div class="bg-white p-6 rounded-lg border border-gray-200">
-                        <h3 class="subsection-title text-xl font-semibold mb-4">Fisioterapia Geniturinária (Pélvica)</h3>
-                        <p class="text-gray-700">
-                            O assistente administrativo encaminha o pedido ao setor de reabilitação para dar as tratativas. 
-                            Todos os atendimentos são realizados no CCE Iria Diniz.
-                        </p>
+                        <h3 class="subsection-title text-lg font-semibold mb-3">Fisioterapia Geniturinária (Pélvica)</h3>
+                        <p class="text-gray-700">O assistente administrativo encaminha o pedido ao setor de reabilitação para dar as tratativas. Todos os atendimentos são realizados no CCE Iria Diniz.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Orientações de Agendamentos -->
+        <!-- Orientações de Agendamentos, Cancelamentos e Fluxos -->
         <section class="mb-12">
             <div class="button-light p-6 rounded-lg card-shadow">
                 <h2 class="section-title text-3xl font-bold mb-6">
-                    <i class="fas fa-clipboard-list mr-3"></i>
+                    <i class="fas fa-calendar-alt mr-3"></i>
                     Orientações de Agendamentos, Cancelamentos e Fluxos
                 </h2>
                 
                 <div class="space-y-6">
                     <div class="bg-white p-6 rounded-lg border border-gray-200">
                         <h3 class="subsection-title text-xl font-semibold mb-4">Infectologia Infantil</h3>
-                        <p class="text-gray-700 mb-2">Os Agendamentos devem ser realizados via contato telefônico no SAE Contagem:</p>
-                        <p class="text-blue-700 font-semibold">
-                            <i class="fas fa-phone mr-2"></i>Contatos: 3058-1597 ou via email: saecontagem@yahoo.com
-                        </p>
+                        <p class="text-gray-700">Os Agendamentos devem ser realizados via contato telefônico no SAE Contagem:</p>
+                        <p class="text-gray-700 font-semibold">Contatos: 3058-1597 ou via email: saecontagem@yahoo.com</p>
                     </div>
                     
                     <div class="bg-white p-6 rounded-lg border border-gray-200">
                         <h3 class="subsection-title text-xl font-semibold mb-4">Mamografia Bilateral de Rastreamento</h3>
-                        <ul class="space-y-2 text-gray-700">
+                        <ul class="list-disc list-inside text-gray-700 space-y-2">
                             <li><strong>Critério:</strong> Mulheres de 50 a 69 anos (periodicidade bienal).</li>
                             <li><strong>Período de carência:</strong> 2 anos.</li>
                             <li><strong>Mamografia de rastreamento:</strong> agendada pela unidade de saúde.</li>
                         </ul>
-                        
-                        <div class="mt-4 p-4 bg-blue-50 rounded-lg">
-                            <h4 class="font-semibold text-blue-800 mb-2">Mamografia diagnóstica e de risco elevado:</h4>
-                            <p class="text-blue-700 mb-2">Guia encaminha para a Diretoria de Regulação /Ceaps</p>
-                            <p class="text-blue-700 mb-1"><strong>Faixas etárias RISCO ELEVADO:</strong> A PARTIR DE 35 ANOS DE IDADE.</p>
-                            <p class="text-blue-700"><strong>Faixas Etarias Diagnostica:</strong> Qualquer idade.</p>
+                        <div class="info-box mt-4">
+                            <p class="text-blue-800 font-semibold">Mamografia diagnóstica e de risco elevado:</p>
+                            <p class="text-gray-700">Guia encaminha para a Diretoria de Regulação /Ceaps</p>
+                            <p class="text-gray-700"><strong>Faixas etárias RISCO ELEVADO:</strong> A PARTIR DE 35 ANOS DE IDADE.</p>
+                            <p class="text-gray-700"><strong>Faixas Etarias Diagnostica:</strong> Qualquer idade.</p>
                         </div>
                     </div>
-                    
+
                     <div class="bg-white p-6 rounded-lg border border-gray-200">
                         <h3 class="subsection-title text-xl font-semibold mb-4">Ultrassonografia Obstétrica</h3>
-                        <ul class="space-y-2 text-gray-700">
+                        <ul class="list-disc list-inside text-gray-700 space-y-2">
                             <li><strong>Critério:</strong> Após 22 semanas de gestação.</li>
                             <li><strong>Carência:</strong> Três meses.</li>
                             <li><strong>Observação:</strong> Pode ser feito até dois pedidos entre 28 e 32 semanas.</li>
@@ -364,162 +300,86 @@
         <section class="mb-12">
             <div class="button-light p-6 rounded-lg card-shadow">
                 <h2 class="section-title text-3xl font-bold mb-6">
-                    <i class="fas fa-vials mr-3"></i>
+                    <i class="fas fa-vial mr-3"></i>
                     Orientações Solicitação de Exames
                 </h2>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <div class="bg-white p-6 rounded-lg border border-gray-200">
-                        <h3 class="subsection-title text-xl font-semibold mb-4">Oftalmologia</h3>
-                        <p class="text-gray-700 mb-4">
-                            Assistente Administrativo da Unidade básica de Saúde coloca o número do prontuário no pedido e 
-                            encaminha para o setor de Oftalmologia/CEAPS realizar a inserção no sistema.
-                        </p>
-                        <p class="text-gray-700 mb-2">Cancelamentos para remarcação: enviar pedido ao setor com justificativa.</p>
-                        <p class="text-blue-700 font-semibold">
-                            <i class="fas fa-phone mr-2"></i>Telefones: 3198-6761 / 3198-6762
-                        </p>
+                        <h3 class="subsection-title text-lg font-semibold mb-3">Oftalmologia</h3>
+                        <p class="text-gray-700">Assistente Administrativo da Unidade básica de Saúde coloca o número do prontuário no pedido e encaminha para o setor de Oftalmologia/CEAPS realizar a inserção no sistema.</p>
+                        <p class="text-gray-700 mt-2">Cancelamentos para remarcação: enviar pedido ao setor com justificativa.</p>
+                        <p class="text-gray-700 font-semibold mt-2">Telefones: 3198-6761 / 3198-6762</p>
                     </div>
-                    
                     <div class="bg-white p-6 rounded-lg border border-gray-200">
-                        <h3 class="subsection-title text-xl font-semibold mb-4">Média Complexidade</h3>
-                        <p class="text-gray-700 mb-4">
-                            Assistente administrativo da Unidade Básica de Saúde coloca o número do prontuário no pedido e 
-                            encaminha ao setor de Média Complexidade/CEAPS para inserção no sistema.
-                        </p>
-                        <p class="text-gray-700 mb-2">Cancelamentos para remarcação: enviar pedido ao setor com justificativa.</p>
-                        <p class="text-blue-700 font-semibold">
-                            <i class="fas fa-phone mr-2"></i>Telefones: 3198-6759 / 3198-6760
-                        </p>
+                        <h3 class="subsection-title text-lg font-semibold mb-3">Média Complexidade</h3>
+                        <p class="text-gray-700">Assistente administrativo da Unidade Básica de Saúde coloca o número do prontuário no pedido e encaminha ao setor de Média Complexidade/CEAPS para inserção no sistema.</p>
+                        <p class="text-gray-700 mt-2">Cancelamentos para remarcação: enviar pedido ao setor com justificativa.</p>
+                        <p class="text-gray-700 font-semibold mt-2">Telefones: 3198-6759 / 3198-6760</p>
                     </div>
-                    
                     <div class="bg-white p-6 rounded-lg border border-gray-200">
-                        <h3 class="subsection-title text-xl font-semibold mb-4">Audiometria</h3>
-                        <p class="text-gray-700">
-                            Assistente Administrativo da Unidade Básica de Saúde lança no sistema e envia a guia para regulação A/C da média complexidade.
-                        </p>
+                        <h3 class="subsection-title text-lg font-semibold mb-3">Audiometria</h3>
+                        <p class="text-gray-700">Assistente Administrativo da Unidade Básica de Saúde lança no sistema e envia a guia para regulação A/C da média complexidade.</p>
                     </div>
-                    
                     <div class="bg-white p-6 rounded-lg border border-gray-200">
-                        <h3 class="subsection-title text-xl font-semibold mb-4">ECG</h3>
-                        <div class="mb-4">
-                            <h4 class="font-semibold text-blue-800 mb-2">Unidades de Referencia:</h4>
-                            <p class="text-gray-700 mb-2">As unidade de Saúde Perobas e Bela Vista realizam o exame no Parque São João.</p>
-                            <p class="text-gray-700">Demais unidades realizam na própria unidade.</p>
+                        <h3 class="subsection-title text-lg font-semibold mb-3">ECG</h3>
+                        <div class="space-y-2">
+                            <div>
+                                <h4 class="font-semibold text-blue-800">Unidades de Referencia:</h4>
+                                <p class="text-gray-700">As unidade de Saúde Perobas e Bela Vista realizam o exame no Parque São João.</p>
+                                <p class="text-gray-700">Demais unidades realizam na própria unidade.</p>
+                            </div>
                         </div>
                     </div>
+                    <div class="bg-white p-6 rounded-lg border border-gray-200">
+                        <h3 class="subsection-title text-lg font-semibold mb-3">EEG</h3>
+                        <p class="text-gray-700">Assistente Administrativo da unidade básica de saúde insere o número do prontuário no pedido e envia a guia para regulação A/C da média complexidade. Não lançar no sistema.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Alto Custo, Reabilitação e Cirurgia -->
+        <section class="mb-12">
+            <div class="button-light p-6 rounded-lg card-shadow">
+                <h2 class="section-title text-3xl font-bold mb-6">
+                    <i class="fas fa-procedures mr-3"></i>
+                    Alto Custo, Reabilitação e Cirurgia (AIH)
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded-lg border border-gray-200">
+                        <h3 class="subsection-title text-xl font-semibold mb-4">Alto Custo</h3>
+                        <ul class="list-disc list-inside text-gray-700 space-y-2">
+                            <li>Assistente Administrativo da Unidade básica de saúde encaminha os papeis para o Ceaps.</li>
+                            <li>Os Agendamentos serão realizados pelo Ceaps e enviados à unidade de saúde para comunicação ao paciente.</li>
+                            <li>Cancelamentos para remarcação: Enviar pedido ao setor/Ceaps com justificativa.</li>
+                        </ul>
+                        <p class="text-gray-700 font-semibold mt-2">Telefones: 3198-6752 / 3198-6753</p>
+                    </div>
                     
                     <div class="bg-white p-6 rounded-lg border border-gray-200">
-                        <h3 class="subsection-title text-xl font-semibold mb-4">EEG</h3>
-                        <p class="text-gray-700">
-                            Assistente Administrativo da unidade básica de saúde insere o número do prontuário no pedido e 
-                            envia a guia para regulação A/C da média complexidade. Não lançar no sistema.
-                        </p>
+                        <h3 class="subsection-title text-xl font-semibold mb-4">Reabilitação</h3>
+                        <ul class="list-disc list-inside text-gray-700 space-y-2">
+                            <li>Necessário Solicitar Xerox de todos os documentos e encaminhar ao setor de reabilitação/junta reguladora/CEAPS, junto com o pedido em envelope separado.</li>
+                            <li>Agendamentos realizados pelo Ceaps e enviados à unidade de saúde para comunicação ao paciente.</li>
+                        </ul>
+                        <p class="text-gray-700 font-semibold mt-2">Email: juntareguladora@contagem.mg.gov.br</p>
+                        <p class="text-gray-700 font-semibold">Telefone: 3198-6763</p>
                     </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Alto Custo -->
-        <section class="mb-12">
-            <div class="button-light p-6 rounded-lg card-shadow">
-                <h2 class="section-title text-3xl font-bold mb-6">
-                    <i class="fas fa-dollar-sign mr-3"></i>
-                    Alto Custo
-                </h2>
-                <div class="bg-white p-6 rounded-lg border border-gray-200">
-                    <ul class="space-y-3 text-gray-700">
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mr-3 mt-1"></i>
-                            Assistente Administrativo da Unidade básica de saúde encaminha os papeis para o Ceaps.
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mr-3 mt-1"></i>
-                            Os Agendamentos serão realizados pelo Ceaps e enviados à unidade de saúde para comunicação ao paciente.
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-info-circle text-blue-500 mr-3 mt-1"></i>
-                            Cancelamentos para remarcação: Enviar pedido ao setor/Ceaps com justificativa.
-                        </li>
-                    </ul>
-                    <p class="text-blue-700 font-semibold mt-4">
-                        <i class="fas fa-phone mr-2"></i>Telefones: 3198-6752 / 3198-6753
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Reabilitação -->
-        <section class="mb-12">
-            <div class="button-light p-6 rounded-lg card-shadow">
-                <h2 class="section-title text-3xl font-bold mb-6">
-                    <i class="fas fa-wheelchair mr-3"></i>
-                    Reabilitação
-                </h2>
-                <div class="bg-white p-6 rounded-lg border border-gray-200">
-                    <ul class="space-y-3 text-gray-700">
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mr-3 mt-1"></i>
-                            Necessário Solicitar Xerox de todos os documentos e encaminhar ao setor de reabilitação/junta reguladora/CEAPS, junto com o pedido em envelope separado.
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mr-3 mt-1"></i>
-                            Agendamentos realizados pelo Ceaps e enviados à unidade de saúde para comunicação ao paciente.
-                        </li>
-                    </ul>
-                    <div class="mt-4 space-y-2">
-                        <p class="text-blue-700 font-semibold">
-                            <i class="fas fa-envelope mr-2"></i>Email: juntareguladora@contagem.mg.gov.br
-                        </p>
-                        <p class="text-blue-700 font-semibold">
-                            <i class="fas fa-phone mr-2"></i>Telefone: 3198-6763
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Cirurgia (AIH) -->
-        <section class="mb-12">
-            <div class="button-light p-6 rounded-lg card-shadow">
-                <h2 class="section-title text-3xl font-bold mb-6">
-                    <i class="fas fa-user-md mr-3"></i>
-                    Cirurgia (AIH)
-                </h2>
-                <div class="bg-white p-6 rounded-lg border border-gray-200">
-                    <ul class="space-y-3 text-gray-700">
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mr-3 mt-1"></i>
-                            Necessario Xerox de todos os documentos, cartão SUS e impressos em duas vias assinados.
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mr-3 mt-1"></i>
-                            Paciente entrega os paéis para o administrativo da unidade de saúde dar as tratativas, exceto Neurocirurgia e Cardiologia (paciente deverá levar direto ao Ceaps).
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mr-3 mt-1"></i>
-                            Agendamentos realizados pelo Ceaps e enviados à unidade para comunicação ao paciente.
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-info-circle text-blue-500 mr-3 mt-1"></i>
-                            Cancelamentos para remarcação: Enviar pedido ao setor com justificativa.
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-info-circle text-blue-500 mr-3 mt-1"></i>
-                            Cancelamentos definitivos: Enviar e-mail para o setor responsável e arquivar papéis no prontuário.
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-exclamation-triangle text-yellow-500 mr-3 mt-1"></i>
-                            Correção de código de AIH: responsabilidade do profissional solicitante.
-                        </li>
-                    </ul>
-                    <div class="mt-4 space-y-2">
-                        <p class="text-blue-700 font-semibold">
-                            <i class="fas fa-phone mr-2"></i>Telefone: 3198-6755
-                        </p>
-                        <p class="text-blue-700 font-semibold">
-                            <i class="fas fa-envelope mr-2"></i>E-mail: cecontagem@gmail.com
-                        </p>
+                    <div class="bg-white p-6 rounded-lg border border-gray-200">
+                        <h3 class="subsection-title text-xl font-semibold mb-4">Cirurgia (AIH)</h3>
+                        <ul class="list-disc list-inside text-gray-700 space-y-2">
+                            <li>Necessario Xerox de todos os documentos, cartão SUS e impressos em duas vias assinados.</li>
+                            <li>Paciente entrega os paéis para o administrativo da unidade de saúde dar as tratativas, exceto Neurocirurgia e Cardiologia (paciente deverá levar direto ao Ceaps).</li>
+                            <li>Agendamentos realizados pelo Ceaps e enviados à unidade para comunicação ao paciente.</li>
+                            <li>Cancelamentos para remarcação: Enviar pedido ao setor com justificativa.</li>
+                            <li>Cancelamentos definitivos: Enviar e-mail para o setor responsável e arquivar papéis no prontuário.</li>
+                            <li>Correção de código de AIH: responsabilidade do profissional solicitante.</li>
+                        </ul>
+                        <p class="text-gray-700 font-semibold mt-2">Telefone: 3198-6755</p>
+                        <p class="text-gray-700 font-semibold">E-mail: cecontagem@gmail.com</p>
                     </div>
                 </div>
             </div>
@@ -529,100 +389,40 @@
         <section class="mb-12">
             <div class="button-light p-6 rounded-lg card-shadow">
                 <h2 class="section-title text-3xl font-bold mb-6">
-                    <i class="fas fa-procedures mr-3"></i>
+                    <i class="fas fa-syringe mr-3"></i>
                     Procedimentos Específicos
                 </h2>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="bg-white p-6 rounded-lg border border-gray-200">
                         <h3 class="subsection-title text-xl font-semibold mb-4">Vasectomia e Postectomia</h3>
-                        <p class="text-gray-700 mb-2">Necessária emissão de AIH, conforme NT das consultas especializadas.</p>
-                        <p class="text-blue-700 font-semibold">
-                            <i class="fas fa-phone mr-2"></i>Telefone: 3198-6755
-                        </p>
+                        <p class="text-gray-700">Necessária emissão de AIH, conforme NT das consultas especializadas.</p>
+                        <p class="text-gray-700 font-semibold mt-2">Telefone: 3198-6755</p>
                     </div>
                     
                     <div class="bg-white p-6 rounded-lg border border-gray-200">
                         <h3 class="subsection-title text-xl font-semibold mb-4">Salpingo (Laqueadura)</h3>
-                        <p class="text-gray-700 mb-2">O Paciente deverá pegar a AIH em até 36 semanas e levar ao HMC para agendamento.</p>
-                        <p class="text-blue-700 font-semibold">
-                            <i class="fas fa-phone mr-2"></i>Telefone: 3198-6755
-                        </p>
-                    </div>
-                    
-                    <div class="bg-white p-6 rounded-lg border border-gray-200">
-                        <h3 class="subsection-title text-xl font-semibold mb-4">Oncologia</h3>
-                        <p class="text-gray-700 mb-2">Paciente deverá levar os papéis direto ao Ceaps.</p>
-                        <p class="text-gray-700 mb-2">Levar xerox de todos os documentos, laudo da biópsia e sumário de alta (se houver).</p>
-                        <p class="text-blue-700 font-semibold">
-                            <i class="fas fa-phone mr-2"></i>Telefone: 3198-6750
-                        </p>
-                    </div>
-                    
-                    <div class="bg-white p-6 rounded-lg border border-gray-200">
-                        <h3 class="subsection-title text-xl font-semibold mb-4">Cirurgia Cardiovascular</h3>
-                        <p class="text-gray-700 mb-2">Não disponível em BH ou Contagem (adulto/infantil).</p>
-                        <p class="text-gray-700 mb-2">Necessária emissão de AIH pelo cardiologista.</p>
-                        <p class="text-blue-700 font-semibold">
-                            <i class="fas fa-phone mr-2"></i>Telefone: 3198-6774
-                        </p>
+                        <p class="text-gray-700">O Paciente deve ser encaminhado para o planejamento familiar, o pedido deve ser inserido no sistema e a guia encaminhada para a média complexidade.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Exames Laboratoriais -->
-        <section class="mb-12">
-            <div class="button-light p-6 rounded-lg card-shadow">
-                <h2 class="section-title text-3xl font-bold mb-6">
-                    <i class="fas fa-flask mr-3"></i>
-                    Exames Laboratoriais
-                </h2>
-                <div class="bg-white p-6 rounded-lg border border-gray-200">
-                    <p class="text-gray-700 leading-relaxed mb-4">
-                        Profissional médico da unidade de Saúde poderá realizar até 11 pedidos, desde que não passem por regulação.
-                    </p>
-                    <p class="text-gray-700 leading-relaxed mb-4">
-                        Se for solicitado acima de 11 exames o mesmo deverá ser autorizado pelo Ceaps.
-                    </p>
-                    <p class="text-blue-700 font-semibold">
-                        Gentileza verificar orientações na Nota Técnica de Exames laboratoriais. https://drive.google.com/file/d/1EyUzfNBzrcN4KTVioiGhr9TY7XTrjc6R/view
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- RX (Raios-X) -->
+        <!-- Exames de Imagem -->
         <section class="mb-12">
             <div class="button-light p-6 rounded-lg card-shadow">
                 <h2 class="section-title text-3xl font-bold mb-6">
                     <i class="fas fa-x-ray mr-3"></i>
-                    RX (Raios-X)
+                    Exames de Imagem
                 </h2>
-                
-                <div class="mb-4">
-                    <p class="text-blue-700 font-semibold mb-4">
-                        <i class="fas fa-phone mr-2"></i>Telefones: 3198-6759 / 3198-6760
-                    </p>
-                </div>
                 
                 <div class="space-y-6">
                     <div class="bg-white p-6 rounded-lg border border-gray-200">
-                        <h3 class="subsection-title text-xl font-semibold mb-4">RX de Urgência (UPA)</h3>
-                        <ul class="space-y-2 text-gray-700">
-                            <li><strong>2 vagas por dia.</strong></li>
-                            <li>Pedido deve ser feito no mesmo dia.</li>
-                            <li>UPA só realiza RX de tórax (casos de pneumonia).</li>
-                            <li>Imagens não estão no Vivver, acessar: <a href="https://6107prd-vivace-portal.cloudmv.com.br:432/login" class="text-blue-600 underline">Portal Vivace</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="bg-white p-6 rounded-lg border border-gray-200">
                         <h3 class="subsection-title text-xl font-semibold mb-4">Radiografia Simples</h3>
-                        <div class="space-y-3">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
                                 <h4 class="font-semibold text-blue-800 mb-2">Com laudo:</h4>
-                                <p class="text-gray-700">Unidade básica de saúde agenda direto no no sistema Tela solicitaçãode procedimento de serviço/ Média Complexidade/barra regionalização. CDI e CCE Iria Diniz disponibilizam RX simples com laudo.</p>
+                                <p class="text-gray-700">As UPAS e o CAE Iria Diniz disponibilizam RX simples com laudo.</p>
                             </div>
                             <div>
                                 <h4 class="font-semibold text-blue-800 mb-2">Sem laudo:</h4>
@@ -713,5 +513,7 @@
             }, 100);
         });
     </script>
-</body>
-</html>
+
+
+
+</body></html>
