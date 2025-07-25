@@ -224,7 +224,7 @@
 
         .home-button:hover {
             background-color: #333;
-            transform: translateY(2px);
+            transform: translateY(-2px);
         }
 
         @media (max-width: 768px) {
@@ -257,18 +257,26 @@
             text-align: center;
             color: #666;
             font-style: italic;
-            padding: 20px;
+            padding: 10px;
             display: none;
         }
     </style>
-             <h1>📋 Distrito Sanitário Eldorado</h1>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="index.html" class="home-button">
+                <i class="fas fa-home"></i>
+                Tela Inicial
+            </a>
+            <h1>📋 Distrito Sanitário Eldorado</h1>
             <p>Relação dos Exames Oftalmologicos</p>
             <p>Pagina criada por Ana P. A. Silva/Suporte Vivver/ Distrito Eldorado</p>
         </div>
 
         <div class="alert">
             ⚠️ <strong>Atenção Unidades de Saúde!</strong><br>
-            Segue uma lista com todos os exames de oftalmologia que são marcados pelo setor de Oftalmologia na diretoria de regulação, assim como os que estão SEM PRESTADOR e os que são marcados em Belo Horizonte pela diretoria de regulação.<br>
+            Segue uma lista com todos os exames de oftalmologia que são marcados pela Diretoria de Regulação/Oftalmologia, assim como os que estão SEM PRESTADOR e os que são marcados em Belo Horizonte pelo setor.<br>
             <strong>Atenção na hora de enviá-los!</strong>
         </div>
 
@@ -281,7 +289,7 @@
 
         <div class="categories">
             <div class="category eldorado">
-                <h2>✅ Marcados pelo Ceaps/Oftalmologia <span class="exam-count" id="eldorado-count">26</span></h2>
+                <h2>✅ Marcados pelo Distrito Eldorado <span class="exam-count" id="eldorado-count">26</span></h2>
                 <ul class="exam-list" id="eldorado-list">
                     <li class="exam-item">Angiografia Fluorescente</li>
                     <li class="exam-item">Avaliação de Catarata</li>
@@ -313,7 +321,7 @@
             </div>
 
             <div class="category bh">
-                <h2>🏥 Marcados pelo Ceaps/ em Belo Horizonte <span class="exam-count" id="bh-count">25</span></h2>
+                <h2>🏥 Marcados em Belo Horizonte <span class="exam-count" id="bh-count">25</span></h2>
                 <ul class="exam-list" id="bh-list">
                     <li class="exam-item">Campo Visual Manual</li>
                     <li class="exam-item">Check-up Córnea</li>
