@@ -123,17 +123,17 @@
                 
                 <!-- Filter Buttons -->
                 <div class="flex gap-2">
-                    <button class="filter-btn active" onclick="filterSpecialties('all')">
+                    <button class="filter-btn active" onclick="filterSpecialties("all")">
                         <i class="fas fa-list mr-2"></i>
                         Todas
                         <span class="ml-2 bg-white bg-opacity-20 px-2 py-1 rounded-full text-xs">46</span>
                     </button>
-                    <button class="filter-btn" onclick="filterSpecialties('low')">
+                    <button class="filter-btn" onclick="filterSpecialties("low")">
                         <i class="fas fa-arrow-down mr-2"></i>
                         Baixa Demanda
                         <span class="ml-2 bg-white bg-opacity-20 px-2 py-1 rounded-full text-xs">6</span>
                     </button>
-                    <button class="filter-btn" onclick="filterSpecialties('high')">
+                    <button class="filter-btn" onclick="filterSpecialties("high")">
                         <i class="fas fa-arrow-up mr-2"></i>
                         Alta Demanda
                         <span class="ml-2 bg-white bg-opacity-20 px-2 py-1 rounded-full text-xs">40</span>
@@ -335,7 +335,7 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
+                    Média complexidade/ Encaminhar para o CEAPS
                 </div>
             </div>
 
@@ -343,7 +343,7 @@
                 <div class="flex items-start justify-between mb-4">
                     <h3 class="text-lg font-semibold text-gray-800 flex-1">
                         <i class="fas fa-allergies mr-2 text-amber-600"></i>
-                        ALERGISTA/ADULTO E INFANTIL
+                        ALERGOLOGIA
                     </h3>
                     <span class="status-badge high-demand px-3 py-1 rounded-full text-xs font-medium ml-2">
                         Alta Demanda
@@ -351,14 +351,14 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
+                    Encaminhar para a diretoria de regulação
                 </div>
             </div>
 
             <div class="specialty-card high-demand bg-white rounded-2xl p-6 shadow-sm border hover:shadow-lg" data-demand="high">
                 <div class="flex items-start justify-between mb-4">
                     <h3 class="text-lg font-semibold text-gray-800 flex-1">
-                        <i class="fas fa-heartbeat mr-2 text-amber-600"></i>
+                        <i class="fas fa-heart mr-2 text-amber-600"></i>
                         ANGIOLOGIA
                     </h3>
                     <span class="status-badge high-demand px-3 py-1 rounded-full text-xs font-medium ml-2">
@@ -367,15 +367,15 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
+                    Encaminhar para a diretoria de regulação
                 </div>
             </div>
 
             <div class="specialty-card high-demand bg-white rounded-2xl p-6 shadow-sm border hover:shadow-lg" data-demand="high">
                 <div class="flex items-start justify-between mb-4">
                     <h3 class="text-lg font-semibold text-gray-800 flex-1">
-                        <i class="fas fa-heart mr-2 text-amber-600"></i>
-                        CARDIOLOGIA ADULTO
+                        <i class="fas fa-heart-broken mr-2 text-amber-600"></i>
+                        CARDIOLOGIA
                     </h3>
                     <span class="status-badge high-demand px-3 py-1 rounded-full text-xs font-medium ml-2">
                         Alta Demanda
@@ -383,7 +383,7 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
+                    Encaminhar para a diretoria de regulação
                 </div>
             </div>
 
@@ -399,39 +399,7 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
-                </div>
-            </div>
-
-            <div class="specialty-card high-demand bg-white rounded-2xl p-6 shadow-sm border hover:shadow-lg" data-demand="high">
-                <div class="flex items-start justify-between mb-4">
-                    <h3 class="text-lg font-semibold text-gray-800 flex-1">
-                        <i class="fas fa-cut mr-2 text-amber-600"></i>
-                        CIRURGIA AMBULATORIAL
-                    </h3>
-                    <span class="status-badge high-demand px-3 py-1 rounded-full text-xs font-medium ml-2">
-                        Alta Demanda
-                    </span>
-                </div>
-                <div class="text-gray-700 text-sm leading-relaxed">
-                    <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
-                </div>
-            </div>
-
-            <div class="specialty-card high-demand bg-white rounded-2xl p-6 shadow-sm border hover:shadow-lg" data-demand="high">
-                <div class="flex items-start justify-between mb-4">
-                    <h3 class="text-lg font-semibold text-gray-800 flex-1">
-                        <i class="fas fa-head-side-mask mr-2 text-amber-600"></i>
-                        CIRURGIA CABEÇA E PESCOÇO
-                    </h3>
-                    <span class="status-badge high-demand px-3 py-1 rounded-full text-xs font-medium ml-2">
-                        Alta Demanda
-                    </span>
-                </div>
-                <div class="text-gray-700 text-sm leading-relaxed">
-                    <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
+                    Encaminhar para a diretoria de regulação
                 </div>
             </div>
 
@@ -447,7 +415,7 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
+                    Encaminhar para a diretoria de regulação
                 </div>
             </div>
 
@@ -455,7 +423,7 @@
                 <div class="flex items-start justify-between mb-4">
                     <h3 class="text-lg font-semibold text-gray-800 flex-1">
                         <i class="fas fa-child mr-2 text-amber-600"></i>
-                        CIRURGIA INFANTIL
+                        CIRURGIA PEDIÁTRICA
                     </h3>
                     <span class="status-badge high-demand px-3 py-1 rounded-full text-xs font-medium ml-2">
                         Alta Demanda
@@ -463,15 +431,15 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
+                    Encaminhar para a diretoria de regulação
                 </div>
             </div>
 
             <div class="specialty-card high-demand bg-white rounded-2xl p-6 shadow-sm border hover:shadow-lg" data-demand="high">
                 <div class="flex items-start justify-between mb-4">
                     <h3 class="text-lg font-semibold text-gray-800 flex-1">
-                        <i class="fas fa-user-md mr-2 text-amber-600"></i>
-                        CIRURGIA PLÁSTICA
+                        <i class="fas fa-tint mr-2 text-amber-600"></i>
+                        CIRURGIA VASCULAR
                     </h3>
                     <span class="status-badge high-demand px-3 py-1 rounded-full text-xs font-medium ml-2">
                         Alta Demanda
@@ -479,15 +447,15 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
+                    Encaminhar para a diretoria de regulação
                 </div>
             </div>
 
             <div class="specialty-card high-demand bg-white rounded-2xl p-6 shadow-sm border hover:shadow-lg" data-demand="high">
                 <div class="flex items-start justify-between mb-4">
                     <h3 class="text-lg font-semibold text-gray-800 flex-1">
-                        <i class="fas fa-lungs mr-2 text-amber-600"></i>
-                        CIRURGIA TORÁCICA
+                        <i class="fas fa-head-side-cough mr-2 text-amber-600"></i>
+                        DERMATOLOGIA
                     </h3>
                     <span class="status-badge high-demand px-3 py-1 rounded-full text-xs font-medium ml-2">
                         Alta Demanda
@@ -495,15 +463,15 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
+                    Encaminhar para a diretoria de regulação
                 </div>
             </div>
 
             <div class="specialty-card high-demand bg-white rounded-2xl p-6 shadow-sm border hover:shadow-lg" data-demand="high">
                 <div class="flex items-start justify-between mb-4">
                     <h3 class="text-lg font-semibold text-gray-800 flex-1">
-                        <i class="fas fa-procedures mr-2 text-amber-600"></i>
-                        COLOPROCTOLOGIA
+                        <i class="fas fa-pills mr-2 text-amber-600"></i>
+                        ENDOCRINOLOGIA
                     </h3>
                     <span class="status-badge high-demand px-3 py-1 rounded-full text-xs font-medium ml-2">
                         Alta Demanda
@@ -511,55 +479,7 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
-                </div>
-            </div>
-
-            <div class="specialty-card high-demand bg-white rounded-2xl p-6 shadow-sm border hover:shadow-lg" data-demand="high">
-                <div class="flex items-start justify-between mb-4">
-                    <h3 class="text-lg font-semibold text-gray-800 flex-1">
-                        <i class="fas fa-hand-paper mr-2 text-amber-600"></i>
-                        DERMATOLOGIA - HANSENÍASE
-                    </h3>
-                    <span class="status-badge high-demand px-3 py-1 rounded-full text-xs font-medium ml-2">
-                        Alta Demanda
-                    </span>
-                </div>
-                <div class="text-gray-700 text-sm leading-relaxed">
-                    <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
-                </div>
-            </div>
-
-            <div class="specialty-card high-demand bg-white rounded-2xl p-6 shadow-sm border hover:shadow-lg" data-demand="high">
-                <div class="flex items-start justify-between mb-4">
-                    <h3 class="text-lg font-semibold text-gray-800 flex-1">
-                        <i class="fas fa-user-md mr-2 text-amber-600"></i>
-                        DERMATOLOGIA GERAL
-                    </h3>
-                    <span class="status-badge high-demand px-3 py-1 rounded-full text-xs font-medium ml-2">
-                        Alta Demanda
-                    </span>
-                </div>
-                <div class="text-gray-700 text-sm leading-relaxed">
-                    <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
-                </div>
-            </div>
-
-            <div class="specialty-card high-demand bg-white rounded-2xl p-6 shadow-sm border hover:shadow-lg" data-demand="high">
-                <div class="flex items-start justify-between mb-4">
-                    <h3 class="text-lg font-semibold text-gray-800 flex-1">
-                        <i class="fas fa-weight mr-2 text-amber-600"></i>
-                        ENDOCRINOLOGIA ADULTO
-                    </h3>
-                    <span class="status-badge high-demand px-3 py-1 rounded-full text-xs font-medium ml-2">
-                        Alta Demanda
-                    </span>
-                </div>
-                <div class="text-gray-700 text-sm leading-relaxed">
-                    <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
+                    Encaminhar para a diretoria de regulação
                 </div>
             </div>
 
@@ -575,15 +495,15 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
+                    Encaminhar para a diretoria de regulação
                 </div>
             </div>
 
             <div class="specialty-card high-demand bg-white rounded-2xl p-6 shadow-sm border hover:shadow-lg" data-demand="high">
                 <div class="flex items-start justify-between mb-4">
                     <h3 class="text-lg font-semibold text-gray-800 flex-1">
-                        <i class="fas fa-stomach mr-2 text-amber-600"></i>
-                        GASTROENTEROLOGIA ADULTO
+                        <i class="fas fa-procedures mr-2 text-amber-600"></i>
+                        GASTROENTEROLOGIA
                     </h3>
                     <span class="status-badge high-demand px-3 py-1 rounded-full text-xs font-medium ml-2">
                         Alta Demanda
@@ -591,15 +511,15 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
+                    Encaminhar para a diretoria de regulação
                 </div>
             </div>
 
             <div class="specialty-card high-demand bg-white rounded-2xl p-6 shadow-sm border hover:shadow-lg" data-demand="high">
                 <div class="flex items-start justify-between mb-4">
                     <h3 class="text-lg font-semibold text-gray-800 flex-1">
-                        <i class="fas fa-user-clock mr-2 text-amber-600"></i>
-                        GERIATRIA
+                        <i class="fas fa-child mr-2 text-amber-600"></i>
+                        GASTROENTEROLOGIA INFANTIL
                     </h3>
                     <span class="status-badge high-demand px-3 py-1 rounded-full text-xs font-medium ml-2">
                         Alta Demanda
@@ -607,15 +527,15 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
+                    Encaminhar para a diretoria de regulação
                 </div>
             </div>
 
             <div class="specialty-card high-demand bg-white rounded-2xl p-6 shadow-sm border hover:shadow-lg" data-demand="high">
                 <div class="flex items-start justify-between mb-4">
                     <h3 class="text-lg font-semibold text-gray-800 flex-1">
-                        <i class="fas fa-tint mr-2 text-amber-600"></i>
-                        HEMATOLOGIA
+                        <i class="fas fa-female mr-2 text-amber-600"></i>
+                        GINECOLOGIA
                     </h3>
                     <span class="status-badge high-demand px-3 py-1 rounded-full text-xs font-medium ml-2">
                         Alta Demanda
@@ -623,15 +543,15 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
+                    Encaminhar para a diretoria de regulação
                 </div>
             </div>
 
             <div class="specialty-card high-demand bg-white rounded-2xl p-6 shadow-sm border hover:shadow-lg" data-demand="high">
                 <div class="flex items-start justify-between mb-4">
                     <h3 class="text-lg font-semibold text-gray-800 flex-1">
-                        <i class="fas fa-virus mr-2 text-amber-600"></i>
-                        INFECTOLOGIA ADULTO
+                        <i class="fas fa-child mr-2 text-amber-600"></i>
+                        GINECOLOGIA INFANTO PUBERAL
                     </h3>
                     <span class="status-badge high-demand px-3 py-1 rounded-full text-xs font-medium ml-2">
                         Alta Demanda
@@ -639,15 +559,15 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
+                    Encaminhar para a diretoria de regulação
                 </div>
             </div>
 
             <div class="specialty-card high-demand bg-white rounded-2xl p-6 shadow-sm border hover:shadow-lg" data-demand="high">
                 <div class="flex items-start justify-between mb-4">
                     <h3 class="text-lg font-semibold text-gray-800 flex-1">
-                        <i class="fas fa-kidneys mr-2 text-amber-600"></i>
-                        NEFROLOGIA ADULTO
+                        <i class="fas fa-user-md mr-2 text-amber-600"></i>
+                        INFECTOLOGIA
                     </h3>
                     <span class="status-badge high-demand px-3 py-1 rounded-full text-xs font-medium ml-2">
                         Alta Demanda
@@ -655,7 +575,23 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
+                    Encaminhar para a diretoria de regulação
+                </div>
+            </div>
+
+            <div class="specialty-card high-demand bg-white rounded-2xl p-6 shadow-sm border hover:shadow-lg" data-demand="high">
+                <div class="flex items-start justify-between mb-4">
+                    <h3 class="text-lg font-semibold text-gray-800 flex-1">
+                        <i class="fas fa-user-md mr-2 text-amber-600"></i>
+                        NEFROLOGIA
+                    </h3>
+                    <span class="status-badge high-demand px-3 py-1 rounded-full text-xs font-medium ml-2">
+                        Alta Demanda
+                    </span>
+                </div>
+                <div class="text-gray-700 text-sm leading-relaxed">
+                    <i class="fas fa-info-circle text-blue-500 mr-2"></i>
+                    Encaminhar para a diretoria de regulação
                 </div>
             </div>
 
@@ -671,7 +607,7 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
+                    Encaminhar para a diretoria de regulação
                 </div>
             </div>
 
@@ -687,7 +623,7 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
+                    Encaminhar para a diretoria de regulação
                 </div>
             </div>
 
@@ -695,7 +631,7 @@
                 <div class="flex items-start justify-between mb-4">
                     <h3 class="text-lg font-semibold text-gray-800 flex-1">
                         <i class="fas fa-brain mr-2 text-amber-600"></i>
-                        NEUROLOGIA ADULTO
+                        NEUROLOGIA
                     </h3>
                     <span class="status-badge high-demand px-3 py-1 rounded-full text-xs font-medium ml-2">
                         Alta Demanda
@@ -703,7 +639,7 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
+                    Encaminhar para a diretoria de regulação
                 </div>
             </div>
 
@@ -719,23 +655,7 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
-                </div>
-            </div>
-
-            <div class="specialty-card high-demand bg-white rounded-2xl p-6 shadow-sm border hover:shadow-lg" data-demand="high">
-                <div class="flex items-start justify-between mb-4">
-                    <h3 class="text-lg font-semibold text-gray-800 flex-1">
-                        <i class="fas fa-tooth mr-2 text-amber-600"></i>
-                        ODONTOLOGIA
-                    </h3>
-                    <span class="status-badge high-demand px-3 py-1 rounded-full text-xs font-medium ml-2">
-                        Alta Demanda
-                    </span>
-                </div>
-                <div class="text-gray-700 text-sm leading-relaxed">
-                    <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
+                    Encaminhar para a diretoria de regulação
                 </div>
             </div>
 
@@ -751,7 +671,7 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
+                    Encaminhar para a diretoria de regulação
                 </div>
             </div>
 
@@ -767,7 +687,23 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
+                    Encaminhar para a diretoria de regulação
+                </div>
+            </div>
+
+            <div class="specialty-card high-demand bg-white rounded-2xl p-6 shadow-sm border hover:shadow-lg" data-demand="high">
+                <div class="flex items-start justify-between mb-4">
+                    <h3 class="text-lg font-semibold text-gray-800 flex-1">
+                        <i class="fas fa-child mr-2 text-amber-600"></i>
+                        ORTOPEDIA INFANTIL
+                    </h3>
+                    <span class="status-badge high-demand px-3 py-1 rounded-full text-xs font-medium ml-2">
+                        Alta Demanda
+                    </span>
+                </div>
+                <div class="text-gray-700 text-sm leading-relaxed">
+                    <i class="fas fa-info-circle text-blue-500 mr-2"></i>
+                    Encaminhar para a diretoria de regulação
                 </div>
             </div>
 
@@ -775,7 +711,7 @@
                 <div class="flex items-start justify-between mb-4">
                     <h3 class="text-lg font-semibold text-gray-800 flex-1">
                         <i class="fas fa-ear-listen mr-2 text-amber-600"></i>
-                        OTORRINO
+                        OTORRINOLARINGOLOGIA
                     </h3>
                     <span class="status-badge high-demand px-3 py-1 rounded-full text-xs font-medium ml-2">
                         Alta Demanda
@@ -783,15 +719,15 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
+                    Encaminhar para a diretoria de regulação
                 </div>
             </div>
 
             <div class="specialty-card high-demand bg-white rounded-2xl p-6 shadow-sm border hover:shadow-lg" data-demand="high">
                 <div class="flex items-start justify-between mb-4">
                     <h3 class="text-lg font-semibold text-gray-800 flex-1">
-                        <i class="fas fa-cut mr-2 text-amber-600"></i>
-                        PEQUENAS CIRURGIAS UROLÓGICAS
+                        <i class="fas fa-child mr-2 text-amber-600"></i>
+                        PEDIATRIA
                     </h3>
                     <span class="status-badge high-demand px-3 py-1 rounded-full text-xs font-medium ml-2">
                         Alta Demanda
@@ -799,7 +735,7 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
+                    Encaminhar para a diretoria de regulação
                 </div>
             </div>
 
@@ -807,7 +743,7 @@
                 <div class="flex items-start justify-between mb-4">
                     <h3 class="text-lg font-semibold text-gray-800 flex-1">
                         <i class="fas fa-lungs mr-2 text-amber-600"></i>
-                        PNEUMOLOGIA ADULTO
+                        PNEUMOLOGIA
                     </h3>
                     <span class="status-badge high-demand px-3 py-1 rounded-full text-xs font-medium ml-2">
                         Alta Demanda
@@ -815,7 +751,7 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
+                    Encaminhar para a diretoria de regulação
                 </div>
             </div>
 
@@ -831,15 +767,15 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
+                    Encaminhar para a diretoria de regulação
                 </div>
             </div>
 
             <div class="specialty-card high-demand bg-white rounded-2xl p-6 shadow-sm border hover:shadow-lg" data-demand="high">
                 <div class="flex items-start justify-between mb-4">
                     <h3 class="text-lg font-semibold text-gray-800 flex-1">
-                        <i class="fas fa-tint mr-2 text-amber-600"></i>
-                        PROCEDIMENTOS HEMATOLÓGICOS
+                        <i class="fas fa-user-md mr-2 text-amber-600"></i>
+                        PROCTOLOGIA
                     </h3>
                     <span class="status-badge high-demand px-3 py-1 rounded-full text-xs font-medium ml-2">
                         Alta Demanda
@@ -847,46 +783,14 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
+                    Encaminhar para a diretoria de regulação
                 </div>
             </div>
 
             <div class="specialty-card high-demand bg-white rounded-2xl p-6 shadow-sm border hover:shadow-lg" data-demand="high">
                 <div class="flex items-start justify-between mb-4">
                     <h3 class="text-lg font-semibold text-gray-800 flex-1">
-                        <i class="fas fa-brain mr-2 text-amber-600"></i>
-                        PSIQUIATRIA
-                    </h3>
-                    <span class="status-badge high-demand px-3 py-1 rounded-full text-xs font-medium ml-2">
-                        Alta Demanda
-                    </span>
-                </div>
-                <div class="text-gray-700 text-sm leading-relaxed">
-                    <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
-                </div>
-            </div>
-
-            <div class="specialty-card high-demand bg-white rounded-2xl p-6 shadow-sm border hover:shadow-lg" data-demand="high">
-                <div class="flex items-start justify-between mb-4">
-                    <h3 class="text-lg font-semibold text-gray-800 flex-1">
-                        <i class="fas fa-brain mr-2 text-amber-600"></i>
-                        PSICOLOGIA
-                    </h3>
-                    <span class="status-badge high-demand px-3 py-1 rounded-full text-xs font-medium ml-2">
-                        Alta Demanda
-                    </span>
-                </div>
-                <div class="text-gray-700 text-sm leading-relaxed">
-                    <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
-                </div>
-            </div>
-
-            <div class="specialty-card high-demand bg-white rounded-2xl p-6 shadow-sm border hover:shadow-lg" data-demand="high">
-                <div class="flex items-start justify-between mb-4">
-                    <h3 class="text-lg font-semibold text-gray-800 flex-1">
-                        <i class="fas fa-kidneys mr-2 text-amber-600"></i>
+                        <i class="fas fa-user-md mr-2 text-amber-600"></i>
                         REUMATOLOGIA
                     </h3>
                     <span class="status-badge high-demand px-3 py-1 rounded-full text-xs font-medium ml-2">
@@ -895,14 +799,30 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
+                    Encaminhar para a diretoria de regulação
                 </div>
             </div>
 
             <div class="specialty-card high-demand bg-white rounded-2xl p-6 shadow-sm border hover:shadow-lg" data-demand="high">
                 <div class="flex items-start justify-between mb-4">
                     <h3 class="text-lg font-semibold text-gray-800 flex-1">
-                        <i class="fas fa-male mr-2 text-amber-600"></i>
+                        <i class="fas fa-child mr-2 text-amber-600"></i>
+                        REUMATOLOGIA INFANTIL
+                    </h3>
+                    <span class="status-badge high-demand px-3 py-1 rounded-full text-xs font-medium ml-2">
+                        Alta Demanda
+                    </span>
+                </div>
+                <div class="text-gray-700 text-sm leading-relaxed">
+                    <i class="fas fa-info-circle text-blue-500 mr-2"></i>
+                    Encaminhar para a diretoria de regulação
+                </div>
+            </div>
+
+            <div class="specialty-card high-demand bg-white rounded-2xl p-6 shadow-sm border hover:shadow-lg" data-demand="high">
+                <div class="flex items-start justify-between mb-4">
+                    <h3 class="text-lg font-semibold text-gray-800 flex-1">
+                        <i class="fas fa-user-md mr-2 text-amber-600"></i>
                         UROLOGIA
                     </h3>
                     <span class="status-badge high-demand px-3 py-1 rounded-full text-xs font-medium ml-2">
@@ -911,120 +831,214 @@
                 </div>
                 <div class="text-gray-700 text-sm leading-relaxed">
                     <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-                    Encaminhar para o CEAPS/Central de Marcação, especialidade deve ser regulada pelo médico regulador, verificar se está lançada no sistema antes de enviar.
+                    Encaminhar para a diretoria de regulação
+                </div>
+            </div>
+
+            <div class="specialty-card high-demand bg-white rounded-2xl p-6 shadow-sm border hover:shadow-lg" data-demand="high">
+                <div class="flex items-start justify-between mb-4">
+                    <h3 class="text-lg font-semibold text-gray-800 flex-1">
+                        <i class="fas fa-child mr-2 text-amber-600"></i>
+                        UROLOGIA INFANTIL
+                    </h3>
+                    <span class="status-badge high-demand px-3 py-1 rounded-full text-xs font-medium ml-2">
+                        Alta Demanda
+                    </span>
+                </div>
+                <div class="text-gray-700 text-sm leading-relaxed">
+                    <i class="fas fa-info-circle text-blue-500 mr-2"></i>
+                    Encaminhar para a diretoria de regulação
+                </div>
+            </div>
+
+            <div class="specialty-card high-demand bg-white rounded-2xl p-6 shadow-sm border hover:shadow-lg" data-demand="high">
+                <div class="flex items-start justify-between mb-4">
+                    <h3 class="text-lg font-semibold text-gray-800 flex-1">
+                        <i class="fas fa-user-md mr-2 text-amber-600"></i>
+                        HANSENÍASE
+                    </h3>
+                    <span class="status-badge high-demand px-3 py-1 rounded-full text-xs font-medium ml-2">
+                        Alta Demanda
+                    </span>
+                </div>
+                <div class="text-gray-700 text-sm leading-relaxed">
+                    <i class="fas fa-info-circle text-blue-500 mr-2"></i>
+                    Encaminhar para a diretoria de regulação
+                </div>
+            </div>
+
+            <div class="specialty-card high-demand bg-white rounded-2xl p-6 shadow-sm border hover:shadow-lg" data-demand="high">
+                <div class="flex items-start justify-between mb-4">
+                    <h3 class="text-lg font-semibold text-gray-800 flex-1">
+                        <i class="fas fa-user-md mr-2 text-amber-600"></i>
+                        TUBERCULOSE
+                    </h3>
+                    <span class="status-badge high-demand px-3 py-1 rounded-full text-xs font-medium ml-2">
+                        Alta Demanda
+                    </span>
+                </div>
+                <div class="text-gray-700 text-sm leading-relaxed">
+                    <i class="fas fa-info-circle text-blue-500 mr-2"></i>
+                    Encaminhar para a diretoria de regulação
+                </div>
+            </div>
+
+            <div class="specialty-card high-demand bg-white rounded-2xl p-6 shadow-sm border hover:shadow-lg" data-demand="high">
+                <div class="flex items-start justify-between mb-4">
+                    <h3 class="text-lg font-semibold text-gray-800 flex-1">
+                        <i class="fas fa-user-md mr-2 text-amber-600"></i>
+                        GERIATRIA
+                    </h3>
+                    <span class="status-badge high-demand px-3 py-1 rounded-full text-xs font-medium ml-2">
+                        Alta Demanda
+                    </span>
+                </div>
+                <div class="text-gray-700 text-sm leading-relaxed">
+                    <i class="fas fa-info-circle text-blue-500 mr-2"></i>
+                    Encaminhar para a diretoria de regulação
+                </div>
+            </div>
+
+            <div class="specialty-card high-demand bg-white rounded-2xl p-6 shadow-sm border hover:shadow-lg" data-demand="high">
+                <div class="flex items-start justify-between mb-4">
+                    <h3 class="text-lg font-semibold text-gray-800 flex-1">
+                        <i class="fas fa-user-md mr-2 text-amber-600"></i>
+                        HEMATOLOGIA
+                    </h3>
+                    <span class="status-badge high-demand px-3 py-1 rounded-full text-xs font-medium ml-2">
+                        Alta Demanda
+                    </span>
+                </div>
+                <div class="text-gray-700 text-sm leading-relaxed">
+                    <i class="fas fa-info-circle text-blue-500 mr-2"></i>
+                    Encaminhar para a diretoria de regulação
+                </div>
+            </div>
+
+            <div class="specialty-card high-demand bg-white rounded-2xl p-6 shadow-sm border hover:shadow-lg" data-demand="high">
+                <div class="flex items-start justify-between mb-4">
+                    <h3 class="text-lg font-semibold text-gray-800 flex-1">
+                        <i class="fas fa-user-md mr-2 text-amber-600"></i>
+                        ONCOLOGIA
+                    </h3>
+                    <span class="status-badge high-demand px-3 py-1 rounded-full text-xs font-medium ml-2">
+                        Alta Demanda
+                    </span>
+                </div>
+                <div class="text-gray-700 text-sm leading-relaxed">
+                    <i class="fas fa-info-circle text-blue-500 mr-2"></i>
+                    Encaminhar para a diretoria de regulação
+                </div>
+            </div>
+
+            <div class="specialty-card high-demand bg-white rounded-2xl p-6 shadow-sm border hover:shadow-lg" data-demand="high">
+                <div class="flex items-start justify-between mb-4">
+                    <h3 class="text-lg font-semibold text-gray-800 flex-1">
+                        <i class="fas fa-user-md mr-2 text-amber-600"></i>
+                        NUTROLOGIA
+                    </h3>
+                    <span class="status-badge high-demand px-3 py-1 rounded-full text-xs font-medium ml-2">
+                        Alta Demanda
+                    </span>
+                </div>
+                <div class="text-gray-700 text-sm leading-relaxed">
+                    <i class="fas fa-info-circle text-blue-500 mr-2"></i>
+                    Encaminhar para a diretoria de regulação
+                </div>
+            </div>
+
+            <div class="specialty-card high-demand bg-white rounded-2xl p-6 shadow-sm border hover:shadow-lg" data-demand="high">
+                <div class="flex items-start justify-between mb-4">
+                    <h3 class="text-lg font-semibold text-gray-800 flex-1">
+                        <i class="fas fa-user-md mr-2 text-amber-600"></i>
+                        NUTROLOGIA INFANTIL
+                    </h3>
+                    <span class="status-badge high-demand px-3 py-1 rounded-full text-xs font-medium ml-2">
+                        Alta Demanda
+                    </span>
+                </div>
+                <div class="text-gray-700 text-sm leading-relaxed">
+                    <i class="fas fa-info-circle text-blue-500 mr-2"></i>
+                    Encaminhar para a diretoria de regulação
+                </div>
+            </div>
+
+            <div class="specialty-card high-demand bg-white rounded-2xl p-6 shadow-sm border hover:shadow-lg" data-demand="high">
+                <div class="flex items-start justify-between mb-4">
+                    <h3 class="text-lg font-semibold text-gray-800 flex-1">
+                        <i class="fas fa-user-md mr-2 text-amber-600"></i>
+                        PSIQUIATRIA
+                    </h3>
+                    <span class="status-badge high-demand px-3 py-1 rounded-full text-xs font-medium ml-2">
+                        Alta Demanda
+                    </span>
+                </div>
+                <div class="text-gray-700 text-sm leading-relaxed">
+                    <i class="fas fa-info-circle text-blue-500 mr-2"></i>
+                    Encaminhar para a diretoria de regulação
+                </div>
+            </div>
+
+            <div class="specialty-card high-demand bg-white rounded-2xl p-6 shadow-sm border hover:shadow-lg" data-demand="high">
+                <div class="flex items-start justify-between mb-4">
+                    <h3 class="text-lg font-semibold text-gray-800 flex-1">
+                        <i class="fas fa-child mr-2 text-amber-600"></i>
+                        PSIQUIATRIA INFANTIL
+                    </h3>
+                    <span class="status-badge high-demand px-3 py-1 rounded-full text-xs font-medium ml-2">
+                        Alta Demanda
+                    </span>
+                </div>
+                <div class="text-gray-700 text-sm leading-relaxed">
+                    <i class="fas fa-info-circle text-blue-500 mr-2"></i>
+                    Encaminhar para a diretoria de regulação
                 </div>
             </div>
         </div>
-
-        <!-- Footer -->
-        <footer class="text-center mt-12 py-6 border-t border-gray-200">
-            <p class="text-gray-600">
-                <i class="fas fa-info-circle mr-2"></i>
-                Sistema de Agendamento de Especialidades Médicas - Guia de Procedimentos
-            </p>
-            <p class="text-gray-500 text-sm mt-2">
-                Última atualização: <span id="currentDate"></span>
-            </p>
-        </footer>
     </div>
 
     <script>
-        // Set current date
-        document.getElementById('currentDate').textContent = new Date().toLocaleDateString('pt-BR');
-
-        // Search functionality
-        const searchInput = document.getElementById('searchInput');
-        const specialtyCards = document.querySelectorAll('.specialty-card');
-
-        searchInput.addEventListener('input', function() {
-            const searchTerm = this.value.toLowerCase();
+        function filterSpecialties(demand) {
+            const cards = document.querySelectorAll(".specialty-card");
+            const buttons = document.querySelectorAll(".filter-btn");
             let visibleCount = 0;
 
-            specialtyCards.forEach(card => {
-                const specialtyName = card.querySelector('h3').textContent.toLowerCase();
-                const observation = card.querySelector('.text-gray-700').textContent.toLowerCase();
-                
-                if (specialtyName.includes(searchTerm) || observation.includes(searchTerm)) {
-                    card.style.display = 'block';
+            cards.forEach(card => {
+                if (demand === "all" || card.dataset.demand === demand) {
+                    card.style.display = "block";
                     visibleCount++;
                 } else {
-                    card.style.display = 'none';
+                    card.style.display = "none";
                 }
             });
 
-            updateCounts();
-        });
-
-        // Filter functionality
-        let currentFilter = 'all';
-
-        function filterSpecialties(filter) {
-            currentFilter = filter;
-            
-            // Update active button
-            document.querySelectorAll('.filter-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            event.target.classList.add('active');
-
-            // Filter cards
-            specialtyCards.forEach(card => {
-                const demand = card.dataset.demand;
-                
-                if (filter === 'all' || demand === filter) {
-                    card.style.display = 'block';
+            buttons.forEach(button => {
+                if (button.textContent.toLowerCase().includes(demand)) {
+                    button.classList.add("active");
                 } else {
-                    card.style.display = 'none';
+                    button.classList.remove("active");
                 }
             });
 
-            updateCounts();
+            // Update counts
+            document.getElementById("totalCount").textContent = document.querySelectorAll(".specialty-card[data-demand]").length;
+            document.getElementById("lowDemandCount").textContent = document.querySelectorAll(".specialty-card[data-demand=\"low\"]").length;
+            document.getElementById("highDemandCount").textContent = document.querySelectorAll(".specialty-card[data-demand=\"high\"]").length;
         }
 
-        // Update statistics counts
-        function updateCounts() {
-            const visibleCards = Array.from(specialtyCards).filter(card => 
-                card.style.display !== 'none'
-            );
-            
-            const lowDemandVisible = visibleCards.filter(card => 
-                card.classList.contains('low-demand')
-            ).length;
-            
-            const highDemandVisible = visibleCards.filter(card => 
-                card.classList.contains('high-demand')
-            ).length;
+        document.getElementById("searchInput").addEventListener("keyup", function() {
+            const searchTerm = this.value.toLowerCase();
+            const cards = document.querySelectorAll(".specialty-card");
 
-            document.getElementById('totalCount').textContent = visibleCards.length;
-            document.getElementById('lowDemandCount').textContent = lowDemandVisible;
-            document.getElementById('highDemandCount').textContent = highDemandVisible;
-        }
-
-        // Initialize counts
-        updateCounts();
-
-        // Add smooth scrolling for better user experience
-        document.addEventListener('DOMContentLoaded', function() {
-            // Add fade-in animation to cards
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            });
-
-            specialtyCards.forEach((card) => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(20px)';
-                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(card);
+            cards.forEach(card => {
+                const title = card.querySelector("h3").textContent.toLowerCase();
+                if (title.includes(searchTerm)) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
             });
         });
     </script>
-
 </body>
 </html>
-
-
