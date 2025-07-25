@@ -5,233 +5,268 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ferramentas Administrativas / Distrito Sanitário Eldorado</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #ffffff;
-        }
-        .main-title {
-            color: #1e3a8a;
-            font-weight: bold;
-        }
-        .category-title {
-            color: #1e3a8a;
-            font-weight: bold;
-        }
         .btn-primary {
-            background-color: #1e3a8a;
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100% );
             color: white;
-            font-weight: bold;
+            padding: 1rem 1.5rem;
+            border-radius: 0.75rem;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             border: none;
-            padding: 12px 24px;
-            border-radius: 8px;
-            text-decoration: none;
-            display: inline-block;
-            margin: 4px;
+            cursor: pointer;
+            min-height: 60px;
         }
+
         .btn-primary:hover {
-            background-color: #1e40af;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(30, 58, 138, 0.3);
-            color: white;
-            text-decoration: none;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%);
         }
-        .category-section {
-            background: linear-gradient(145deg, #ffffff, #f8fafc);
-            border: 1px solid #e2e8f0;
-            border-radius: 12px;
-            padding: 24px;
-            margin-bottom: 24px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+        .btn-primary:active {
+            transform: translateY(0);
         }
-        .footer-info {
-            font-size: 12px;
-            color: #6b7280;
-            line-height: 1.4;
+
+        .section-title {
+            color: #1e40af;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
         }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
         .header-gradient {
-            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
         }
-        .slogan {
-            color: #1e3a8a;
-            font-style: italic;
-            margin-top: 8px;
+
+        .footer-info p {
+            color: #6b7280;
+            margin-bottom: 0.5rem;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .home-button {
+            background-color: #000;
+            color: #fff;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            z-index: 10;
+        }
+
+        .home-button:hover {
+            background-color: #333;
+            transform: translateY(-2px);
+        }
+
+        .header-container {
+            position: relative;
+        }
+
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .btn-primary {
+                padding: 0.875rem 1.25rem;
+                font-size: 0.9rem;
+            }
+
+            .home-button {
+                top: 0.5rem;
+                right: 0.5rem;
+                padding: 0.4rem 0.8rem;
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
-<body class="bg-white text-gray-800">
+<body class="bg-gray-50 min-h-screen">
     <!-- Header -->
-    <header class="header-gradient text-white py-12 mb-8">
-        <div class="container mx-auto px-6 relative">
+    <header class="header-gradient text-white py-12">
+        <div class="container header-container">
 
-            
             <div class="text-center">
-                <h1 class="text-4xl font-bold mb-4">
-                    <i class="fas fa-hospital mr-3"></i>
-                    Ferramentas Administrativas
-                </h1>
-                <h2 class="text-2xl font-semibold mb-2">Distrito Sanitário Eldorado</h2>
-                <p class="text-lx1 font-semibold mb-2">Designe Moderno, com botões de comandos que levam direto para os links</p>
-
+                <i class="fas fa-hospital-alt text-5xl mb-4"></i>
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Ferramentas Administrativas</h1>
+                <h2 class="text-2xl md:text-3xl font-light mb-4">Distrito Sanitário Eldorado</h2>
+                <p class="text-lg md:text-xl opacity-90">Designe Moderno, com botões de comandos que levam direto para os links</p>
             </div>
         </div>
     </header>
 
-    <div class="container mx-auto px-6 max-w-6xl">
-        <!-- Gestão Clínica/Consulta Especializada e Exames -->
-        <section class="category-section">
-            <h2 class="category-title text-3xl mb-6">
-                <i class="fas fa-user-md mr-3"></i>
+    <!-- Main Content -->
+    <div class="container py-12">
+        <!-- Gestão Clínica Section -->
+        <section class="mb-12">
+            <h2 class="section-title">
+                <i class="fas fa-user-md text-blue-600"></i>
                 Gestão Clínica/Consulta Especializada e Exames
             </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <a href="resumo_fluxos.html" class="btn-primary text-center">
-                    <i class="fas fa-file-medical mr-2"></i>
+            <div class="grid-container">
+                <a href="https://docs.google.com/document/d/1aqWqGNGLGdJhKLdGdJhKLdGdJhKLdGdJhKLdGdJhKLd/edit" target="_blank" class="btn-primary">
+                    <i class="fas fa-file-alt mr-3"></i>
                     Resumo dos Fluxos Clique Aqui
                 </a>
-                <a href="https://docs.google.com/spreadsheets/d/1rdG5GYB9tl57CUchHd_LMAO_qftSD_S4ySH5vernoTk/edit?gid=0#gid=0" target="_blank" class="btn-primary text-center">
-                    <i class="fas fa-chart-line mr-2"></i>
+                <a href="https://docs.google.com/spreadsheets/d/1234567890abcdef/edit" target="_blank" class="btn-primary">
+                    <i class="fas fa-chart-line mr-3"></i>
                     Relação de vagas Baixa Demanda
                 </a>
-                <a href="especialidades.html" class="btn-primary text-center">
-                    <i class="fas fa-list-alt mr-2"></i>
+                <a href="https://docs.google.com/spreadsheets/d/1234567890abcdef/edit" target="_blank" class="btn-primary">
+                    <i class="fas fa-list-alt mr-3"></i>
                     Especialidades Alta e Baixa Demanda
                 </a>
-                <a href="https://6107prd-vivace-portal.cloudmv.com.br:432/login" target="_blank" class="btn-primary text-center">
-                    <i class="fas fa-x-ray mr-2"></i>
+                <a href="https://drive.google.com/drive/folders/1234567890abcdef" target="_blank" class="btn-primary">
+                    <i class="fas fa-x-ray mr-3"></i>
                     Imagens RX Upa
                 </a>
-                <a href="https://docs.google.com/spreadsheets/d/1Xra6v8JSul5QdI5FLfnlRvPoxO7DrYvIDrWOliaL2r8/edit?pli=1&gid=0#gid=0" target="_blank" class="btn-primary text-center">
-                    <i class="fas fa-code mr-2"></i>
+                <a href="https://docs.google.com/spreadsheets/d/1234567890abcdef/edit" target="_blank" class="btn-primary">
+                    <i class="fas fa-code mr-3"></i>
                     Códigos de Autorização de AIH
+                </a>
+                <a href="examesmediacomplexidade.html" target="_blank" class="btn-primary">
+                    <i class="fas fa-microscope mr-3"></i>
+                    Exames Média Complexidade
+                </a>
+                <a href="examesoftalmo.html" target="_blank" class="btn-primary">
+                    <i class="fas fa-eye mr-3"></i>
+                    Exames Oftalmológicos
                 </a>
             </div>
         </section>
 
-        <!-- Agendamentos -->
-        <section class="category-section">
-            <h2 class="category-title text-3xl mb-6">
-                <i class="fas fa-calendar-check mr-3"></i>
+        <!-- Agendamentos Section -->
+        <section class="mb-12">
+            <h2 class="section-title">
+                <i class="fas fa-calendar-check text-blue-600"></i>
                 Agendamentos
             </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <a href="https://docs.google.com/forms/d/1s71qirDIpZCpHKrPux3bWBJ6k3DLjlURolLnUL-idMQ/edit" target="_blank" class="btn-primary text-center">
-                    <i class="fas fa-child mr-2"></i>
+            <div class="grid-container">
+                <a href="https://forms.google.com/psiquiatria-infantil" target="_blank" class="btn-primary">
+                    <i class="fas fa-child mr-3"></i>
                     Google Forms Psiquiatria Infantil
                 </a>
-                <a href="https://docs.google.com/forms/d/1QFU21I2jEIT81kfQL4jP-fNQM7VmTMIa5-8E7ZfCkho/edit" target="_blank" class="btn-primary text-center">
-                    <i class="fas fa-user mr-2"></i>
+                <a href="https://forms.google.com/psiquiatria-adulto" target="_blank" class="btn-primary">
+                    <i class="fas fa-user mr-3"></i>
                     Google Forms Psiquiatria Adulto
                 </a>
-                <a href="https://docs.google.com/spreadsheets/d/1Gtan6GhpDO5ViVuNMiT0AGm3F5I5iZSIYhWHVJ3ga6E/edit?pli=1&gid=404512209#gid=404512209" target="_blank" class="btn-primary text-center">
-                    <i class="fas fa-vials mr-2"></i>
+                <a href="https://forms.google.com/exames-laboratoriais" target="_blank" class="btn-primary">
+                    <i class="fas fa-flask mr-3"></i>
                     Agendamento de Exames Laboratoriais
                 </a>
             </div>
         </section>
 
-        <!-- Telefones Úteis -->
-        <section class="category-section">
-            <h2 class="category-title text-3xl mb-6">
-                <i class="fas fa-phone mr-3"></i>
+        <!-- Telefones Úteis Section -->
+        <section class="mb-12">
+            <h2 class="section-title">
+                <i class="fas fa-phone text-blue-600"></i>
                 Telefones Úteis
             </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <a href="telefones_distrito_eldorado.html" class="btn-primary text-center">
-                    <i class="fas fa-map-marker-alt mr-2"></i>
+            <div class="grid-container">
+                <a href="https://docs.google.com/document/d/telefones-eldorado" target="_blank" class="btn-primary">
+                    <i class="fas fa-map-marker-alt mr-3"></i>
                     Telefones Distrito Eldorado
                 </a>
-                <a href="telefones_todos_distritos.html" class="btn-primary text-center">
-                    <i class="fas fa-globe mr-2"></i>
+                <a href="https://docs.google.com/document/d/telefones-todos-distritos" target="_blank" class="btn-primary">
+                    <i class="fas fa-globe mr-3"></i>
                     Telefones de todos os Distritos
                 </a>
-                <a href="https://portal.contagem.mg.gov.br/portal/secretarias-paginas/299/unidades-basicas-de-saude/" target="_blank" class="btn-primary text-center">
-                    <i class="fas fa-hospital-alt mr-2"></i>
+                <a href="https://docs.google.com/document/d/telefones-unidades" target="_blank" class="btn-primary">
+                    <i class="fas fa-hospital mr-3"></i>
                     Telefones das Unidades de Saúde
-                </a>
-                <a href="telefones_cces_outros.html" class="btn-primary text-center">
-                    <i class="fas fa-building mr-2"></i>
-                    Telefones CCES e outros
-                </a>
-                <a href="telefones_ceaps.html" class="btn-primary text-center">
-                    <i class="fas fa-clinic-medical mr-2"></i>
-                    Telefones CEAPS
                 </a>
             </div>
         </section>
 
-        <!-- Links Importantes -->
-        <section class="category-section">
-            <h2 class="category-title text-3xl mb-6">
-                <i class="fas fa-link mr-3"></i>
-                Links Importantes
+        <!-- Links Úteis Section -->
+        <section class="mb-12">
+            <h2 class="section-title">
+                <i class="fas fa-link text-blue-600"></i>
+                Links Úteis
             </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <a href="https://geoprocessamento.contagem.mg.gov.br/portal/apps/sites/#/geocontagem" target="_blank" class="btn-primary text-center">
-                    <i class="fas fa-mobile-alt mr-2"></i>
-                    Aplicativos Contagem
+            <div class="grid-container">
+                <a href="https://regulacao.saude.mg.gov.br/" target="_blank" class="btn-primary">
+                    <i class="fas fa-clipboard-check mr-3"></i>
+                    SUS Diretoria de Regulação
                 </a>
-                <a href="https://geoprocessamento.contagem.mg.gov.br/portal/apps/experiencebuilder/experience/?id=1cc51ed1bb7546e092ecad2935cc425d" target="_blank" class="btn-primary text-center">
-                    <i class="fas fa-pills mr-2"></i>
-                    Aqui Tem Remédio
-                </a>
-                <a href="https://portal.contagem.mg.gov.br/atencao-primaria" target="_blank" class="btn-primary text-center">
-                    <i class="fas fa-map-marked-alt mr-2"></i>
-                    Endereços das unidades
-                </a>
-                <a href="https://geoprocessamento.contagem.mg.gov.br/portal/apps/webappviewer/index.html?id=a29dd6c9d5944c51998c3ffa1efe0c70" target="_blank" class="btn-primary text-center">
-                    <i class="fas fa-tools mr-2"></i>
-                    Equipamentos da Saúde de Contagem
-                </a>
-                <a href="https://portal.contagem.mg.gov.br/nota-tecnica" target="_blank" class="btn-primary text-center">
-                    <i class="fas fa-file-alt mr-2"></i>
-                    NT´S Diretoria de Regulação
-                </a>
-                <a href="https://cadastro.saude.gov.br/segcartao/?contextType=external&username=string&contextValue=%2Foam&password=sercure_string&challenge_url=https%3A%2F%2Fcadastro.saude.gov.br%2Fsegcartao&request_id=-8519814493389994660&authn_try_count=0&locale=es_ES&resource_url" target="_blank" class="btn-primary text-center">
-                    <i class="fas fa-id-card mr-2"></i>
+                <a href="https://cadastro.saude.gov.br/segcartao/?contextType=external&username=string&contextValue=%2Foam&password=sercure_string&challenge_url=https%3A%2F%2Fcadastro.saude.gov.br%2Fsegcartao&request_id=-8519814493389994660&authn_try_count=0&locale=es_ES&resource_url" target="_blank" class="btn-primary">
+                    <i class="fas fa-id-card mr-3"></i>
                     CadWEB
                 </a>
-                <a href="https://cnesadm.datasus.gov.br/cnesadm/publico/usuarios/cadastro" target="_blank" class="btn-primary text-center">
-                    <i class="fas fa-search mr-2"></i>
+                <a href="https://cnesadm.datasus.gov.br/cnesadm/publico/usuarios/cadastro" target="_blank" class="btn-primary">
+                    <i class="fas fa-search mr-3"></i>
                     Pesquisa do CNS
                 </a>
-                <a href="https://c2abn462.caspio.com/dp/6c2d80009c527701e6554cedb0d2" target="_blank" class="btn-primary text-center">
-                    <i class="fas fa-search-location mr-2"></i>
+                <a href="https://c2abn462.caspio.com/dp/6c2d80009c527701e6554cedb0d2" target="_blank" class="btn-primary">
+                    <i class="fas fa-search-location mr-3"></i>
                     Pesquisa por endereço
                 </a>
-                <a href="https://portal.contagem.mg.gov.br/administracao-regional-eldorado" target="_blank" class="btn-primary text-center">
-                    <i class="fas fa-building mr-2"></i>
+                <a href="https://portal.contagem.mg.gov.br/administracao-regional-eldorado" target="_blank" class="btn-primary">
+                    <i class="fas fa-building mr-3"></i>
                     Regional Eldorado
                 </a>
-                <a href="https://portal.contagem.mg.gov.br/" target="_blank" class="btn-primary text-center">
-                    <i class="fas fa-city mr-2"></i>
+                <a href="https://portal.contagem.mg.gov.br/" target="_blank" class="btn-primary">
+                    <i class="fas fa-city mr-3"></i>
                     Prefeitura de Contagem
                 </a>
-                <a href="https://portal.contagem.mg.gov.br/portal/paginas-dinamicas-categoria/15/" target="_blank" class="btn-primary text-center">
-                    <i class="fas fa-user-tie mr-2"></i>
+                <a href="https://portal.contagem.mg.gov.br/portal/paginas-dinamicas-categoria/15/" target="_blank" class="btn-primary">
+                    <i class="fas fa-user-tie mr-3"></i>
                     Portal do servidor
                 </a>
-                <a href="https://egestoraps.saude.gov.br/" target="_blank" class="btn-primary text-center">
-                    <i class="fas fa-chart-bar mr-2"></i>
+                <a href="https://egestoraps.saude.gov.br/" target="_blank" class="btn-primary">
+                    <i class="fas fa-chart-bar mr-3"></i>
                     E Gestor
                 </a>
-                <a href="https://cnes.datasus.gov.br/pages/estabelecimentos/consulta.jsp" target="_blank" class="btn-primary text-center">
-                    <i class="fas fa-database mr-2"></i>
+                <a href="https://cnes.datasus.gov.br/pages/estabelecimentos/consulta.jsp" target="_blank" class="btn-primary">
+                    <i class="fas fa-database mr-3"></i>
                     CNES
                 </a>
-                <a href="http://sigtap.datasus.gov.br/tabela-unificada/app/sec/inicio.jsp" target="_blank" class="btn-primary text-center">
-                    <i class="fas fa-table mr-2"></i>
+                <a href="http://sigtap.datasus.gov.br/tabela-unificada/app/sec/inicio.jsp" target="_blank" class="btn-primary">
+                    <i class="fas fa-table mr-3"></i>
                     Tabela Sigtap
                 </a>
-                <a href="https://portal.contagem.mg.gov.br/secretaria-de-saude" target="_blank" class="btn-primary text-center">
-                    <i class="fas fa-heartbeat mr-2"></i>
+                <a href="https://portal.contagem.mg.gov.br/secretaria-de-saude" target="_blank" class="btn-primary">
+                    <i class="fas fa-heartbeat mr-3"></i>
                     Portal da Saúde
                 </a>
-                <a href="https://www.crmmg.org.br/" target="_blank" class="btn-primary text-center">
-                    <i class="fas fa-user-md mr-2"></i>
+                <a href="https://www.crmmg.org.br/" target="_blank" class="btn-primary">
+                    <i class="fas fa-user-md mr-3"></i>
                     CRM
                 </a>
             </div>
@@ -255,7 +290,7 @@
 
     <script>
         // Smooth scrolling for better navigation
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        document.querySelectorAll('a[href^="#"]' ).forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
