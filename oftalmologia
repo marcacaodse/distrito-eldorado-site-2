@@ -270,15 +270,13 @@
                 Tela Inicial
             </a>
             <h1>📋 Distrito Sanitário Eldorado</h1>
-            <p>Relação dos Exames Oftalmológicos</p>
+            <p>Relação dos Exames Oftalmologicos</p>
             <p>Pagina criada por Ana P. A. Silva/Suporte Vivver/ Distrito Eldorado</p>
         </div>
 
         <div class="alert">
-            ⚠️ <strong>Atenção Unidades de Saúde!</strong>  
-
-            Segue uma lista com todos os exames de oftalmologia que são marcados pelo Distrito Eldorado, assim como os que estão SEM PRESTADOR e os que são marcados em Belo Horizonte.  
-
+            ⚠️ <strong>Atenção Unidades de Saúde!</strong><br>
+            Segue uma lista com todos os exames de oftalmologia que são marcados pelo Distrito Eldorado, assim como os que estão SEM PRESTADOR e os que são marcados em Belo Horizonte.<br>
             <strong>Atenção na hora de enviá-los para a diretoria de regulação!</strong>
         </div>
 
@@ -464,15 +462,17 @@
         // Função para limpar busca
         function clearSearch() {
             searchInput.value = '';
-            performSearch(); // Re-run search to reset filters and counts
+            performSearch(); // Re-executa a busca para resetar os filtros
         }
 
         // Event Listeners
-        searchInput.addEventListener('keyup', performSearch);
+        searchInput.addEventListener('input', performSearch);
         clearButton.addEventListener('click', clearSearch);
 
-        // Initial search to set counts and display based on initial state
-        performSearch();
+        // Inicializar contadores e exibir todos os exames ao carregar a página
+        window.addEventListener('load', () => {
+            performSearch();
+        });
     </script>
 </body>
 </html>
