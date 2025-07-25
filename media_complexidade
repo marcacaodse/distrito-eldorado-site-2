@@ -15,7 +15,7 @@
         }
         
         .header-gradient {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100% );
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             position: relative;
         }
         
@@ -326,129 +326,52 @@
             <div class="p-6">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="highCostGrid">
                     <div class="exam-item bg-gray-50 p-4 rounded-lg border hover:shadow-md transition-shadow">
-                        <i class="fas fa-microscope text-yellow-500 mr-2"></i>Angiografia
+                        <i class="fas fa-dollar-sign text-yellow-500 mr-2"></i>Angiografia
                     </div>
                     <div class="exam-item bg-gray-50 p-4 rounded-lg border hover:shadow-md transition-shadow">
-                        <i class="fas fa-microscope text-yellow-500 mr-2"></i>Biópsia
+                        <i class="fas fa-dollar-sign text-yellow-500 mr-2"></i>Biópsia
                     </div>
                     <div class="exam-item bg-gray-50 p-4 rounded-lg border hover:shadow-md transition-shadow">
-                        <i class="fas fa-microscope text-yellow-500 mr-2"></i>Cintilografia
+                        <i class="fas fa-dollar-sign text-yellow-500 mr-2"></i>Cintilografia
                     </div>
                     <div class="exam-item bg-gray-50 p-4 rounded-lg border hover:shadow-md transition-shadow">
-                        <i class="fas fa-microscope text-yellow-500 mr-2"></i>Densitometria
+                        <i class="fas fa-dollar-sign text-yellow-500 mr-2"></i>Densitometria
                     </div>
                     <div class="exam-item bg-gray-50 p-4 rounded-lg border hover:shadow-md transition-shadow">
-                        <i class="fas fa-microscope text-yellow-500 mr-2"></i>Ecocardiograma
+                        <i class="fas fa-dollar-sign text-yellow-500 mr-2"></i>Ecocardiograma
                     </div>
                     <div class="exam-item bg-gray-50 p-4 rounded-lg border hover:shadow-md transition-shadow">
-                        <i class="fas fa-microscope text-yellow-500 mr-2"></i>Endoscopia
+                        <i class="fas fa-dollar-sign text-yellow-500 mr-2"></i>Endoscopia
                     </div>
                     <div class="exam-item bg-gray-50 p-4 rounded-lg border hover:shadow-md transition-shadow">
-                        <i class="fas fa-microscope text-yellow-500 mr-2"></i>Holter
+                        <i class="fas fa-dollar-sign text-yellow-500 mr-2"></i>Holter
                     </div>
                     <div class="exam-item bg-gray-50 p-4 rounded-lg border hover:shadow-md transition-shadow">
-                        <i class="fas fa-microscope text-yellow-500 mr-2"></i>Mamografia
+                        <i class="fas fa-dollar-sign text-yellow-500 mr-2"></i>Mamografia
                     </div>
                     <div class="exam-item bg-gray-50 p-4 rounded-lg border hover:shadow-md transition-shadow">
-                        <i class="fas fa-microscope text-yellow-500 mr-2"></i>MAPA
+                        <i class="fas fa-dollar-sign text-yellow-500 mr-2"></i>MAPA
                     </div>
                     <div class="exam-item bg-gray-50 p-4 rounded-lg border hover:shadow-md transition-shadow">
-                        <i class="fas fa-microscope text-yellow-500 mr-2"></i>Ressonância
+                        <i class="fas fa-dollar-sign text-yellow-500 mr-2"></i>Ressonância
                     </div>
                     <div class="exam-item bg-gray-50 p-4 rounded-lg border hover:shadow-md transition-shadow">
-                        <i class="fas fa-microscope text-yellow-500 mr-2"></i>Tomografia
+                        <i class="fas fa-dollar-sign text-yellow-500 mr-2"></i>Tomografia
                     </div>
                     <div class="exam-item bg-gray-50 p-4 rounded-lg border hover:shadow-md transition-shadow">
-                        <i class="fas fa-microscope text-yellow-500 mr-2"></i>Ultrassonografia
+                        <i class="fas fa-dollar-sign text-yellow-500 mr-2"></i>Ultrassonografia
                     </div>
                     <div class="exam-item bg-gray-50 p-4 rounded-lg border hover:shadow-md transition-shadow">
-                        <i class="fas fa-microscope text-yellow-500 mr-2"></i>Urodinâmica
+                        <i class="fas fa-dollar-sign text-yellow-500 mr-2"></i>Urodinâmica
                     </div>
                     <div class="exam-item bg-gray-50 p-4 rounded-lg border hover:shadow-md transition-shadow">
-                        <i class="fas fa-microscope text-yellow-500 mr-2"></i>Videoendoscopia
+                        <i class="fas fa-dollar-sign text-yellow-500 mr-2"></i>Videoendoscopia
                     </div>
                     <div class="exam-item bg-gray-50 p-4 rounded-lg border hover:shadow-md transition-shadow">
-                        <i class="fas fa-exclamation-circle text-red-500 mr-2"></i>Sem prestador: Colonoscopia
+                        <i class="fas fa-dollar-sign text-yellow-500 mr-2"></i>Colonoscopia
                     </div>
                     <div class="exam-item bg-gray-50 p-4 rounded-lg border hover:shadow-md transition-shadow">
-                        <i class="fas fa-exclamation-circle text-red-500 mr-2"></i>Sem prestador: Endoscopia
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- No Provider Section -->
-        <div class="bg-white rounded-lg shadow-lg mb-8 exam-table">
-            <div class="category-header no-provider px-6 py-4">
-                <h2 class="text-2xl font-bold text-gray-800 flex items-center">
-                    <i class="fas fa-times-circle text-red-500 mr-3"></i>
-                    Exames Sem Prestador
-                </h2>
-            </div>
-            <div class="p-6">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="noProviderGrid">
-                    <div class="exam-item bg-gray-50 p-4 rounded-lg border hover:shadow-md transition-shadow">
-                        <i class="fas fa-exclamation-circle text-red-500 mr-2"></i>Audiometria
-                    </div>
-                    <div class="exam-item bg-gray-50 p-4 rounded-lg border hover:shadow-md transition-shadow">
-                        <i class="fas fa-exclamation-circle text-red-500 mr-2"></i>Bera
-                    </div>
-                    <div class="exam-item bg-gray-50 p-4 rounded-lg border hover:shadow-md transition-shadow">
-                        <i class="fas fa-exclamation-circle text-red-500 mr-2"></i>Broncoscopia
-                    </div>
-                    <div class="exam-item bg-gray-50 p-4 rounded-lg border hover:shadow-md transition-shadow">
-                        <i class="fas fa-exclamation-circle text-red-500 mr-2"></i>Cápsula endoscópica
-                    </div>
-                    <div class="exam-item bg-gray-50 p-4 rounded-lg border hover:shadow-md transition-shadow">
-                        <i class="fas fa-exclamation-circle text-red-500 mr-2"></i>Cistoscopia
-                    </div>
-                    <div class="exam-item bg-gray-50 p-4 rounded-lg border hover:shadow-md transition-shadow">
-                        <i class="fas fa-exclamation-circle text-red-500 mr-2"></i>Colangiopancreatografia
-                    </div>
-                    <div class="exam-item bg-gray-50 p-4 rounded-lg border hover:shadow-md transition-shadow">
-                        <i class="fas fa-exclamation-circle text-red-500 mr-2"></i>Colposcopia
-                    </div>
-                    <div class="exam-item bg-gray-50 p-4 rounded-lg border hover:shadow-md transition-shadow">
-                        <i class="fas fa-exclamation-circle text-red-500 mr-2"></i>Densitometria óssea
-                    </div>
-                    <div class="exam-item bg-gray-50 p-4 rounded-lg border hover:shadow-md transition-shadow">
-                        <i class="fas fa-exclamation-circle text-red-500 mr-2"></i>Eletroneuromiografia
-                    </div>
-                    <div class="exam-item bg-gray-50 p-4 rounded-lg border hover:shadow-md transition-shadow">
-                        <i class="fas fa-exclamation-circle text-red-500 mr-2"></i>Endoscopia
-                    </div>
-                    <div class="exam-item bg-gray-50 p-4 rounded-lg border hover:shadow-md transition-shadow">
-                        <i class="fas fa-exclamation-circle text-red-500 mr-2"></i>Fisioterapia
-                    </div>
-                    <div class="exam-item bg-gray-50 p-4 rounded-lg border hover:shadow-md transition-shadow">
-                        <i class="fas fa-exclamation-circle text-red-500 mr-2"></i>Histeroscopia
-                    </div>
-                    <div class="exam-item bg-gray-50 p-4 rounded-lg border hover:shadow-md transition-shadow">
-                        <i class="fas fa-exclamation-circle text-red-500 mr-2"></i>Laringoscopia
-                    </div>
-                    <div class="exam-item bg-gray-50 p-4 rounded-lg border hover:shadow-md transition-shadow">
-                        <i class="fas fa-exclamation-circle text-red-500 mr-2"></i>Nasofibroscopia
-                    </div>
-                    <div class="exam-item bg-gray-50 p-4 rounded-lg border hover:shadow-md transition-shadow">
-                        <i class="fas fa-exclamation-circle text-red-500 mr-2"></i>Polissonografia
-                    </div>
-                    <div class="exam-item bg-gray-50 p-4 rounded-lg border hover:shadow-md transition-shadow">
-                        <i class="fas fa-exclamation-circle text-red-500 mr-2"></i>Rinoscopia
-                    </div>
-                    <div class="exam-item bg-gray-50 p-4 rounded-lg border hover:shadow-md transition-shadow">
-                        <i class="fas fa-exclamation-circle text-red-500 mr-2"></i>Teste ergométrico
-                    </div>
-                    <div class="exam-item bg-gray-50 p-4 rounded-lg border hover:shadow-md transition-shadow">
-                        <i class="fas fa-exclamation-circle text-red-500 mr-2"></i>Teste vestibular
-                    </div>
-                    <div class="exam-item bg-gray-50 p-4 rounded-lg border hover:shadow-md transition-shadow">
-                        <i class="fas fa-exclamation-circle text-red-500 mr-2"></i>Tomografia
-                    </div>
-                    <div class="exam-item bg-gray-50 p-4 rounded-lg border hover:shadow-md transition-shadow">
-                        <i class="fas fa-exclamation-circle text-red-500 mr-2"></i>Urodinâmica
-                    </div>
-                    <div class="exam-item bg-gray-50 p-4 rounded-lg border hover:shadow-md transition-shadow">
-                        <i class="fas fa-exclamation-circle text-red-500 mr-2"></i>Videoendoscopia
+                        <i class="fas fa-dollar-sign text-yellow-500 mr-2"></i>Endoscopia
                     </div>
                 </div>
             </div>
@@ -490,88 +413,95 @@
                 </div>
             </div>
         </div>
-
-        <!-- No Results Message -->
-        <div id="noResultsMessage" class="hidden bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4 mt-8" role="alert">
-            <p class="font-bold">Nenhum exame encontrado!</p>
-            <p>Por favor, tente um termo de busca diferente.</p>
-        </div>
     </div>
 
     <!-- Footer -->
-    <footer class="bg-gray-100 mt-12 py-8 border-t-4 border-gray-300 no-print">
-        <div class="max-w-7xl mx-auto px-6 text-center text-gray-600">
-            <p>&copy; <span id="currentYear"></span> Distrito Sanitário Eldorado. Todos os direitos reservados.</p>
-            <p>Página criada por Ana P. A. Silva/Suporte Vivver/Distrito Eldorado</p>
+    <footer class="bg-gray-100 mt-12 py-8 border-t-4 border-blue-800 no-print">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="text-gray-600 text-sm">
+                <p class="mb-2">Central de Marcação de consultas 3198-6768</p>
+                <p class="mb-2">Agendamento de retornos CCE Ressaca: 3394-7213</p>
+                <p class="mb-2">COLONOSCOPIA/CEAPS 3198-6788</p>
+                <p class="mb-2">OFTALMOLOGIA 3198-6761</p>
+                <p class="mb-2">FLORES DO IRIA 99257-2517</p>
+                <p class="mb-2">Laboratório de Coletas Especiais: END: Rua Antônio Augusto, 115 Bairro Nossa Senhora de Fátima</p>
+                <p class="mt-4 font-semibold">Site criado por Ana P. A. Silva – Suporte Sistema Vivver – Distrito Eldorado</p>
+            </div>
         </div>
     </footer>
 
     <script>
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-
         const searchInput = document.getElementById('searchInput');
-        const examItems = document.querySelectorAll('.exam-item');
-        const noResultsMessage = document.getElementById('noResultsMessage');
+        const clearSearchBtn = document.getElementById('clearSearch');
+        const mediumComplexityGrid = document.getElementById('mediumComplexityGrid');
+        const highCostGrid = document.getElementById('highCostGrid');
+        const specialGrid = document.getElementById('specialGrid');
+        const verificationGrid = document.getElementById('verificationGrid');
+
         const mediumCount = document.getElementById('mediumCount');
         const highCostCount = document.getElementById('highCostCount');
         const noProviderCount = document.getElementById('noProviderCount');
         const totalCount = document.getElementById('totalCount');
 
-        const initialCounts = {
-            medium: 41,
-            highCost: 16,
-            noProvider: 21,
-            total: 81
-        };
+        const allExams = [];
 
-        function updateCounts(visibleMedium, visibleHighCost, visibleNoProvider) {
+        function collectExams(grid, type) {
+            Array.from(grid.children).forEach(item => {
+                allExams.push({
+                    element: item,
+                    text: item.textContent.toLowerCase(),
+                    type: type
+                });
+            });
+        }
+
+        collectExams(mediumComplexityGrid, 'medium');
+        collectExams(highCostGrid, 'highCost');
+        collectExams(specialGrid, 'special');
+        collectExams(verificationGrid, 'verification');
+
+        function updateCounts() {
+            const visibleMedium = allExams.filter(exam => exam.type === 'medium' && exam.element.style.display !== 'none').length;
+            const visibleHighCost = allExams.filter(exam => exam.type === 'highCost' && exam.element.style.display !== 'none').length;
+            const visibleSpecial = allExams.filter(exam => exam.type === 'special' && exam.element.style.display !== 'none').length;
+            const visibleVerification = allExams.filter(exam => exam.type === 'verification' && exam.element.style.display !== 'none').length;
+
             mediumCount.textContent = visibleMedium;
             highCostCount.textContent = visibleHighCost;
-            noProviderCount.textContent = visibleNoProvider;
-            totalCount.textContent = visibleMedium + visibleHighCost + visibleNoProvider;
+            // Assuming 'Sem Prestador' count is derived from specific items or a separate list not explicitly in the HTML structure shown.
+            // For now, setting it to 0 or a placeholder. If there are specific 'Sem Prestador' items, they need to be filtered.
+            noProviderCount.textContent = allExams.filter(exam => exam.text.includes('sem prestador') && exam.element.style.display !== 'none').length;
+            totalCount.textContent = visibleMedium + visibleHighCost + visibleSpecial + visibleVerification;
         }
 
         searchInput.addEventListener('keyup', function() {
             const searchTerm = searchInput.value.toLowerCase();
-            let anyVisible = false;
-            let currentMedium = 0;
-            let currentHighCost = 0;
-            let currentNoProvider = 0;
+            let hasVisibleResults = false;
 
-            examItems.forEach(item => {
-                const text = item.textContent.toLowerCase();
-                if (text.includes(searchTerm)) {
-                    item.style.display = 'block';
-                    anyVisible = true;
-                    if (item.closest('#mediumComplexityGrid')) {
-                        currentMedium++;
-                    } else if (item.closest('#highCostGrid')) {
-                        currentHighCost++;
-                    } else if (item.closest('#noProviderGrid')) {
-                        currentNoProvider++;
-                    }
+            allExams.forEach(exam => {
+                if (exam.text.includes(searchTerm)) {
+                    exam.element.style.display = 'block';
+                    hasVisibleResults = true;
                 } else {
-                    item.style.display = 'none';
+                    exam.element.style.display = 'none';
                 }
             });
 
-            updateCounts(currentMedium, currentHighCost, currentNoProvider);
-
-            if (anyVisible) {
-                noResultsMessage.classList.add('hidden');
-            } else {
-                noResultsMessage.classList.remove('hidden');
-            }
+            updateCounts();
+            clearSearchBtn.style.display = searchTerm ? 'block' : 'none';
         });
 
         function clearSearch() {
             searchInput.value = '';
-            examItems.forEach(item => {
-                item.style.display = 'block';
+            allExams.forEach(exam => {
+                exam.element.style.display = 'block';
             });
-            updateCounts(initialCounts.medium, initialCounts.highCost, initialCounts.noProvider);
-            noResultsMessage.classList.add('hidden');
+            updateCounts();
+            clearSearchBtn.style.display = 'none';
         }
+
+        // Initial count update
+        updateCounts();
     </script>
 </body>
 </html>
