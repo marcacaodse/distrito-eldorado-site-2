@@ -3,236 +3,468 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resumo do Fluxo de Marcação - Sistema de Agendamento/ Página Criada por Ana P. A. Silva/Suporte Vivver/Distrito Sanitário Eldorado</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Resumo do Fluxo de Marcação - Sistema de Agendamento</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f2f5;
-            color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #2c3e50;
             line-height: 1.6;
-            /* Removido opacity: 0 que estava tornando a página invisível */
+            min-height: 100vh;
         }
 
         .container {
-            max-width: 960px;
-            margin: 20px auto;
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        h1, h2, h3, h4 {
-            color: #0056b3;
-            margin-bottom: 15px;
-        }
-
-        h1 {
-            font-size: 2.5em;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        h2 {
-            font-size: 2em;
-            border-bottom: 2px solid #0056b3;
-            padding-bottom: 10px;
-            margin-top: 30px;
-        }
-
-        h3 {
-            font-size: 1.5em;
-            color: #007bff;
-            margin-top: 20px;
-        }
-
-        h4 {
-            font-size: 1.2em;
-            color: #007bff;
-            margin-top: 15px;
-        }
-
-        p {
-            margin-bottom: 10px;
-        }
-
-        ul {
-            list-style-type: disc;
-            margin-left: 20px;
-            margin-bottom: 10px;
-        }
-
-        ol {
-            list-style-type: decimal;
-            margin-left: 20px;
-            margin-bottom: 10px;
-        }
-
-        .highlight {
-            background-color: #e9f7ff;
-            padding: 15px;
-            border-left: 5px solid #007bff;
-            margin-bottom: 20px;
-        }
-
-        .note {
-            font-style: italic;
-            color: #555;
-        }
-
+        /* Header Styles */
         .header-bar {
-            background-color: #007bff;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-            font-size: 1.2em;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 20px;
         }
 
-        .header-bar a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-
-        .header-bar a:hover {
-            text-decoration: underline;
-        }
-
-        .search-bar {
-            background-color: #e9f7ff;
-            padding: 15px 20px;
-            border-bottom: 1px solid #cce7ff;
+        .header-left {
             display: flex;
-            justify-content: center;
             align-items: center;
+        }
+
+        .home-btn {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+            backdrop-filter: blur(10px);
+        }
+
+        .home-btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .header-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-align: center;
+            flex: 1;
+        }
+
+        .header-info {
+            text-align: right;
+            font-size: 0.9rem;
+            opacity: 0.9;
+            max-width: 250px;
+        }
+
+        /* Search Bar */
+        .search-bar {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
         }
 
         .search-bar input {
-            width: 70%;
-            padding: 8px;
-            border: 1px solid #007bff;
-            border-radius: 5px;
-            margin-right: 10px;
-        }
-
-        .search-bar button {
-            background-color: #007bff;
-            color: #fff;
-            padding: 8px 15px;
+            flex: 1;
+            min-width: 250px;
+            padding: 12px 20px;
             border: none;
-            border-radius: 5px;
+            border-radius: 25px;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .search-bar input:focus {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+
+        .search-btn, .clear-btn {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 25px;
             cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
 
-        .search-bar button:hover {
-            background-color: #0056b3;
+        .search-btn {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
         }
 
+        .clear-btn {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            color: white;
+        }
+
+        .search-btn:hover, .clear-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Main Title */
+        .main-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 30px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Section Cards */
         .section-card {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
+            background: white;
+            border-radius: 20px;
+            margin-bottom: 25px;
             overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .section-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        /* Different color themes for each section */
+        .section-card:nth-child(1) .section-card-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .section-card:nth-child(2) .section-card-header {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .section-card:nth-child(3) .section-card-header {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        .section-card:nth-child(4) .section-card-header {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+
+        .section-card:nth-child(5) .section-card-header {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        }
+
+        .section-card:nth-child(6) .section-card-header {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+        }
+
+        .section-card:nth-child(7) .section-card-header {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+        }
+
+        .section-card:nth-child(8) .section-card-header {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+        }
+
+        .section-card:nth-child(9) .section-card-header {
+            background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
         }
 
         .section-card-header {
-            background-color: #e9f7ff;
-            padding: 15px 20px;
-            font-size: 1.8em;
-            color: #0056b3;
+            padding: 20px 25px;
+            color: white;
             display: flex;
             align-items: center;
-            border-bottom: 1px solid #cce7ff;
+            gap: 15px;
+            font-size: 1.4rem;
+            font-weight: 600;
         }
 
         .section-card-header i {
-            margin-right: 10px;
-            color: #007bff;
+            font-size: 1.8rem;
+            opacity: 0.9;
         }
 
         .section-card-content {
-            padding: 20px;
+            padding: 25px;
         }
 
+        /* Subsection Titles */
         .subsection-title {
-            color: #0056b3;
+            color: #2c3e50;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 20px 0 15px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e9ecef;
+            position: relative;
         }
 
+        .subsection-title::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        /* Grid Layout */
         .grid-container {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
+            margin: 20px 0;
         }
 
         .grid-item {
-            background-color: #f8faff;
-            padding: 15px;
-            border-left: 4px solid #007bff;
-            border-radius: 5px;
-        }
-
-        .footer {
-            background-color: #0056b3;
-            color: #fff;
-            text-align: center;
+            background: linear-gradient(135deg, #f8f9ff 0%, #e6f3ff 100%);
             padding: 20px;
-            margin-top: 30px;
-            border-radius: 8px;
+            border-radius: 15px;
+            border-left: 5px solid #667eea;
+            transition: all 0.3s ease;
         }
 
-        .footer p {
-            margin: 5px 0;
+        .grid-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
         }
 
-        .footer i {
+        .grid-item h4 {
+            color: #667eea;
+            font-weight: 600;
             margin-bottom: 10px;
         }
 
-        /* Responsividade para dispositivos móveis */
+        /* Text Styles */
+        p {
+            margin-bottom: 12px;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        ul {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        strong {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        /* Links */
+        a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+
+        /* Highlight boxes */
+        .highlight-box {
+            background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+            border: 1px solid #f39c12;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 5px solid #f39c12;
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        }
+
+        .footer i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+
+        .footer p {
+            margin: 8px 0;
+            color: #ecf0f1;
+        }
+
+        /* Search highlight */
+        mark {
+            background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
+            .header-bar {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+
+            .header-left, .header-info {
+                width: 100%;
+            }
+
+            .header-title {
+                order: -1;
+            }
+
+            .search-bar {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .search-bar input {
+                min-width: auto;
+                margin-bottom: 10px;
+            }
+
+            .main-title {
+                font-size: 2rem;
+            }
+
             .grid-container {
                 grid-template-columns: 1fr;
             }
-            
-            .header-bar {
-                flex-direction: column;
-                text-align: center;
-                gap: 10px;
+
+            .section-card-header {
+                font-size: 1.2rem;
+                padding: 15px 20px;
             }
-            
-            .search-bar {
-                flex-direction: column;
-                gap: 10px;
-            }
-            
-            .search-bar input {
-                width: 100%;
+
+            .section-card-content {
+                padding: 20px;
             }
         }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 10px;
+            }
+
+            .main-title {
+                font-size: 1.8rem;
+            }
+
+            .section-card-header {
+                font-size: 1.1rem;
+                padding: 12px 15px;
+            }
+
+            .section-card-content {
+                padding: 15px;
+            }
+        }
+
+        /* Animation for page load */
+        .section-card {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Stagger animation for cards */
+        .section-card:nth-child(1) { animation-delay: 0.1s; }
+        .section-card:nth-child(2) { animation-delay: 0.2s; }
+        .section-card:nth-child(3) { animation-delay: 0.3s; }
+        .section-card:nth-child(4) { animation-delay: 0.4s; }
+        .section-card:nth-child(5) { animation-delay: 0.5s; }
+        .section-card:nth-child(6) { animation-delay: 0.6s; }
+        .section-card:nth-child(7) { animation-delay: 0.7s; }
+        .section-card:nth-child(8) { animation-delay: 0.8s; }
+        .section-card:nth-child(9) { animation-delay: 0.9s; }
     </style>
 </head>
 <body>
-    <div class="header-bar bg-gradient-to-r from-blue-600 to-blue-800 text-white p-4 flex justify-between items-center shadow-lg">
-        <a href="index.html" class="text-white hover:text-blue-200 transition duration-300 ease-in-out text-lg font-semibold"><i class="fas fa-home mr-2"></i>Tela Inicial</a>
-        <span class="text-xl font-bold">Resumo do Fluxo de Marcação</span>
-        <span class="text-sm text-blue-200 text-right">Sistema de Agendamento e Procedimentos<br>Página criada por Ana P. A. Silva/Suporte Vivver/Distrito Sanitário Eldorado</span>
-    </div>
-
-    <div class="search-bar">
-        <input type="text" id="searchInput" placeholder="Pesquisar na página...">
-        <button id="searchButton">Pesquisar</button>
-        <button id="clearSearchButton">Limpar</button>
+    <div class="header-bar">
+        <div class="header-left">
+            <a href="#" class="home-btn" onclick="window.location.reload();">
+                <i class="fas fa-home"></i>
+                Tela Inicial
+            </a>
+        </div>
+        <div class="header-title">Resumo do Fluxo de Marcação</div>
+        <div class="header-info">
+            Sistema de Agendamento e Procedimentos<br>
+            <small>Página criada por Ana P. A. Silva<br>Suporte Vivver/Distrito Sanitário Eldorado</small>
+        </div>
     </div>
 
     <div class="container">
-        <h1 class="text-4xl font-bold text-center mb-8 text-blue-700">Resumo dos Fluxos de Marcação de Consultas e Exames</h1>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="🔍 Pesquisar na página...">
+            <button class="search-btn" id="searchButton">
+                <i class="fas fa-search"></i>
+                Pesquisar
+            </button>
+            <button class="clear-btn" id="clearSearchButton">
+                <i class="fas fa-times"></i>
+                Limpar
+            </button>
+        </div>
+
+        <h1 class="main-title">Resumo dos Fluxos de Marcação de Consultas e Exames</h1>
 
         <div class="section-card">
             <div class="section-card-header">
@@ -240,7 +472,7 @@
                 <span>Resumo dos Fluxos de Marcação de Consultas e Exames</span>
             </div>
             <div class="section-card-content">
-                <p class="text-gray-700">Este documento apresenta o resumo dos fluxos para marcação de consultas especializadas e exames, organizando os procedimentos por demanda e especificando os canais apropriados para cada tipo de serviço.</p>
+                <p>Este documento apresenta o resumo dos fluxos para marcação de consultas especializadas e exames, organizando os procedimentos por demanda e especificando os canais apropriados para cada tipo de serviço.</p>
             </div>
         </div>
 
@@ -250,41 +482,41 @@
                 <span>Consultas Especializadas</span>
             </div>
             <div class="section-card-content">
-                <h3 class="subsection-title text-xl font-semibold mb-4">Inserção de Primeira Consulta Especialidades reguladas(alta demanda) e não reguladas(baixa Demanda)</h3>
+                <h3 class="subsection-title">Inserção de Primeira Consulta Especialidades reguladas(alta demanda) e não reguladas(baixa Demanda)</h3>
                 
                 <div class="grid-container">
                     <div class="grid-item">
-                        <h4 class="font-bold text-blue-600">Alta Demanda</h4>
-                        <p class="text-gray-700">Encaminhar para o CEAPS/Central de Marcação de consultas, especialidade deve ser regulada pelo médico regulador, verificar se a guia está lançada no sistema antes de enviar.</p>
+                        <h4>Alta Demanda</h4>
+                        <p>Encaminhar para o CEAPS/Central de Marcação de consultas, especialidade deve ser regulada pelo médico regulador, verificar se a guia está lançada no sistema antes de enviar.</p>
                     </div>
                     <div class="grid-item">
-                        <h4 class="font-bold text-blue-600">Baixa Demanda</h4>
-                        <p class="text-gray-700">Caso haja disponibilidade de vagas a Unidade Basica de Saúde pode entrar no sistema e realizar o agendamento.</p>
+                        <h4>Baixa Demanda</h4>
+                        <p>Caso haja disponibilidade de vagas a Unidade Basica de Saúde pode entrar no sistema e realizar o agendamento.</p>
                     </div>
                 </div>
-                <p class="text-gray-700 mt-4">Para Acessar a Lista das Especialidades <a href="#" class="text-red-600 font-bold text-lg hover:underline">Clique Aqui</a></p>
+                <p>Para Acessar a Lista das Especialidades <a href="#" style="color: #e74c3c; font-weight: bold;">Clique Aqui</a></p>
 
-                <h3 class="subsection-title text-xl font-semibold mb-4">Cancelamentos - Consultas Especializadas</h3>
-                <h4 class="font-bold text-blue-600">Cancelamentos Primeira Consulta</h4>
-                <p class="text-gray-700">Os cancelamentos devem ser realizados pelo assistente administrativo da unidade de saúde por meio do sistema Vivver. <strong>Observação:</strong> É essencial manter a priorização da guia antes do cancelamento.</p>
-                <p class="text-gray-700">Para remarcações a solicitação deverá ser enviada por e-mail à Central de Marcação de Consultas (CMC ), com a justificativa do cancelamento. A CMC será responsável pela inserção do paciente na fila de espera.</p>
+                <h3 class="subsection-title">Cancelamentos - Consultas Especializadas</h3>
+                <h4 style="color: #667eea; font-weight: 600;">Cancelamentos Primeira Consulta</h4>
+                <p>Os cancelamentos devem ser realizados pelo assistente administrativo da unidade de saúde por meio do sistema Vivver. <strong>Observação:</strong> É essencial manter a priorização da guia antes do cancelamento.</p>
+                <p>Para remarcações a solicitação deverá ser enviada por e-mail à Central de Marcação de Consultas (CMC ), com a justificativa do cancelamento. A CMC será responsável pela inserção do paciente na fila de espera.</p>
 
-                <h3 class="subsection-title text-xl font-semibold mb-4">Inserção de Retornos</h3>
-                <h4 class="font-bold text-blue-600">Solicitações de Retornos para Médicos – CCE Ressaca</h4>
-                <p class="text-gray-700">Agendamentos podem ser solicitados via WhatsApp telefone: 3394-7213.</p>
+                <h3 class="subsection-title">Inserção de Retornos</h3>
+                <h4 style="color: #667eea; font-weight: 600;">Solicitações de Retornos para Médicos – CCE Ressaca</h4>
+                <p>Agendamentos podem ser solicitados via WhatsApp telefone: 3394-7213.</p>
 
-                <h4 class="font-bold text-blue-600">Solicitações de Retorno para o CISMEP e Iria Diniz:</h4>
-                <p class="text-gray-700">Assistente Administrativo da Unidade básica de Saúde insere a solicitação no sistema Vivver.</p>
+                <h4 style="color: #667eea; font-weight: 600;">Solicitações de Retorno para o CISMEP e Iria Diniz:</h4>
+                <p>Assistente Administrativo da Unidade básica de Saúde insere a solicitação no sistema Vivver.</p>
 
-                <h4 class="font-bold text-blue-600">Retornos com exames prontos:</h4>
-                <p class="text-gray-700">Encaminhar solicitação por email para a central de marcação de consultas, informando que os mesmos foram realizados. Email: cmceldorado@gmail.com.</p>
+                <h4 style="color: #667eea; font-weight: 600;">Retornos com exames prontos:</h4>
+                <p>Encaminhar solicitação por email para a central de marcação de consultas, informando que os mesmos foram realizados. Email: cmceldorado@gmail.com.</p>
 
-                <h4 class="font-bold text-blue-600">Retornos para Médicos Fora da Rede:</h4>
-                <p class="text-gray-700">As solicitações devem ser encaminhados por e-mail para Central de Marcação de Consultas realizar a inserção no sistema. Email: cmceldorado@gmail.com</p>
+                <h4 style="color: #667eea; font-weight: 600;">Retornos para Médicos Fora da Rede:</h4>
+                <p>As solicitações devem ser encaminhados por e-mail para Central de Marcação de Consultas realizar a inserção no sistema. Email: cmceldorado@gmail.com</p>
 
-                <h4 class="font-bold text-blue-600">Retornos de Colposcopia Dra. Ivana Vilela:</h4>
-                <p class="text-gray-700">Assistente Administrativo solicita entrando em contato pelo Wattsapp.</p>
-                <p class="text-gray-700">Telefone: 99257-2517 (Flores do Iria) Agendamentos e esclarecimentos de dúvidas.</p>
+                <h4 style="color: #667eea; font-weight: 600;">Retornos de Colposcopia Dra. Ivana Vilela:</h4>
+                <p>Assistente Administrativo solicita entrando em contato pelo Wattsapp.</p>
+                <p>Telefone: 99257-2517 (Flores do Iria) Agendamentos e esclarecimentos de dúvidas.</p>
             </div>
         </div>
 
@@ -294,8 +526,8 @@
                 <span>Fluxos Específicos</span>
             </div>
             <div class="section-card-content">
-                <h3 class="subsection-title text-xl font-semibold mb-4">Pré-natal de Alto Risco</h3>
-                <ul class="list-disc ml-5 text-gray-700">
+                <h3 class="subsection-title">Pré-natal de Alto Risco</h3>
+                <ul>
                     <li>O profissional de nível superior deverá inserir a solicitação com a justificativa no sistema Vivver.</li>
                     <li>A guia deverá ser arquivada na unidade de saúde para monitoramento até o agendamento.</li>
                     <li>A unidade de básica de saúde será responsável por monitorar o status da solicitação no sistema, garantindo que não fique pendente.</li>
@@ -304,18 +536,20 @@
                     <li>Caso ocorram pendências, a UBS deverá verificar e resolver rapidamente, sendo a tarefa exclusiva dos profissionais de nível superior.</li>
                 </ul>
 
-                <h3 class="subsection-title text-xl font-semibold mb-4">Sangramento Uterino Anormal</h3>
-                <p class="text-gray-700">O procedimento é semelhante ao do pré-natal de alto risco: o profissional de nível superior insere a solicitação com justificativa no Vivver, arquiva a guia e a unidade de saúde acompanha para garantir que não haja pendências.</p>
+                <h3 class="subsection-title">Sangramento Uterino Anormal</h3>
+                <p>O procedimento é semelhante ao do pré-natal de alto risco: o profissional de nível superior insere a solicitação com justificativa no Vivver, arquiva a guia e a unidade de saúde acompanha para garantir que não haja pendências.</p>
 
-                <h3 class="subsection-title text-xl font-semibold mb-4">Acupuntura</h3>
-                <ul class="list-disc ml-5 text-gray-700">
+                <h3 class="subsection-title">Acupuntura</h3>
+                <ul>
                     <li>O profissional de nível superior deverá realizar uma solicitação com justificativa no sistema Viver e arquivar um guia para monitoramento.</li>
                     <li>A unidade básica de saúde acompanha a solicitação para evitar pendências.</li>
                     <li>A UBS receberá relatório, via email e impresso via malote informando os dados e os locais dos atendimentos.</li>
                     <li>O assistente administrativo deverá imprimir o agendamento, anexá-lo à guia e entregar ao paciente.</li>
                     <li>Pendências devem ser verificadas e solucionadas diariamente pela UBS, exclusivamente por profissionais de nível superior.</li>
                 </ul>
-                <p class="text-gray-700 note"><strong>Ressalva:</strong> Solicitações efetuadas por profissionais externos, as mesmas podem ser inseridas pelo assistente administrativo, desde que a guia seja anexada para regulação.</p>
+                <div class="highlight-box">
+                    <strong>Ressalva:</strong> Solicitações efetuadas por profissionais externos, as mesmas podem ser inseridas pelo assistente administrativo, desde que a guia seja anexada para regulação.
+                </div>
             </div>
         </div>
 
@@ -325,14 +559,14 @@
                 <span>Orientações de Fisioterapia</span>
             </div>
             <div class="section-card-content">
-                <h3 class="subsection-title text-xl font-semibold mb-4">Fisioterapia Geral</h3>
-                <p class="text-gray-700">Os agendamentos devem ser feitos pela UBS via sistema Vivver. Caso não haja vagas no distrito, a UBS pode agendar em outros distritos, desde que o paciente concorde com o local.</p>
+                <h3 class="subsection-title">Fisioterapia Geral</h3>
+                <p>Os agendamentos devem ser feitos pela UBS via sistema Vivver. Caso não haja vagas no distrito, a UBS pode agendar em outros distritos, desde que o paciente concorde com o local.</p>
 
-                <h3 class="subsection-title text-xl font-semibold mb-4">Fisioterapia Buco-Maxilo</h3>
-                <p class="text-gray-700">A UBS é responsável por acessar o sistema Vivver e agendar para a clínica Fisiovida.</p>
+                <h3 class="subsection-title">Fisioterapia Buco-Maxilo</h3>
+                <p>A UBS é responsável por acessar o sistema Vivver e agendar para a clínica Fisiovida.</p>
 
-                <h3 class="subsection-title text-xl font-semibold mb-4">Fisioterapia Geniturinária (Pélvica)</h3>
-                <p class="text-gray-700">O assistente administrativo encaminha o pedido ao setor de reabilitação para dar as tratativas. Todos os atendimentos são realizados no CCE Iria Diniz.</p>
+                <h3 class="subsection-title">Fisioterapia Geniturinária (Pélvica)</h3>
+                <p>O assistente administrativo encaminha o pedido ao setor de reabilitação para dar as tratativas. Todos os atendimentos são realizados no CCE Iria Diniz.</p>
             </div>
         </div>
 
@@ -342,15 +576,50 @@
                 <span>Radiografias</span>
             </div>
             <div class="section-card-content">
-                <h3 class="subsection-title text-xl font-semibold mb-4">Radiografia Simples</h3>
-                <h4 class="font-bold text-blue-600">Com laudo:</h4>
-                <p class="text-gray-700">As UPAS e o CAE Iria Diniz disponibilizam RX simples com laudo.</p>
+                <h3 class="subsection-title">Radiografia Simples</h3>
+                <h4 style="color: #43e97b; font-weight: 600;">Com laudo:</h4>
+                <p>As UPAS e o CAE Iria Diniz disponibilizam RX simples com laudo.</p>
 
-                <h4 class="font-bold text-blue-600">Sem laudo:</h4>
-                <p class="text-gray-700">A Unidade básica de saúde agenda no sistema os agendamentos também podem ser marcados para a UPA.</p>
+                <h4 style="color: #43e97b; font-weight: 600;">Sem laudo:</h4>
+                <p>A Unidade básica de saúde agenda no sistema os agendamentos também podem ser marcados para a UPA.</p>
 
-                <h3 class="subsection-title text-xl font-semibold mb-4">Radiografia com Preparo, Panorâmica ou com Carga</h3>
-                <p class="text-gray-700">Enviar para o Ceaps/setor de Média Complexidade.</p>
+                <h3 class="subsection-title">Radiografia com Preparo, Panorâmica ou com Carga</h3>
+                <p>Enviar para o Ceaps/setor de Média Complexidade.</p>
+            </div>
+        </div>
+
+        <div class="section-card">
+            <div class="section-card-header">
+                <i class="fas fa-female"></i>
+                <span>Mamografia</span>
+            </div>
+            <div class="section-card-content">
+                <h3 class="subsection-title">Mamografia Bilateral de Rastreamento</h3>
+                <ul>
+                    <li><strong>Critério:</strong> Mulheres de 50 a 69 anos (periodicidade bienal).</li>
+                    <li><strong>Período de carência:</strong> 2 anos.</li>
+                    <li><strong>Mamografia de rastreamento:</strong> agendada pela unidade de saúde.</li>
+                </ul>
+
+                <h3 class="subsection-title">Mamografia Diagnóstica e de Risco Elevado</h3>
+                <p>Guia encaminha para a Diretoria de Regulação /Ceaps</p>
+                <p><strong>Faixas etárias RISCO ELEVADO:</strong> A PARTIR DE 35 ANOS DE IDADE.</p>
+                <p><strong>Faixas Etárias Diagnóstica:</strong> Qualquer idade.</p>
+            </div>
+        </div>
+
+        <div class="section-card">
+            <div class="section-card-header">
+                <i class="fas fa-baby"></i>
+                <span>Ultrassonografia</span>
+            </div>
+            <div class="section-card-content">
+                <h3 class="subsection-title">Ultrassonografia Obstétrica</h3>
+                <ul>
+                    <li><strong>Critério:</strong> Após 22 semanas de gestação.</li>
+                    <li><strong>Carência:</strong> Três meses.</li>
+                    <li><strong>Observação:</strong> Pode ser feito até dois pedidos entre 28 e 32 semanas.</li>
+                </ul>
             </div>
         </div>
 
@@ -360,101 +629,149 @@
                 <span>Orientações Diversas</span>
             </div>
             <div class="section-card-content">
-                <h3 class="subsection-title text-xl font-semibold mb-4">Infectologia Infantil</h3>
-                <p class="text-gray-700">Os Agendamentos devem ser realizados via contato telefônico no SAE Contagem:</p>
-                <p class="text-gray-700">Contatos: 3058-1597 ou via email: saecontagem@yahoo.com</p>
+                <h3 class="subsection-title">Infectologia Infantil</h3>
+                <p>Os Agendamentos devem ser realizados via contato telefônico no SAE Contagem:</p>
+                <p>Contatos: 3058-1597 ou via email: saecontagem@yahoo.com</p>
 
-                <h3 class="subsection-title text-xl font-semibold mb-4">Mamografia Bilateral de Rastreamento</h3>
-                <ul class="list-disc ml-5 text-gray-700">
-                    <li><strong>Critério:</strong> Mulheres de 50 a 69 anos (periodicidade bienal).</li>
-                    <li><strong>Período de carência:</strong> 2 anos.</li>
-                    <li><strong>Mamografia de rastreamento:</strong> agendada pela unidade de saúde.</li>
-                </ul>
-                <p class="text-gray-700"><strong>Mamografia diagnóstica e de risco elevado:</strong></p>
-                <p class="text-gray-700">Guia encaminha para a Diretoria de Regulação /Ceaps</p>
-                <p class="text-gray-700"><strong>Faixas etárias RISCO ELEVADO:</strong> A PARTIR DE 35 ANOS DE IDADE.</p>
-                <p class="text-gray-700"><strong>Faixas Etarias Diagnostica:</strong> Qualquer idade.</p>
+                <h3 class="subsection-title">Vasectomia e Postectomia</h3>
+                <p>Telefone: 3198-6755</p>
+                <p>Necessária emissão de AIH, conforme NT das consultas especializadas.</p>
 
-                <h3 class="subsection-title text-xl font-semibold mb-4">Ultrassonografia Obstétrica</h3>
-                <ul class="list-disc ml-5 text-gray-700">
-                    <li><strong>Critério:</strong> Após 22 semanas de gestação.</li>
-                    <li><strong>Carência:</strong> Três meses.</li>
-                    <li><strong>Observação:</strong> Pode ser feito até dois pedidos entre 28 e 32 semanas.</li>
-                </ul>
+                <h3 class="subsection-title">Salpingo (Laqueadura)</h3>
+                <p>Telefone: 3198-6755</p>
+                <p>Paciente deverá pegar a AIH em até 36 semanas e levar ao HMC para agendamento.</p>
 
-                <h3 class="subsection-title text-xl font-semibold mb-4">Vasectomia e Postectomia</h3>
-                <p class="text-gray-700">Telefone: 3198-6755</p>
-                <p class="text-gray-700">Necessária emissão de AIH, conforme NT das consultas especializadas.</p>
+                <h3 class="subsection-title">Oncologia</h3>
+                <p>Telefone: 3198-6750</p>
+                <p>Paciente deverá levar os papéis direto ao Ceaps.</p>
+                <p>Levar xerox de todos os documentos, laudo da biópsia e sumário de alta (se houver).</p>
 
-                <h3 class="subsection-title text-xl font-semibold mb-4">Salpingo (Laqueadura)</h3>
-                <p class="text-gray-700">Telefone: 3198-6755</p>
-                <p class="text-gray-700">Paciente deverá pegar a AIH em até 36 semanas e levar ao HMC para agendamento.</p>
+                <h3 class="subsection-title">Cirurgia Cardiovascular</h3>
+                <p>Telefone: 3198-6774</p>
+                <p>Não disponível em BH ou Contagem (adulto/infantil).</p>
+                <p>Necessária emissão de AIH pelo cardiologista.</p>
 
-                <h3 class="subsection-title text-xl font-semibold mb-4">Oncologia</h3>
-                <p class="text-gray-700">Telefone: 3198-6750</p>
-                <p class="text-gray-700">Paciente deverá levar os papéis direto ao Ceaps.</p>
-                <p class="text-gray-700">Levar xerox de todos os documentos, laudo da biópsia e sumário de alta (se houver).</p>
-
-                <h3 class="subsection-title text-xl font-semibold mb-4">Cirurgia Cardiovascular</h3>
-                <p class="text-gray-700">Telefone: 3198-6774</p>
-                <p class="text-gray-700">Não disponível em BH ou Contagem (adulto/infantil).</p>
-                <p class="text-gray-700">Necessária emissão de AIH pelo cardiologista.</p>
-
-                <h3 class="subsection-title text-xl font-semibold mb-4">Exames Laboratoriais</h3>
-                <p class="text-gray-700">Profissional médico da unidade de Saúde poderá realizar até 11 pedidos, desde que não passem por regulação.</p>
-                <p class="text-gray-700">Se for solicitado acima de 11 exames o mesmo deverá ser autorizado pelo Ceaps.</p>
-                <p class="text-gray-700">Gentileza verificar orientações na NT de Exames laboratoriais.</p>
+                <h3 class="subsection-title">Exames Laboratoriais</h3>
+                <p>Profissional médico da unidade de Saúde poderá realizar até 11 pedidos, desde que não passem por regulação.</p>
+                <p>Se for solicitado acima de 11 exames o mesmo deverá ser autorizado pelo Ceaps.</p>
+                <p>Gentileza verificar orientações na NT de Exames laboratoriais.</p>
             </div>
         </div>
 
         <div class="footer">
-            <i class="fas fa-hospital text-3xl"></i>
+            <i class="fas fa-hospital"></i>
             <p><strong>Sistema de Agendamento e Procedimentos</strong></p>
             <p>Página criada por Ana P. A. Silva</p>
             <p>Suporte Vivver - Distrito Sanitário Eldorado</p>
-            <p class="text-sm mt-2">© 2024 - Todos os direitos reservados</p>
+            <p style="font-size: 0.9rem; margin-top: 15px; opacity: 0.8;">© 2024 - Todos os direitos reservados</p>
         </div>
     </div>
 
     <script>
-        // Funcionalidade de pesquisa
+        // Funcionalidade de pesquisa melhorada
         document.getElementById('searchButton').addEventListener('click', function() {
-            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            performSearch();
+        });
+
+        document.getElementById('clearSearchButton').addEventListener('click', function() {
+            clearSearch();
+        });
+
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+
+        function performSearch() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase().trim();
             const content = document.querySelector('.container');
             
             if (searchTerm) {
                 // Remove highlights anteriores
-                content.innerHTML = content.innerHTML.replace(/<mark>/g, '').replace(/<\/mark>/g, '');
+                clearHighlights();
                 
                 // Adiciona highlights
-                const regex = new RegExp(`(${searchTerm})`, 'gi');
-                content.innerHTML = content.innerHTML.replace(regex, '<mark>$1</mark>');
+                const regex = new RegExp(`(${escapeRegExp(searchTerm)})`, 'gi');
+                highlightText(content, regex);
+                
+                // Scroll para o primeiro resultado
+                const firstHighlight = document.querySelector('mark');
+                if (firstHighlight) {
+                    firstHighlight.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
             }
-        });
+        }
 
-        document.getElementById('clearSearchButton').addEventListener('click', function() {
+        function clearSearch() {
             document.getElementById('searchInput').value = '';
-            const content = document.querySelector('.container');
-            content.innerHTML = content.innerHTML.replace(/<mark>/g, '').replace(/<\/mark>/g, '');
+            clearHighlights();
+        }
+
+        function clearHighlights() {
+            const highlights = document.querySelectorAll('mark');
+            highlights.forEach(mark => {
+                const parent = mark.parentNode;
+                parent.replaceChild(document.createTextNode(mark.textContent), mark);
+                parent.normalize();
+            });
+        }
+
+        function highlightText(element, regex) {
+            const walker = document.createTreeWalker(
+                element,
+                NodeFilter.SHOW_TEXT,
+                null,
+                false
+            );
+
+            const textNodes = [];
+            let node;
+            while (node = walker.nextNode()) {
+                if (node.parentElement.tagName !== 'SCRIPT' && 
+                    node.parentElement.tagName !== 'STYLE' &&
+                    node.parentElement.tagName !== 'MARK') {
+                    textNodes.push(node);
+                }
+            }
+
+            textNodes.forEach(textNode => {
+                const text = textNode.textContent;
+                if (regex.test(text)) {
+                    const highlightedHTML = text.replace(regex, '<mark>$1</mark>');
+                    const wrapper = document.createElement('div');
+                    wrapper.innerHTML = highlightedHTML;
+                    
+                    while (wrapper.firstChild) {
+                        textNode.parentNode.insertBefore(wrapper.firstChild, textNode);
+                    }
+                    textNode.parentNode.removeChild(textNode);
+                }
+            });
+        }
+
+        function escapeRegExp(string) {
+            return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        }
+
+        // Smooth scroll para links internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
         });
 
-        // Pesquisa ao pressionar Enter
-        document.getElementById('searchInput').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                document.getElementById('searchButton').click();
-            }
+        // Adiciona efeito de loading
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '1';
         });
-
-        // Adiciona estilo para os highlights
-        const style = document.createElement('style');
-        style.textContent = `
-            mark {
-                background-color: yellow;
-                padding: 2px 4px;
-                border-radius: 3px;
-            }
-        `;
-        document.head.appendChild(style);
     </script>
 </body>
 </html>
