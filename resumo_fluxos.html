@@ -1,4 +1,6 @@
-<!DOCTYPE html><html lang="pt-BR"><head>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resumo do Fluxo de Marcação - Sistema de Agendamento/ Página Criada por Ana P. A. Silva/Suporte Vivver/Distrito Sanitário Eldorado</title>
@@ -10,7 +12,7 @@
             background-color: #f0f2f5;
             color: #333;
             line-height: 1.6;
-            opacity: 0;
+            /* Removido opacity: 0 que estava tornando a página invisível */
         }
 
         .container {
@@ -19,7 +21,7 @@
             padding: 20px;
             background-color: #fff;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1 );
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
         h1, h2, h3, h4 {
@@ -192,18 +194,40 @@
         .footer i {
             margin-bottom: 10px;
         }
+
+        /* Responsividade para dispositivos móveis */
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .header-bar {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            
+            .search-bar {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .search-bar input {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="header-bar bg-gradient-to-r from-blue-600 to-blue-800 text-white p-4 flex justify-between items-center shadow-lg">
         <a href="index.html" class="text-white hover:text-blue-200 transition duration-300 ease-in-out text-lg font-semibold"><i class="fas fa-home mr-2"></i>Tela Inicial</a>
         <span class="text-xl font-bold">Resumo do Fluxo de Marcação</span>
-        <span class="text-sm text-blue-200 text-right">Sistema de Agendamento e Procedimentos  
-Página criada por Ana P. A. Silva/Suporte Vivver/Distrito Sanitário Eldorado</span>
+        <span class="text-sm text-blue-200 text-right">Sistema de Agendamento e Procedimentos<br>Página criada por Ana P. A. Silva/Suporte Vivver/Distrito Sanitário Eldorado</span>
     </div>
 
     <div class="search-bar">
         <input type="text" id="searchInput" placeholder="Pesquisar na página...">
+        <button id="searchButton">Pesquisar</button>
         <button id="clearSearchButton">Limpar</button>
     </div>
 
@@ -314,6 +338,24 @@ Página criada por Ana P. A. Silva/Suporte Vivver/Distrito Sanitário Eldorado</
 
         <div class="section-card">
             <div class="section-card-header">
+                <i class="fas fa-x-ray"></i>
+                <span>Radiografias</span>
+            </div>
+            <div class="section-card-content">
+                <h3 class="subsection-title text-xl font-semibold mb-4">Radiografia Simples</h3>
+                <h4 class="font-bold text-blue-600">Com laudo:</h4>
+                <p class="text-gray-700">As UPAS e o CAE Iria Diniz disponibilizam RX simples com laudo.</p>
+
+                <h4 class="font-bold text-blue-600">Sem laudo:</h4>
+                <p class="text-gray-700">A Unidade básica de saúde agenda no sistema os agendamentos também podem ser marcados para a UPA.</p>
+
+                <h3 class="subsection-title text-xl font-semibold mb-4">Radiografia com Preparo, Panorâmica ou com Carga</h3>
+                <p class="text-gray-700">Enviar para o Ceaps/setor de Média Complexidade.</p>
+            </div>
+        </div>
+
+        <div class="section-card">
+            <div class="section-card-header">
                 <i class="fas fa-medkit"></i>
                 <span>Orientações Diversas</span>
             </div>
@@ -340,146 +382,79 @@ Página criada por Ana P. A. Silva/Suporte Vivver/Distrito Sanitário Eldorado</
                     <li><strong>Observação:</strong> Pode ser feito até dois pedidos entre 28 e 32 semanas.</li>
                 </ul>
 
-                <h3 class="subsection-title text-xl font-semibold mb-4">Radiografia</h3>
-                <h4 class="font-bold text-blue-600">Com laudo:</h4>
-                <p class="text-gray-700">As UPAS e o CAE Iria Diniz disponibilizam RX simples com laudo.</p>
+                <h3 class="subsection-title text-xl font-semibold mb-4">Vasectomia e Postectomia</h3>
+                <p class="text-gray-700">Telefone: 3198-6755</p>
+                <p class="text-gray-700">Necessária emissão de AIH, conforme NT das consultas especializadas.</p>
 
-                <h4 class="font-bold text-blue-600">Sem laudo:</h4>
-                <p class="text-gray-700">A Unidade básica de saúde agenda no sistema os agendamentos também podem ser marcados para a UPA.</p>
+                <h3 class="subsection-title text-xl font-semibold mb-4">Salpingo (Laqueadura)</h3>
+                <p class="text-gray-700">Telefone: 3198-6755</p>
+                <p class="text-gray-700">Paciente deverá pegar a AIH em até 36 semanas e levar ao HMC para agendamento.</p>
 
-                <h3 class="subsection-title text-xl font-semibold mb-4">Radiografia com Preparo, Panorâmica ou com Carga</h3>
-                <p class="text-gray-700">Enviar para o Ceaps/setor de Média Complexidade para agendamento.</p>
-                <p class="text-gray-700">Radiografias solicitadas por órgãos fora de Contagem que necessitam de imagem também devem ser enviadas para Média Complexidade.</p>
-                <p class="text-gray-700"><strong>Observação:</strong> O agendamento de RX deve seguir a regionalização; na ausência de vagas nas UPAs, agendar no CAE Iria Diniz ou CDI.</p>
+                <h3 class="subsection-title text-xl font-semibold mb-4">Oncologia</h3>
+                <p class="text-gray-700">Telefone: 3198-6750</p>
+                <p class="text-gray-700">Paciente deverá levar os papéis direto ao Ceaps.</p>
+                <p class="text-gray-700">Levar xerox de todos os documentos, laudo da biópsia e sumário de alta (se houver).</p>
+
+                <h3 class="subsection-title text-xl font-semibold mb-4">Cirurgia Cardiovascular</h3>
+                <p class="text-gray-700">Telefone: 3198-6774</p>
+                <p class="text-gray-700">Não disponível em BH ou Contagem (adulto/infantil).</p>
+                <p class="text-gray-700">Necessária emissão de AIH pelo cardiologista.</p>
+
+                <h3 class="subsection-title text-xl font-semibold mb-4">Exames Laboratoriais</h3>
+                <p class="text-gray-700">Profissional médico da unidade de Saúde poderá realizar até 11 pedidos, desde que não passem por regulação.</p>
+                <p class="text-gray-700">Se for solicitado acima de 11 exames o mesmo deverá ser autorizado pelo Ceaps.</p>
+                <p class="text-gray-700">Gentileza verificar orientações na NT de Exames laboratoriais.</p>
             </div>
         </div>
 
-        <div class="section-card">
-            <div class="section-card-header">
-                <i class="fas fa-random"></i>
-                <span>Outros Fluxos</span>
-            </div>
-            <div class="section-card-content">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    <div class="bg-white p-6 rounded-lg border border-gray-200 flex flex-col justify-between">
-                        <h3 class="subsection-title text-xl font-semibold mb-4 text-blue-800">Pé Diabético</h3>
-                        <p class="text-gray-700">Encaminhamentos para pé diabético devem ser agendados direto no sistema Vivver pela unidade básica de Saúde.</p>
-                    </div>
-                    
-                    <div class="bg-white p-6 rounded-lg border border-gray-200 flex flex-col justify-between">
-                        <h3 class="subsection-title text-xl font-semibold mb-4 text-blue-800">Gasometria e Espermograma</h3>
-                        <p class="text-gray-700">O exame é realizado pelo laboratório de coleta mas o pedido deve ser separado dos exames de sangue.</p>
-                    </div>
-                    
-                    <div class="bg-white p-6 rounded-lg border border-gray-200 flex flex-col justify-between">
-                        <h3 class="subsection-title text-xl font-semibold mb-4 text-blue-800">Risco Cirúrgico Odontológico</h3>
-                        <p class="text-gray-700">Clínico da unidade deve realizar o risco.</p>
-                        <p class="text-gray-700">Caso não esteja de acordo, encaminhar guia ao cardiologista explicando o motivo.</p>
-                    </div>
-                    
-                    <div class="bg-white p-6 rounded-lg border border-gray-200 flex flex-col justify-between">
-                        <h3 class="subsection-title text-xl font-semibold mb-4 text-blue-800">Estudo Urodinamico</h3>
-                        <p class="text-gray-700">Assim que chegar o agendmento do exame (estudo urodinamico), informar para o enfermeiro da equipe para verificar os pacientes que utiliza sonda vesical de demora (Fley).</p>
-                    </div>
-                    
-                    <div class="bg-white p-6 rounded-lg border border-gray-200 flex flex-col justify-between">
-                        <h3 class="subsection-title text-xl font-semibold mb-4 text-blue-800">VASECTOMIA E POSTECTOMIA</h3>
-                        <p class="text-gray-700">Telefone: 3198-6755</p>
-                        <p class="text-gray-700">Necessária emissão de AIH, conforme NT das consultas especializadas.</p>
-                    </div>
-                    
-                    <div class="bg-white p-6 rounded-lg border border-gray-200 flex flex-col justify-between">
-                        <h3 class="subsection-title text-xl font-semibold mb-4 text-blue-800">SALPINGO (LAQUEADURA)</h3>
-                        <p class="text-gray-700">Telefone: 3198-6755</p>
-                        <p class="text-gray-700">Paciente deverá pegar a AIH em até 36 semanas e levar ao HMC para agendamento.</p>
-                    </div>
-                    
-                    <div class="bg-white p-6 rounded-lg border border-gray-200 flex flex-col justify-between">
-                        <h3 class="subsection-title text-xl font-semibold mb-4 text-blue-800">ONCOLOGIA</h3>
-                        <p class="text-gray-700">Telefone: 3198-6750</p>
-                        <p class="text-gray-700">Paciente deverá levar os papéis direto ao Ceaps.</p>
-                        <p class="text-gray-700">Levar xerox de todos os documentos, laudo da biópsia e sumário de alta (se houver).</p>
-                    </div>
-                    
-                    <div class="bg-white p-6 rounded-lg border border-gray-200 flex flex-col justify-between">
-                        <h3 class="subsection-title text-xl font-semibold mb-4 text-blue-800">CIRURGIA CARDIOVASCULAR</h3>
-                        <p class="text-gray-700">Telefone: 3198-6774</p>
-                        <p class="text-gray-700">Não disponível em BH ou Contagem (adulto/infantil).</p>
-                        <p class="text-gray-700">Necessária emissão de AIH pelo cardiologista.</p>
-                    </div>
-                    
-                    <div class="bg-white p-6 rounded-lg border border-gray-200 flex flex-col justify-between">
-                        <h3 class="subsection-title text-xl font-semibold mb-4 text-blue-800">EXAMES LABORATORIAIS</h3>
-                        <p class="text-gray-700">Profissional médico da unidade de Saúde poderá realizar até 11 pedidos, desde que não passem por regulação.</p>
-                        <p class="text-gray-700">Se for solicitado acima de 11 exames o mesmo deverá ser autorizado pelo Ceaps.</p>
-                        <p class="text-gray-700">Gentileza verificar orientações na NT de Exames laboratoriais.</p>
-                    </div>
-                </div>
-            </div>
+        <div class="footer">
+            <i class="fas fa-hospital text-3xl"></i>
+            <p><strong>Sistema de Agendamento e Procedimentos</strong></p>
+            <p>Página criada por Ana P. A. Silva</p>
+            <p>Suporte Vivver - Distrito Sanitário Eldorado</p>
+            <p class="text-sm mt-2">© 2024 - Todos os direitos reservados</p>
         </div>
-
-        <!-- Footer -->
-        <footer class="bg-gray-50 rounded-lg p-8 text-center border-t-4 border-blue-500">
-            <div class="mb-4">
-                <i class="fas fa-info-circle text-blue-500 text-2xl"></i>
-            </div>
-            <p class="text-gray-600 text-lg font-medium">
-                Sistema de Fluxo de Marcação - Consultas Especializadas e Exames
-            </p>
-            <p class="text-gray-500 text-sm mt-2">
-                Documento de orientação para unidades básicas de saúde
-            </p>
-        </footer>
     </div>
 
     <script>
-        // Smooth scrolling for better navigation
-        document.querySelectorAll(\'a[href^="#"]\').forEach(anchor => {
-            anchor.addEventListener(\'click\', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute(\'href\')).scrollIntoView({
-                    behavior: \'smooth\'
-                });
-            });
+        // Funcionalidade de pesquisa
+        document.getElementById('searchButton').addEventListener('click', function() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const content = document.querySelector('.container');
+            
+            if (searchTerm) {
+                // Remove highlights anteriores
+                content.innerHTML = content.innerHTML.replace(/<mark>/g, '').replace(/<\/mark>/g, '');
+                
+                // Adiciona highlights
+                const regex = new RegExp(`(${searchTerm})`, 'gi');
+                content.innerHTML = content.innerHTML.replace(regex, '<mark>$1</mark>');
+            }
         });
 
-        // Add loading animation for better UX
-        window.addEventListener(\'load\', function() {
-            document.body.style.opacity = \'0\';
-            document.body.style.transition = \'opacity 0.5s ease-in-out\';
-            setTimeout(() => {
-                document.body.style.opacity = \'1\';
-            }, 100);
+        document.getElementById('clearSearchButton').addEventListener('click', function() {
+            document.getElementById('searchInput').value = '';
+            const content = document.querySelector('.container');
+            content.innerHTML = content.innerHTML.replace(/<mark>/g, '').replace(/<\/mark>/g, '');
         });
 
-        // Search functionality
-        const searchInput = document.getElementById(\'searchInput\');
-        const clearSearchButton = document.getElementById(\'clearSearchButton\');
-        const sections = document.querySelectorAll(\'section\');
-
-        searchInput.addEventListener(\'keyup\', function() {
-            const searchTerm = searchInput.value.toLowerCase();
-            sections.forEach(section => {
-                const text = section.textContent.toLowerCase();
-                if (text.includes(searchTerm)) {
-                    section.style.display = \'\';
-                } else {
-                    section.style.display = \'none\';
-                }
-            });
+        // Pesquisa ao pressionar Enter
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                document.getElementById('searchButton').click();
+            }
         });
 
-        clearSearchButton.addEventListener(\'click\', function() {
-            searchInput.value = \'\';
-            sections.forEach(section => {
-                section.style.display = \'\';
-            });
-        });
+        // Adiciona estilo para os highlights
+        const style = document.createElement('style');
+        style.textContent = `
+            mark {
+                background-color: yellow;
+                padding: 2px 4px;
+                border-radius: 3px;
+            }
+        `;
+        document.head.appendChild(style);
     </script>
-
-
-
-
-
-
-</body></html>
+</body>
+</html>
