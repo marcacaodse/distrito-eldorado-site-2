@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Distrito Sanitário Eldorado - Exames Oftalmológicos</title>
+    <title>Distrito Sanitário Eldorado - Resumo do fluco de Exames Oftalmológicos</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
@@ -26,16 +26,15 @@
                 <a href="https://marcacaodse.github.io/distrito-eldorado-site-2/index.html" class="bg-black text-white font-bold px-4 py-2 rounded shadow hover:bg-gray-800 transition duration-300">Tela Inicial</a>
             </div>
             <div class="text-center">
-                <h1 class="text-3xl font-bold">Distrito Sanitário Eldorado - Resumo dos Exames Oftalmológicos</h1>
-                <p class="text-lg">Relação do fluxo de Exames Oftalmológicos</p>
+                <h1 class="text-3xl font-bold">Distrito Sanitário Eldorado - Resumo do fluxo de Exames Oftalmológicos</h1>
+                <p class="text-lg">Relação dos Exames Oftalmológicos</p>
             </div>
         </div>
     </header>
 
     <!-- Main Content -->
     <div class="container mx-auto mt-8 p-6 bg-white rounded-lg shadow-xl">
-        <h2 class="text-2xl text-gray-700 mb-6 text-center">Relação dofluxo de Exames Oftalmológicos</h2>
-        <p class="text-gray-600 text-center mb-8">Lista completa dos exames oftalmológicos organizados por local de agendamento e disponibilidade</p>
+        <p class="text-gray-600 text-center mb-8">Lista completa de exames oftalmológicos organizados por local de marcação e disponibilidade</p>
         <p class="text-gray-500 text-sm text-center mb-8">Página criada por Ana P. A. Silva/Suporte Vivver/Distrito Eldorado</p>
 
 
@@ -239,6 +238,132 @@
                         <i class="fas fa-eye text-blue-500 mr-2"></i>Topografia Corneana
                     </div>
                     <div class="exam-item bg-gray-50 p-4 rounded-lg border hover:shadow-md transition-shadow">
-                        <i class="fas fa-eye text-blu
-(Content truncated due to size limit. Use line ranges to read in chunks)
-                            
+                        <i class="fas fa-eye text-blue-500 mr-2"></i>Uveíte
+                    </div>
+                    <div class="exam-item bg-gray-50 p-4 rounded-lg border hover:shadow-md transition-shadow">
+                        <i class="fas fa-eye text-blue-500 mr-2"></i>Visão sub-Norma
+                    </div>
+                    <div class="exam-item bg-gray-50 p-4 rounded-lg border hover:shadow-md transition-shadow">
+                        <i class="fas fa-eye text-blue-500 mr-2"></i>Vitrectomia
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-8">
+            <div class="bg-gray-200 p-4 rounded-t-lg">
+                <h2 class="text-2xl font-bold text-gray-800 flex items-center">
+                    <i class="fas fa-exclamation-triangle text-red-500 mr-3"></i>
+                    Sem Prestador
+                </h2>
+            </div>
+            <div class="p-6 bg-white rounded-b-lg shadow-md">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="noProviderGrid">
+                    <div class="exam-item bg-gray-50 p-4 rounded-lg border hover:shadow-md transition-shadow">
+                        <i class="fas fa-exclamation-triangle text-red-500 mr-2"></i>EOG - Eletrooculograma
+                    </div>
+                    <div class="exam-item bg-gray-50 p-4 rounded-lg border hover:shadow-md transition-shadow">
+                        <i class="fas fa-exclamation-triangle text-red-500 mr-2"></i>ERG - Eletrorretinografia
+                    </div>
+                    <div class="exam-item bg-gray-50 p-4 rounded-lg border hover:shadow-md transition-shadow">
+                        <i class="fas fa-exclamation-triangle text-red-500 mr-2"></i>Exerese Calázio
+                    </div>
+                    <div class="exam-item bg-gray-50 p-4 rounded-lg border hover:shadow-md transition-shadow">
+                        <i class="fas fa-exclamation-triangle text-red-500 mr-2"></i>Potencial de Acuidade
+                    </div>
+                    <div class="exam-item bg-gray-50 p-4 rounded-lg border hover:shadow-md transition-shadow">
+                        <i class="fas fa-exclamation-triangle text-red-500 mr-2"></i>Potencial Visual Evocado ou PVE
+                    </div>
+                    <div class="exam-item bg-gray-50 p-4 rounded-lg border hover:shadow-md transition-shadow">
+                        <i class="fas fa-exclamation-triangle text-red-500 mr-2"></i>OCT
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 mt-12 py-8 border-t-4 border-blue-800 no-print">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="text-gray-600 text-sm">
+                <p class="mb-2">Central de Marcação de consultas 3198-6768</p>
+                <p class="mb-2">Agendamento de retornos CCE Ressaca: 3394-7213</p>
+                <p class="mb-2">COLONOSCOPIA/CEAPS 3198-6788</p>
+                <p class="mb-2">OFTALMOLOGIA 3198-6761</p>
+                <p class="mb-2">FLORES DO IRIA 99257-2517</p>
+                <p class="mb-2">Laboratório de Coletas Especiais: END: Rua Antônio Augusto, 115 Bairro Nossa Senhora de Fátima</p>
+                <p class="mt-4 font-semibold">Site criado por Ana P. A. Silva – Suporte Sistema Vivver – Distrito Eldorado</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const searchInput = document.getElementById('searchInput');
+        const clearSearchBtn = document.getElementById('clearSearch');
+        const ceapsGrid = document.getElementById('ceapsGrid');
+        const bhGrid = document.getElementById('bhGrid');
+        const noProviderGrid = document.getElementById('noProviderGrid');
+
+        const ceapsCount = document.getElementById('ceapsCount');
+        const bhCount = document.getElementById('bhCount');
+        const noProviderCount = document.getElementById('noProviderCount');
+
+        const allExams = [];
+
+        function collectExams(grid, type) {
+            Array.from(grid.children).forEach(item => {
+                allExams.push({
+                    element: item,
+                    text: item.textContent.toLowerCase(),
+                    type: type
+                });
+            });
+        }
+
+        collectExams(ceapsGrid, 'ceaps');
+        collectExams(bhGrid, 'bh');
+        collectExams(noProviderGrid, 'noProvider');
+
+        function updateCounts() {
+            const visibleCeaps = allExams.filter(exam => exam.type === 'ceaps' && exam.element.style.display !== 'none').length;
+            const visibleBh = allExams.filter(exam => exam.type === 'bh' && exam.element.style.display !== 'none').length;
+            const visibleNoProvider = allExams.filter(exam => exam.type === 'noProvider' && exam.element.style.display !== 'none').length;
+
+            ceapsCount.textContent = visibleCeaps;
+            bhCount.textContent = visibleBh;
+            noProviderCount.textContent = visibleNoProvider;
+        }
+
+        searchInput.addEventListener('keyup', function() {
+            const searchTerm = searchInput.value.toLowerCase();
+            let hasVisibleResults = false;
+
+            allExams.forEach(exam => {
+                if (exam.text.includes(searchTerm)) {
+                    exam.element.style.display = 'block';
+                    hasVisibleResults = true;
+                } else {
+                    exam.element.style.display = 'none';
+                }
+            });
+
+            updateCounts();
+            clearSearchBtn.style.display = searchTerm ? 'block' : 'none';
+        });
+
+        function clearSearch() {
+            searchInput.value = '';
+            allExams.forEach(exam => {
+                exam.element.style.display = 'block';
+            });
+            updateCounts();
+            clearSearchBtn.style.display = 'none';
+        }
+
+        clearSearchBtn.addEventListener('click', clearSearch);
+
+        // Initial count update
+        updateCounts();
+    </script>
+
+</body></html>
