@@ -27,11 +27,8 @@
             color: white;
             padding: 20px 0;
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
+            /* Removido position: fixed; */
+            /* Removido top, left, right, z-index */
             transition: transform 0.3s ease-in-out;
         }
 
@@ -104,6 +101,8 @@
             margin: 0 auto;
             padding: 20px;
             margin-top: 20px;
+            /* Removido position: fixed; */
+            /* Removido top, left, right, z-index */
         }
 
         .search-box {
@@ -169,7 +168,7 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
-            margin-top: 140px; /* Espaço para o cabeçalho fixo */
+            margin-top: 20px; /* Ajustado para cabeçalho não fixo e search-container fora */
         }
 
         .content-section {
@@ -367,7 +366,7 @@
             }
 
             .container {
-                margin-top: 180px;
+                margin-top: 20px; /* Ajustado para cabeçalho não fixo e search-container fora */
                 padding: 15px;
             }
 
@@ -386,7 +385,7 @@
             }
 
             .container {
-                margin-top: 200px;
+                margin-top: 20px; /* Ajustado para cabeçalho não fixo e search-container fora */
             }
         }
     </style>
@@ -403,22 +402,22 @@
                     <div>Página criada por Ana P. A. Silva</div>
                     <div>Suporte Vivver/Distrito Sanitário Eldorado</div>
                 </div>
-                <a href="#" class="home-button">
+                <a href="https://marcacaodse.github.io/distrito-eldorado-site-2/index.html" class="home-button">
                     <i class="fas fa-home"></i> Tela Inicial
                 </a>
             </div>
         </div>
-        
-        <div class="search-container">
-            <div class="search-box">
-                <input type="text" id="searchInput" class="search-input" placeholder="🔍 Pesquisar na página...">
-                <button id="searchButton" class="search-button">
-                    <i class="fas fa-search"></i> Pesquisar
-                </button>
-                <button id="clearSearchButton" class="clear-button">
-                    <i class="fas fa-times"></i> Limpar
-                </button>
-            </div>
+    </div>
+    
+    <div class="search-container">
+        <div class="search-box">
+            <input type="text" id="searchInput" class="search-input" placeholder="🔍 Pesquisar na página...">
+            <button id="searchButton" class="search-button">
+                <i class="fas fa-search"></i> Pesquisar
+            </button>
+            <button id="clearSearchButton" class="clear-button">
+                <i class="fas fa-times"></i> Limpar
+            </button>
         </div>
     </div>
 
