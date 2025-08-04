@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distrito Sanitário Eldorado - Guia Completo de Contatos</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .section-divider {
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            height: 3px;
+            border-radius: 2px;
+        }
+        .home-button {
+            background-color: #000000; /* Preto */
+            color: white;
+            font-weight: bold;
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .home-button:hover {
+            background-color: #333333; /* Preto mais escuro no hover */
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Header -->
+    <header class="gradient-bg text-white py-8 mb-8">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="index.html" class="home-button">Tela Inicial</a>
+            <div class="text-center flex-grow">
+                <i class="fas fa-hospital-alt text-5xl mb-4"></i>
+                <h1 class="text-4xl font-bold mb-2">Distrito Sanitário Eldorado</h1>
+                <p class="text-xl opacity-90">Guia Completo de Contatos</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="container mx-auto px-6 pb-12">
+        <!-- Distritos Administrativos -->
+        <section class="mb-12">
+            <div class="flex items-center mb-8">
+                <i class="fas fa-building text-3xl text-indigo-600 mr-4"></i>
+                <h2 class="text-3xl font-bold text-gray-800">Distritos Administrativos</h2>
+            </div>
+            <div class="section-divider mb-8"></div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white rounded-lg shadow-lg p-6 border-l-4 border-indigo-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-user-tie text-2xl text-indigo-600 mr-3"></i>
+                        <h3 class="text-lg font-semibold text-gray-800">DISTRITO DIRETORIA</h3>
+                    </div>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>Rua Oliveira 362 industrial Itaú</p>
+                        <p><i class="fas fa-phone mr-2"></i><a href="tel:3911-3145" class="text-indigo-600 hover:underline">3911-3145</a></p>
+                        <p><i class="fas fa-user mr-2"></i>DIREÇÃO WANDHA</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-6 border-l-4 border-indigo-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-user-cog text-2xl text-indigo-600 mr-3"></i>
+                        <h3 class="text-lg font-semibold text-gray-800">DISTRITO ILHA DIRETORIA</h3>
+                    </div>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>Rua Oliveira 362 industrial Itaú</p>
+                        <p><i class="fas fa-phone mr-2"></i><a href="tel:3392-2151" class="text-indigo-600 hover:underline">3392-2151</a></p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-6 border-l-4 border-indigo-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-users text-2xl text-indigo-600 mr-3"></i>
+                        <h3 class="text-lg font-semibold text-gray-800">DISTRITO RH</h3>
+                    </div>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>Rua Oliveira 362 industrial Itaú</p>
+                        <p><i class="fas fa-phone mr-2"></i><a href="tel:3392-2202" class="text-indigo-600 hover:underline">3392-2202</a></p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-6 border-l-4 border-indigo-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-clipboard-list text-2xl text-indigo-600 mr-3"></i>
+                        <h3 class="text-lg font-semibold text-gray-800">DISTRITO ADMINISTRATIVO</h3>
+                    </div>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>Rua Oliveira 362 industrial Itaú</p>
+                        <p><i class="fas fa-phone mr-2"></i><a href="tel:3392-2137" class="text-indigo-600 hover:underline">3392-2137</a></p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-6 border-l-4 border-indigo-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-paw text-2xl text-indigo-600 mr-3"></i>
+                        <h3 class="text-lg font-semibold text-gray-800">DISTRITO ZOONOSES</h3>
+                    </div>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>Rua Oliveira 362 industrial Itaú</p>
+                        <p><i class="fas fa-phone mr-2"></i><a href="tel:3392-2211" class="text-indigo-600 hover:underline">3392-2211</a></p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-6 border-l-4 border-indigo-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-virus text-2xl text-indigo-600 mr-3"></i>
+                        <h3 class="text-lg font-semibold text-gray-800">DISTRITO EPIDEMIO</h3>
+                    </div>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>Rua Oliveira 362 industrial Itaú</p>
+                        <p><i class="fas fa-phone mr-2"></i><a href="tel:3392-2175" class="text-indigo-600 hover:underline">3392-2175</a></p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-6 border-l-4 border-indigo-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-stethoscope text-2xl text-indigo-600 mr-3"></i>
+                        <h3 class="text-lg font-semibold text-gray-800">DISTRITO GESTÃO CLÍNICA</h3>
+                    </div>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>Rua Oliveira 362 industrial Itaú</p>
+                        <p><i class="fas fa-phone mr-2"></i><a href="tel:3356-6270" class="text-indigo-600 hover:underline">3356-6270</a></p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-6 border-l-4 border-indigo-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-headset text-2xl text-indigo-600 mr-3"></i>
+                        <h3 class="text-lg font-semibold text-gray-800">ANINHA SUPORTE VIVVER</h3>
+                    </div>
+                 <div class="space-y-2 text-sm text-gray-600">
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>Rua Oliveira 362 industrial Itaú</p>
+                        <p><i class="fas fa-phone mr-2"></i><a href="tel:3356-6270" class="text-indigo-600 hover:underline">3356-6270</a></p>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <p><i class="fas fa-phone mr-2"></i><a href="tel:3392-2195" class="text-indigo-600 hover:underline">3392-2195</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- UBS -->
+        <section class="mb-12">
+            <div class="flex items-center mb-8">
+                <i class="fas fa-hospital text-3xl text-green-600 mr-4"></i>
+                <h2 class="text-3xl font-bold text-gray-800">Unidades Básicas de Saúde (UBS)</h2>
+            </div>
+            <div class="section-divider mb-8"></div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-lg shadow-lg p-6 border-l-4 border-green-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-clinic-medical text-2xl text-green-600 mr-3"></i>
+                        <h3 class="text-lg font-semibold text-gray-800">UBS Água Branca</h3>
+                    </div>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>Rua Seis N°320</p>
+                        <p><i class="fas fa-phone mr-2"></i><a href="tel:3352-5245" class="text-green-600 hover:underline">3352-5245</a> / <a href="tel:3394-8059" class="text-green-600 hover:underline">3394-8059</a> (R-8059)</p>
+                        <p><i class="fas fa-envelope mr-2"></i><a href="mailto:ubsaguabranca@gmail.com" class="text-green-600 hover:underline">ubsaguabranca@gmail.com</a></p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-6 border-l-4 border-green-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-clinic-medical text-2xl text-green-600 mr-3"></i>
+                        <h3 class="text-lg font-semibold text-gray-800">UBS Jardim Bandeirantes</h3>
+                    </div>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>Avenida Água Branca N°317</p>
+                        <p><i class="fas fa-phone mr-2"></i><a href="tel:3353-2401" class="text-green-600 hover:underline">3353-2401</a> / <a href="tel:3352-5248" class="text-green-600 hover:underline">3352-5248</a></p>
+                        <p><i class="fas fa-envelope mr-2"></i><a href="mailto:marcacaoadm@gmail.com" class="text-green-600 hover:underline">marcacaoadm@gmail.com</a></p>
+                        <p><i class="fas fa-envelope mr-2"></i><a href="mailto:ubsjdbandeirantes@gmail.com" class="text-green-600 hover:underline">ubsjdbandeirantes@gmail.com</a></p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-6 border-l-4 border-green-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-clinic-medical text-2xl text-green-600 mr-3"></i>
+                        <h3 class="text-lg font-semibold text-gray-800">UBS Unidade XV</h3>
+                    </div>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>Rua Oliveira nº 362</p>
+                        <p><i class="fas fa-phone mr-2"></i><a href="tel:3356-1214" class="text-green-600 hover:underline">3356-1214</a> / <a href="tel:3352-5271" class="text-green-600 hover:underline">3352-5271</a></p>
+                        <p><i class="fas fa-envelope mr-2"></i><a href="mailto:cmcusfxv@gmail.com" class="text-green-600 hover:underline">cmcusfxv@gmail.com</a></p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-6 border-l-4 border-green-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-clinic-medical text-2xl text-green-600 mr-3"></i>
+                        <h3 class="text-lg font-semibold text-gray-800">UBS CSU Eldorado</h3>
+                    </div>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>Rua Portugal N°50</p>
+                        <p><i class="fas fa-phone mr-2"></i><a href="tel:3352-5251" class="text-green-600 hover:underline">3352-5251</a> / <a href="tel:3392-2171" class="text-green-600 hover:underline">3392-2171</a> / <a href="tel:4748" class="text-green-600 hover:underline">4748</a> / <a href="tel:3353-3548" class="text-green-600 hover:underline">3353-3548</a></p>
+                        <p><i class="fas fa-envelope mr-2"></i><a href="mailto:marcacaocsu@gmail.com" class="text-green-600 hover:underline">marcacaocsu@gmail.com</a></p>
+                        <p><i class="fas fa-envelope mr-2"></i><a href="mailto:ubs.eldorado@contagem.mg.gov.br" class="text-green-600 hover:underline">ubs.eldorado@contagem.mg.gov.br</a></p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-6 border-l-4 border-green-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-clinic-medical text-2xl text-green-600 mr-3"></i>
+                        <h3 class="text-lg font-semibold text-gray-800">UBS Santa Cruz</h3>
+                    </div>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>Rua Tubira N° 173</p>
+                        <p><i class="fas fa-phone mr-2"></i><a href="tel:3911-9423" class="text-green-600 hover:underline">3911-9423</a> / <a href="tel:3911-9460" class="text-green-600 hover:underline">3911-9460</a> / <a href="tel:99257-1809" class="text-green-600 hover:underline">99257-1809</a></p>
+                        <p><i class="fas fa-envelope mr-2"></i><a href="mailto:ubssantacruzdse@gmail.com" class="text-green-600 hover:underline">ubssantacruzdse@gmail.com</a></p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-6 border-l-4 border-green-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-clinic-medical text-2xl text-green-600 mr-3"></i>
+                        <h3 class="text-lg font-semibold text-gray-800">UBS Novo Eldorado</h3>
+                    </div>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>Av Guilhermino De Oliveira Nº 60</p>
+                        <p><i class="fas fa-phone mr-2"></i><a href="tel:3351-6130" class="text-green-600 hover:underline">3351-6130</a> / <a href="tel:3395-4094" class="text-green-600 hover:underline">3395-4094</a></p>
+                        <p><i class="fas fa-envelope mr-2"></i><a href="mailto:marcacaoneldorado@gmail.com" class="text-green-600 hover:underline">marcacaoneldorado@gmail.com</a></p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-6 border-l-4 border-green-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-clinic-medical text-2xl text-green-600 mr-3"></i>
+                        <h3 class="text-lg font-semibold text-gray-800">UBS Bela Vista-Eq 68</h3>
+                    </div>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>Carlos Vitoriano de Sá N° 625</p>
+                        <p><i class="fas fa-phone mr-2"></i><a href="tel:3352-2545" class="text-green-600 hover:underline">3352-2545</a></p>
+                        <p><i class="fas fa-envelope mr-2"></i><a href="mailto:marcacaousfbelavista@gmail.com" class="text-green-600 hover:underline">marcacaousfbelavista@gmail.com</a></p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-6 border-l-4 border-green-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-clinic-medical text-2xl text-green-600 mr-3"></i>
+                        <h3 class="text-lg font-semibold text-gray-800">UBS Jardim Eldorado</h3>
+                    </div>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>Rua Canafistula N° 245</p>
+                        <p><i class="fas fa-phone mr-2"></i><a href="tel:3352-5254" class="text-green-600 hover:underline">3352-5254</a> / <a href="tel:3351-6735" class="text-green-600 hover:underline">3351-6735</a></p>
+                        <p><i class="fas fa-envelope mr-2"></i><a href="mailto:usfjardimeldorado@gmail.com" class="text-green-600 hover:underline">usfjardimeldorado@gmail.com</a></p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-6 border-l-4 border-green-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-clinic-medical text-2xl text-green-600 mr-3"></i>
+                        <h3 class="text-lg font-semibold text-gray-800">UBS Parque São João</h3>
+                    </div>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>Rua Sete N° 54</p>
+                        <p><i class="fas fa-phone mr-2"></i><a href="tel:3352-5259" class="text-green-600 hover:underline">3352-5259</a> / <a href="tel:3911-4858" class="text-green-600 hover:underline">3911-4858</a></p>
+                        <p><i class="fas fa-envelope mr-2"></i><a href="mailto:marcacaopsaojoao@gmail.com" class="text-green-600 hover:underline">marcacaopsaojoao@gmail.com</a></p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-6 border-l-4 border-green-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-clinic-medical text-2xl text-green-600 mr-3"></i>
+                        <h3 class="text-lg font-semibold text-gray-800">UBS Perobas-Eq 70</h3>
+                    </div>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>Rua Doze N° 43</p>
+                        <p><i class="fas fa-phone mr-2"></i><a href="tel:3912-4620" class="text-green-600 hover:underline">3912-4620</a></p>
+                        <p><i class="fas fa-envelope mr-2"></i><a href="mailto:perobas70@gmail.com" class="text-green-600 hover:underline">perobas70@gmail.com</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Farmácias Distritais -->
+        <section class="mb-12">
+            <div class="flex items-center mb-8">
+                <i class="fas fa-pills text-3xl text-purple-600 mr-4"></i>
+                <h2 class="text-3xl font-bold text-gray-800">Farmácias Distritais Eldorado</h2>
+            </div>
+            <div class="section-divider mb-8"></div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white rounded-lg shadow-lg p-6 border-l-4 border-purple-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-prescription-bottle-alt text-2xl text-purple-600 mr-3"></i>
+                        <h3 class="text-lg font-semibold text-gray-800">Farmácia Água Branca</h3>
+                    </div>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>R. Joaquim Camargos, n° 500</p>
+                        <p><i class="fas fa-phone mr-2"></i><a href="tel:3391-2475" class="text-purple-600 hover:underline">3391-2475</a></p>
+                        <p><i class="fas fa-envelope mr-2"></i><a href="mailto:fdaguabranca@gmail.com" class="text-purple-600 hover:underline">fdaguabranca@gmail.com</a></p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-6 border-l-4 border-purple-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-prescription-bottle-alt text-2xl text-purple-600 mr-3"></i>
+                        <h3 class="text-lg font-semibold text-gray-800">Farmácia Eldorado I</h3>
+                    </div>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>Av. José Faria Rocha nº 1986</p>
+                        <p><i class="fas fa-phone mr-2"></i><a href="tel:3392-2229" class="text-purple-600 hover:underline">3392-2229</a></p>
+                        <p><i class="fas fa-envelope mr-2"></i><a href="mailto:farmaciaeldorado1@gmail.com" class="text-purple-600 hover:underline">farmaciaeldorado1@gmail.com</a></p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-6 border-l-4 border-purple-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-prescription-bottle-alt text-2xl text-purple-600 mr-3"></i>
+                        <h3 class="text-lg font-semibold text-gray-800">Farmácia Eldorado II (CSU)</h3>
+                    </div>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>R. Senegal nº 229 - Eldorado</p>
+                        <p><i class="fas fa-phone mr-2"></i><a href="tel:3911-2969" class="text-purple-600 hover:underline">3911-2969</a> / <a href="tel:3353-3511" class="text-purple-600 hover:underline">3353-3511</a></p>
+                        <p><i class="fas fa-envelope mr-2"></i><a href="mailto:fdeldorado2@gmail.com" class="text-purple-600 hover:underline">fdeldorado2@gmail.com</a></p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-6 border-l-4 border-purple-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-prescription-bottle-alt text-2xl text-purple-600 mr-3"></i>
+                        <h3 class="text-lg font-semibold text-gray-800">Farmácia Parque São João</h3>
+                    </div>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>R. Guiricema nº 182 A - Parque São João</p>
+                        <p><i class="fas fa-phone mr-2"></i><a href="tel:3352-5005" class="text-purple-600 hover:underline">3352-5005</a></p>
+                        <p><i class="fas fa-envelope mr-2"></i><a href="mailto:farmaciadistritalpsj@gmail.com" class="text-purple-600 hover:underline">farmaciadistritalpsj@gmail.com</a></p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-6 border-l-4 border-purple-500 card-hover">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-flask text-2xl text-purple-600 mr-3"></i>
+                        <h3 class="text-lg font-semibold text-gray-800">Laboratório HS Farma</h3>
+                    </div>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>Avenida José Faria da Rocha N° 1986</p>
+                        <p><i class="fas fa-phone mr-2"></i><a href="tel:3356-6715" class="text-purple-600 hover:underline">3356-6715</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="gradient-bg text-white py-6 mt-12">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-sm opacity-90">© 2024 Distritos de Saúde - Guia Completo de Contatos</p>
+        </div>
+    </footer>
+</body>
+</html>
+
+

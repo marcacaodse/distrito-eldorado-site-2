@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telefones CCE's e Outros - Diretório de Contatos</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .search-focus:focus {
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .stats-bg {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        .home-button {
+            background-color: #000000; /* Preto */
+            color: white;
+            font-weight: bold;
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .home-button:hover {
+            background-color: #333333; /* Preto mais escuro no hover */
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <div class="max-w-7xl mx-auto p-6">
+        <!-- Header -->
+        <div class="gradient-bg text-white text-center p-12 rounded-2xl mb-8 shadow-2xl relative">
+            <div class="absolute top-4 left-4">
+                <a href="index.html" class="home-button">Tela Inicial</a>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-light mb-4">
+                <i class="fas fa-address-book mr-4"></i>
+                Diretório de Contatos
+            </h1>
+            <p class="text-xl opacity-90">CCE's, Prestadores e Serviços de Saúde</p>
+
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-bg text-white text-center p-6 rounded-xl mb-8 shadow-lg">
+            <h3 class="text-2xl font-semibold mb-2">38 Contatos Disponíveis</h3>
+            <p class="text-lg opacity-90">Informações atualizadas e organizadas para seu acesso rápido</p>
+        </div>
+
+        <!-- Search -->
+        <div class="mb-8 text-center">
+            <div class="relative max-w-lg mx-auto">
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    class="w-full px-6 py-4 text-lg border-2 border-gray-200 rounded-full focus:border-blue-500 focus:outline-none search-focus bg-gray-50 focus:bg-white"
+                    placeholder="🔍 Pesquisar por nome, telefone ou observação..."
+                >
+            </div>
+        </div>
+
+        <!-- Contacts Grid -->
+        <div id="contactsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            <!-- Almoxarifado -->
+            <div class="contact-card bg-white border border-gray-200 rounded-xl p-6 card-hover shadow-sm">
+                <div class="contact-name text-xl font-semibold text-gray-800 mb-3 flex items-center">
+                    <i class="fas fa-building text-blue-500 mr-3"></i>
+                    Almorarifado
+                </div>
+                <div class="contact-phone text-lg text-blue-600 font-medium mb-2 flex items-center break-all">
+                    <i class="fas fa-phone text-blue-500 mr-3"></i>
+                    9462/1876/5336
+                </div>
+            </div>
+
+            <!-- Caps Ad -->
+            <div class="contact-card bg-white border border-gray-200 rounded-xl p-6 card-hover shadow-sm">
+                <div class="contact-name text-xl font-semibold text-gray-800 mb-3 flex items-center">
+                    <i class="fas fa-building text-blue-500 mr-3"></i>
+                    Caps Ad
+                </div>
+                <div class="contact-phone text-lg text-blue-600 font-medium mb-2 flex items-center break-all">
+                    <i class="fas fa-phone text-blue-500 mr-3"></i>
+                    3398 7378
+                </div>
+            </div>
+
+            <!-- Caps Adulto -->
+            <div class="contact-card bg-white border border-gray-200 rounded-xl p-6 card-hover shadow-sm">
+                <div class="contact-name text-xl font-semibold text-gray-800 mb-3 flex items-center">
+                    <i class="fas fa-building text-blue-500 mr-3"></i>
+                    Caps Adulto
+                </div>
+                <div class="contact-phone text-lg text-blue-600 font-medium mb-2 flex items-center break-all">
+                    <i class="fas fa-phone text-blue-500 mr-3"></i>
+                    3355 1558
+                </div>
+            </div>
+
+            <!-- Caps I -->
+            <div class="contact-card bg-white border border-gray-200 rounded-xl p-6 card-hover shadow-sm">
+                <div class="contact-name text-xl font-semibold text-gray-800 mb-3 flex items-center">
+                    <i class="fas fa-building text-blue-500 mr-3"></i>
+                    Caps I
+                </div>
+                <div class="contact-phone text-lg text-blue-600 font-medium mb-2 flex items-center break-all">
+                    <i class="fas fa-phone text-blue-500 mr-3"></i>
+                    3352 5350/3356 3307
+                </div>
+                <div class="contact-obs text-gray-600 mt-3 pt-3 border-t border-gray-100 flex items-start">
+                    <i class="fas fa-map-marker-alt text-gray-400 mr-2 mt-1"></i>
+                    R. Livorno, 96, Sta. Cruz
+                </div>
+            </div>
+
+            <!-- Casa Da Família -->
+            <div class="contact-card bg-white border border-gray-200 rounded-xl p-6 card-hover shadow-sm">
+                <div class="contact-name text-xl font-semibold text-gray-800 mb-3 flex items-center">
+                    <i class="fas fa-building text-blue-500 mr-3"></i>
+                    Casa Da Família
+                </div>
+                <div class="contact-phone text-lg text-blue-600 font-medium mb-2 flex items-center break-all">
+                    <i class="fas fa-phone text-blue-500 mr-3"></i>
+                    3911 6774
+                </div>
+            </div>
+
+            <!-- CCE Flores Do Iria -->
+            <div class="contact-card bg-white border border-gray-200 rounded-xl p-6 card-hover shadow-sm">
+                <div class="contact-name text-xl font-semibold text-gray-800 mb-3 flex items-center">
+                    <i class="fas fa-building text-blue-500 mr-3"></i>
+                    CCE Flores Do Iria
+                </div>
+                <div class="contact-phone text-lg text-blue-600 font-medium mb-2 flex items-center break-all">
+                    <i class="fas fa-phone text-blue-500 mr-3"></i>
+                    3058-2787
+                </div>
+            </div>
+
+            <!-- CCE Iria Diniz Agendas -->
+            <div class="contact-card bg-white border border-gray-200 rounded-xl p-6 card-hover shadow-sm">
+                <div class="contact-name text-xl font-semibold text-gray-800 mb-3 flex items-center">
+                    <i class="fas fa-building text-blue-500 mr-3"></i>
+                    CCE Iria Diniz Agendas
+                </div>
+                <div class="contact-phone text-lg text-blue-600 font-medium mb-2 flex items-center break-all">
+                    <i class="fas fa-phone text-blue-500 mr-3"></i>
+                    3058-2790/99257-2044
+                </div>
+            </div>
+
+            <!-- CCE Iria Diniz Recepção -->
+            <div class="contact-card bg-white border border-gray-200 rounded-xl p-6 card-hover shadow-sm">
+                <div class="contact-name text-xl font-semibold text-gray-800 mb-3 flex items-center">
+                    <i class="fas fa-building text-blue-500 mr-3"></i>
+                    CCE Iria Diniz Recepção
+                </div>
+                <div class="contact-phone text-lg text-blue-600 font-medium mb-2 flex items-center break-all">
+                    <i class="fas fa-phone text-blue-500 mr-3"></i>
+                    3058-2704
+                </div>
+            </div>
+
+            <!-- CCE Ressaca -->
+            <div class="contact-card bg-white border border-gray-200 rounded-xl p-6 card-hover shadow-sm">
+                <div class="contact-name text-xl font-semibold text-gray-800 mb-3 flex items-center">
+                    <i class="fas fa-building text-blue-500 mr-3"></i>
+                    CCE Ressaca
+                </div>
+                <div class="contact-phone text-lg text-blue-600 font-medium mb-2 flex items-center break-all">
+                    <i class="fas fa-phone text-blue-500 mr-3"></i>
+                    3394-1345 / 7213
+                </div>
+            </div>
+
+            <!-- CEO -->
+            <div class="contact-card bg-white border border-gray-200 rounded-xl p-6 card-hover shadow-sm">
+                <div class="contact-name text-xl font-semibold text-gray-800 mb-3 flex items-center">
+                    <i class="fas fa-building text-blue-500 mr-3"></i>
+                    CEO
+                </div>
+                <div class="contact-phone text-lg text-blue-600 font-medium mb-2 flex items-center break-all">
+                    <i class="fas fa-phone text-blue-500 mr-3"></i>
+                    3398-7182/3398-5910
+                </div>
+            </div>
+
+            <!-- CER IV -->
+            <div class="contact-card bg-white border border-gray-200 rounded-xl p-6 card-hover shadow-sm">
+                <div class="contact-name text-xl font-semibold text-gray-800 mb-3 flex items-center">
+                    <i class="fas fa-building text-blue-500 mr-3"></i>
+                    CER IV
+                </div>
+                <div class="contact-phone text-lg text-blue-600 font-medium mb-2 flex items-center break-all">
+                    <i class="fas fa-phone text-blue-500 mr-3"></i>
+                    3356 6909/3356 6901/3392-6251/33566953
+                </div>
+            </div>
+
+            <!-- CEREST -->
+            <div class="contact-card bg-white border border-gray-200 rounded-xl p-6 card-hover shadow-sm">
+                <div class="contact-name text-xl font-semibold text-gray-800 mb-3 flex items-center">
+                    <i class="fas fa-building text-blue-500 mr-3"></i>
+                    CEREST
+                </div>
+                <div class="contact-phone text-lg text-blue-600 font-medium mb-2 flex items-center break-all">
+                    <i class="fas fa-phone text-blue-500 mr-3"></i>
+                    3351 6130/6789
+                </div>
+                <div class="contact-obs text-gray-600 mt-3 pt-3 border-t border-gray-100 flex items-start">
+                    <i class="fas fa-info-circle text-gray-400 mr-2 mt-1"></i>
+                    INSTITUCIONAL: 31-99257-0569
+                </div>
+            </div>
+
+            <!-- SAE - Infecto Infantil -->
+            <div class="contact-card bg-white border border-gray-200 rounded-xl p-6 card-hover shadow-sm">
+                <div class="contact-name text-xl font-semibold text-gray-800 mb-3 flex items-center">
+                    <i class="fas fa-building text-blue-500 mr-3"></i>
+                    SAE - Infecto Infantil
+                </div>
+                <div class="contact-phone text-lg text-blue-600 font-medium mb-2 flex items-center break-all">
+                    <i class="fas fa-phone text-blue-500 mr-3"></i>
+                    3058-1597
+                </div>
+            </div>
+
+            <!-- CISMEP Sabrina -->
+            <div class="contact-card bg-white border border-gray-200 rounded-xl p-6 card-hover shadow-sm">
+                <div class="contact-name text-xl font-semibold text-gray-800 mb-3 flex items-center">
+                    <i class="fas fa-building text-blue-500 mr-3"></i>
+                    CISMEP Sabrina
+                </div>
+                <div class="contact-phone text-lg text-blue-600 font-medium mb-2 flex items-center break-all">
+                    <i class="fas fa-phone text-blue-500 mr-3"></i>
+                    3512-4434
+                </div>
+            </div>
+
+            <!-- Comissão Oncológica -->
+            <div class="contact-card bg-white border border-gray-200 rounded-xl p-6 card-hover shadow-sm">
+                <div class="contact-name text-xl font-semibold text-gray-800 mb-3 flex items-center">
+                    <i class="fas fa-building text-blue-500 mr-3"></i>
+                    Comissão Oncológica
+                </div>
+                <div class="contact-phone text-lg text-blue-600 font-medium mb-2 flex items-center break-all">
+                    <i class="fas fa-phone text-blue-500 mr-3"></i>
+                    3277-5365
+                </div>
+            </div>
+
+            <!-- CRAS -->
+            <div class="contact-card bg-white border border-gray-200 rounded-xl p-6 card-hover shadow-sm">
+                <div class="contact-name text-xl font-semibold text-gray-800 mb-3 flex items-center">
+                    <i class="fas fa-building text-blue-500 mr-3"></i>
+                    CRAS
+                </div>
+                <div class="contact-phone text-lg text-blue-600 font-medium mb-2 flex items-center break-all">
+                    <i class="fas fa-phone text-blue-500 mr-3"></i>
+                    3911 6774
+                </div>
+                <div class="contact-obs text-gray-600 mt-3 pt-3 border-t border-gray-100 flex items-start">
+                    <i class="fas fa-map-marker-alt text-gray-400 mr-2 mt-1"></i>
+                    R. Senegal, 229
+                </div>
+            </div>
+
+            <!-- Guarda Municipal - BARRETO -->
+            <div class="contact-card bg-white border border-gray-200 rounded-xl p-6 card-hover shadow-sm">
+                <div class="contact-name text-xl font-semibold text-gray-800 mb-3 flex items-center">
+                    <i class="fas fa-shield-alt text-blue-500 mr-3"></i>
+                    Guarda Municipal
+                </div>
+                <div class="contact-phone text-lg text-blue-600 font-medium mb-2 flex items-center break-all">
+                    <i class="fas fa-phone text-blue-500 mr-3"></i>
+                    153 - BARRETO
+                </div>
+            </div>
+
+            <!-- Guarda Municipal - Água Branca -->
+            <div class="contact-card bg-white border border-gray-200 rounded-xl p-6 card-hover shadow-sm">
+                <div class="contact-name text-xl font-semibold text-gray-800 mb-3 flex items-center">
+                    <i class="fas fa-shield-alt text-blue-500 mr-3"></i>
+                    Guarda Municipal
+                </div>
+                <div class="contact-phone text-lg text-blue-600 font-medium mb-2 flex items-center break-all">
+                    <i class="fas fa-phone text-blue-500 mr-3"></i>
+                    3398 3051
+                </div>
+                <div class="contact-obs text-gray-600 mt-3 pt-3 border-t border-gray-100 flex items-start">
+                    <i class="fas fa-map-marker-alt text-gray-400 mr-2 mt-1"></i>
+                    Região Água Branca
+                </div>
+            </div>
+
+            <!-- ITR -->
+            <div class="contact-card bg-white border border-gray-200 rounded-xl p-6 card-hover shadow-sm">
+                <div class="contact-name text-xl font-semibold text-gray-800 mb-3 flex items-center">
+                    <i class="fas fa-building text-blue-500 mr-3"></i>
+                    ITR
+                </div>
+                <div class="contact-phone text-lg text-blue-600 font-medium mb-2 flex items-center break-all">
+                    <i class="fas fa-phone text-blue-500 mr-3"></i>
+                    3395-5359
+                </div>
+                <div class="contact-obs text-gray-600 mt-3 pt-3 border-t border-gray-100 flex items-start">
+                    <i class="fas fa-map-marker-alt text-gray-400 mr-2 mt-1"></i>
+                    Rua Reginaldo de Souza Lima Nº 500 - Bernardo Monteiro
+                </div>
+            </div>
+
+            <!-- Laboratório -->
+            <div class="contact-card bg-white border border-gray-200 rounded-xl p-6 card-hover shadow-sm">
+                <div class="contact-name text-xl font-semibold text-gray-800 mb-3 flex items-center">
+                    <i class="fas fa-flask text-blue-500 mr-3"></i>
+                    Laboratório
+                </div>
+                <div class="contact-phone text-lg text-blue-600 font-medium mb-2 flex items-center break-all">
+                    <i class="fas fa-phone text-blue-500 mr-3"></i>
+                    3356 6715
+                </div>
+                <div class="contact-obs text-gray-600 mt-3 pt-3 border-t border-gray-100 flex items-start">
+                    <i class="fas fa-map-marker-alt text-gray-400 mr-2 mt-1"></i>
+                    Av. José Faria da Rocha, 1986
+                </div>
+            </div>
+
+            <!-- Medwork -->
+            <div class="contact-card bg-white border border-gray-200 rounded-xl p-6 card-hover shadow-sm">
+                <div class="contact-name text-xl font-semibold text-gray-800 mb-3 flex items-center">
+                    <i class="fas fa-user-md text-blue-500 mr-3"></i>
+                    Medwork – Medicina Do Trabalho Prefeitura
+                </div>
+                <div class="contact-phone text-lg text-blue-600 font-medium mb-2 flex items-center break-all">
+                    <i class="fas fa-phone text-blue-500 mr-3"></i>
+                    3398 6763/ 3291 8686
+                </div>
+                <div class="contact-obs text-gray-600 mt-3 pt-3 border-t border-gray-100 flex items-start">
+                    <i class="fas fa-map-marker-alt text-gray-400 mr-2 mt-1"></i>
+                    R. Bernardo Monteiro, 660, Centro, Contagem (próximo à Casa de Cultura do Cruzeiro)
+                </div>
+            </div>
+
+            <!-- Ouvidoria 1 -->
+            <div class="contact-card bg-white border border-gray-200 rounded-xl p-6 card-hover shadow-sm">
+                <div class="contact-name text-xl font-semibold text-gray-800 mb-3 flex items-center">
+                    <i class="fas fa-comments text-blue-500 mr-3"></i>
+                    Ouvidoria
+                </div>
+                <div class="contact-phone text-lg text-blue-600 font-medium mb-2 flex items-center break-all">
+                    <i class="fas fa-phone text-blue-500 mr-3"></i>
+                    3472-6275
+                </div>
+            </div>
+
+            <!-- Ouvidoria 2 -->
+            <div class="contact-card bg-white border border-gray-200 rounded-xl p-6 card-hover shadow-sm">
+                <div class="contact-name text-xl font-semibold text-gray-800 mb-3 flex items-center">
+                    <i class="fas fa-comments text-blue-500 mr-3"></i>
+                    Ouvidoria
+                </div>
+                <div class="contact-phone text-lg text-blue-600 font-medium mb-2 flex items-center break-all">
+                    <i class="fas fa-phone text-blue-500 mr-3"></i>
+                    9898/1604/0800 2832947
+                </div>
+            </div>
+
+            <!-- Oxigenoterapia -->
+            <div class="contact-card bg-white border border-gray-200 rounded-xl p-6 card-hover shadow-sm">
+                <div class="contact-name text-xl font-semibold text-gray-800 mb-3 flex items-center">
+                    <i class="fas fa-lungs text-blue-500 mr-3"></i>
+                    Oxigenoterapia
+                </div>
+                <div class="contact-phone text-lg text-blue-600 font-medium mb-2 flex items-center break-all">
+                    <i class="fas fa-phone text-blue-500 mr-3"></i>
+                    3394-6294 / 3058-1593
+                </div>
+            </div>
+
+            <!-- RH - Benefício -->
+            <div class="contact-card bg-white border border-gray-200 rounded-xl p-6 card-hover shadow-sm">
+                <div class="contact-name text-xl font-semibold text-gray-800 mb-3 flex items-center">
+                    <i class="fas fa-users text-blue-500 mr-3"></i>
+                    RH - Benefício
+                </div>
+                <div class="contact-phone text-lg text-blue-600 font-medium mb-2 flex items-center break-all">
+                    <i class="fas fa-phone text-blue-500 mr-3"></i>
+                    3472 6377
+                </div>
+            </div>
+
+            <!-- RH - Férias -->
+            <div class="contact-card bg-white border border-gray-200 rounded-xl p-6 card-hover shadow-sm">
+                <div class="contact-name text-xl font-semibold text-gray-800 mb-3 flex items-center">
+                    <i class="fas fa-users text-blue-500 mr-3"></i>
+                    RH - Férias
+                </div>
+                <div class="contact-phone text-lg text-blue-600 font-medium mb-2 flex items-center break-all">
+                    <i class="fas fa-phone text-blue-500 mr-3"></i>
+                    3472 6381
+                </div>
+            </div>
+
+            <!-- RH - Pagamento -->
+            <div class="contact-card bg-white border border-gray-200 rounded-xl p-6 card-hover shadow-sm">
+                <div class="contact-name text-xl font-semibold text-gray-800 mb-3 flex items-center">
+                    <i class="fas fa-users text-blue-500 mr-3"></i>
+                    RH - Pagamento
+                </div>
+                <div class="contact-phone text-lg text-blue-600 font-medium mb-2 flex items-center break-all">
+                    <i class="fas fa-phone text-blue-500 mr-3"></i>
+                    3472 6374
+                </div>
+                <div class="contact-obs text-gray-600 mt-3 pt-3 border-t border-gray-100 flex items-start">
+                    <i class="fas fa-info-circle text-gray-400 mr-2 mt-1"></i>
+                    Beth
+                </div>
+            </div>
+
+            <!-- SAD -->
+            <div class="contact-card bg-white border border-gray-200 rounded-xl p-6 card-hover shadow-sm">
+                <div class="contact-name text-xl font-semibold text-gray-800 mb-3 flex items-center">
+                    <i class="fas fa-building text-blue-500 mr-3"></i>
+                    SAD
+                </div>
+                <div class="contact-phone text-lg text-blue-600 font-medium mb-2 flex items-center break-all">
+                    <i class="fas fa-phone text-blue-500 mr-3"></i>
+                    99179-6545/3473-6336
+                </div>
+            </div>
+
+            <!-- SAS -->
+            <div class="contact-card bg-white border border-gray-200 rounded-xl p-6 card-hover shadow-sm">
+                <div class="contact-name text-xl font-semibold text-gray-800 mb-3 flex items-center">
+                    <i class="fas fa-building text-blue-500 mr-3"></i>
+                    SAS
+                </div>
+                <div class="contact-phone text-lg text-blue-600 font-medium mb-2 flex items-center break-all">
+                    <i class="fas fa-phone text-blue-500 mr-3"></i>
+                    3472-6339
+                </div>
+                <div class="contact-obs text-gray-600 mt-3 pt-3 border-t border-gray-100 flex items-start">
+                    <i class="fas fa-info-circle text-gray-400 mr-2 mt-1"></i>
+                    Diretoria de Atenção Especializada
+                </div>
+            </div>
+
+            <!-- SAE -->
+            <div class="contact-card bg-white border border-gray-200 rounded-xl p-6 card-hover shadow-sm">
+                <div class="contact-name text-xl font-semibold text-gray-800 mb-3 flex items-center">
+                    <i class="fas fa-building text-blue-500 mr-3"></i>
+                    SAE
+                </div>
+                <div class="contact-phone text-lg text-blue-600 font-medium mb-2 flex items-center break-all">
+                    <i class="fas fa-phone text-blue-500 mr-3"></i>
+                    3058-1597 / 3058-1593
+                </div>
+                <div class="contact-obs text-gray-600 mt-3 pt-3 border-t border-gray-100 flex items-start">
+                    <i class="fas fa-envelope text-gray-400 mr-2 mt-1"></i>
+                    saecontagem@yahoo.com
+                </div>
+            </div>
+
+            <!-- Saúde Administrativo -->
+            <div class="contact-card bg-white border border-gray-200 rounded-xl p-6 card-hover shadow-sm">
+                <div class="contact-name text-xl font-semibold text-gray-800 mb-3 flex items-center">
+                    <i class="fas fa-building text-blue-500 mr-3"></i>
+                    Saúde Administrativo
+                </div>
+                <div class="contact-phone text-lg text-blue-600 font-medium mb-2 flex items-center break-all">
+                    <i class="fas fa-phone text-blue-500 mr-3"></i>
+                    3352-9068
+                </div>
+            </div>
+
+            <!-- Saúde Bucal -->
+            <div class="contact-card bg-white border border-gray-200 rounded-xl p-6 card-hover shadow-sm">
+                <div class="contact-name text-xl font-semibold text-gray-800 mb-3 flex items-center">
+                    <i class="fas fa-tooth text-blue-500 mr-3"></i>
+                    Saúde Bucal
+                </div>
+                <div class="contact-phone text-lg text-blue-600 font-medium mb-2 flex items-center break-all">
+                    <i class="fas fa-phone text-blue-500 mr-3"></i>
+                    3472 6337
+                </div>
+            </div>
+
+            <!-- Telefonia -->
+            <div class="contact-card bg-white border border-gray-200 rounded-xl p-6 card-hover shadow-sm">
+                <div class="contact-name text-xl font-semibold text-gray-800 mb-3 flex items-center">
+                    <i class="fas fa-phone-volume text-blue-500 mr-3"></i>
+                    Telefonia
+                </div>
+                <div class="contact-phone text-lg text-blue-600 font-medium mb-2 flex items-center break-all">
+                    <i class="fas fa-phone text-blue-500 mr-3"></i>
+                    3356 2070
+                </div>
+            </div>
+
+            <!-- TI – Suporte -->
+            <div class="contact-card bg-white border border-gray-200 rounded-xl p-6 card-hover shadow-sm">
+                <div class="contact-name text-xl font-semibold text-gray-800 mb-3 flex items-center">
+                    <i class="fas fa-laptop text-blue-500 mr-3"></i>
+                    TI – Suporte - Helbert
+                </div>
+                <div class="contact-phone text-lg text-blue-600 font-medium mb-2 flex items-center break-all">
+                    <i class="fas fa-phone text-blue-500 mr-3"></i>
+                    3472 6299 / 3472 6298
+                </div>
+                <div class="contact-obs text-gray-600 mt-3 pt-3 border-t border-gray-100 flex items-start">
+                    <i class="fas fa-info-circle text-gray-400 mr-2 mt-1"></i>
+                    Eleandro – Supervisor | Saude.Ti.Contagem.Mg.Gov.Br
+                </div>
+            </div>
+
+            <!-- Transporte Sanitário -->
+            <div class="contact-card bg-white border border-gray-200 rounded-xl p-6 card-hover shadow-sm">
+                <div class="contact-name text-xl font-semibold text-gray-800 mb-3 flex items-center">
+                    <i class="fas fa-ambulance text-blue-500 mr-3"></i>
+                    Transporte Sanitário
+                </div>
+                <div class="contact-phone text-lg text-blue-600 font-medium mb-2 flex items-center break-all">
+                    <i class="fas fa-phone text-blue-500 mr-3"></i>
+                    3351-8973 /3352-5013 /3398-7820
+                </div>
+            </div>
+
+            <!-- Vivver -->
+            <div class="contact-card bg-white border border-gray-200 rounded-xl p-6 card-hover shadow-sm">
+                <div class="contact-name text-xl font-semibold text-gray-800 mb-3 flex items-center">
+                    <i class="fas fa-building text-blue-500 mr-3"></i>
+                    Vivver
+                </div>
+                <div class="contact-phone text-lg text-blue-600 font-medium mb-2 flex items-center break-all">
+                    <i class="fas fa-phone text-blue-500 mr-3"></i>
+                    3025 3550
+                </div>
+            </div>
+
+            <!-- Laboratório Central -->
+            <div class="contact-card bg-white border border-gray-200 rounded-xl p-6 card-hover shadow-sm">
+                <div class="contact-name text-xl font-semibold text-gray-800 mb-3 flex items-center">
+                    <i class="fas fa-flask text-blue-500 mr-3"></i>
+                    Laboratório Central
+                </div>
+                <div class="contact-phone text-lg text-blue-600 font-medium mb-2 flex items-center break-all">
+                    <i class="fas fa-phone text-blue-500 mr-3"></i>
+                    3472-6309
+                </div>
+            </div>
+
+            <!-- Laboratório Alisson -->
+            <div class="contact-card bg-white border border-gray-200 rounded-xl p-6 card-hover shadow-sm">
+                <div class="contact-name text-xl font-semibold text-gray-800 mb-3 flex items-center">
+                    <i class="fas fa-flask text-blue-500 mr-3"></i>
+                    Laboratório Alisson
+                </div>
+                <div class="contact-phone text-lg text-blue-600 font-medium mb-2 flex items-center break-all">
+                    <i class="fas fa-phone text-blue-500 mr-3"></i>
+                    3472-6339/3197166-4844
+                </div>
+            </div>
+        </div>
+
+        <!-- No Results Message -->
+        <div id="noResults" class="text-center py-12 hidden">
+            <i class="fas fa-search text-6xl text-gray-300 mb-4"></i>
+            <p class="text-xl text-gray-500">Nenhum contato encontrado com esses critérios de busca.</p>
+        </div>
+
+        <!-- Footer -->
+        <div class="text-center mt-12 py-8 border-t border-gray-200">
+            <p class="text-gray-600 mb-2">© 2024 - Diretório de Contatos | Sistema de Informações de Saúde</p>
+            <p class="text-gray-500">Desenvolvido para facilitar o acesso às informações de contato</p>
+        </div>
+    </div>
+
+    <script>
+        // Search functionality
+        const searchInput = document.getElementById('searchInput');
+        const contactsGrid = document.getElementById('contactsGrid');
+        const noResults = document.getElementById('noResults');
+        const contactCards = document.querySelectorAll('.contact-card');
+
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase().trim();
+            let visibleCards = 0;
+
+            contactCards.forEach(card => {
+                const name = card.querySelector('.contact-name').textContent.toLowerCase();
+                const phone = card.querySelector('.contact-phone').textContent.toLowerCase();
+                const obs = card.querySelector('.contact-obs');
+                const obsText = obs ? obs.textContent.toLowerCase() : '';
+
+                if (name.includes(searchTerm) || phone.includes(searchTerm) || obsText.includes(searchTerm)) {
+                    card.style.display = 'block';
+                    visibleCards++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Show/hide no results message
+            if (visibleCards === 0 && searchTerm !== '') {
+                contactsGrid.classList.add('hidden');
+                noResults.classList.remove('hidden');
+            } else {
+                contactsGrid.classList.remove('hidden');
+                noResults.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
+
+
