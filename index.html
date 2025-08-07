@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferramentas Administrativas / Distrito Sanitário Eldorado</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+        }
+        .main-title {
+            color: #1e3a8a;
+            font-weight: bold;
+        }
+        .category-title {
+            color: #1e3a8a;
+            font-weight: bold;
+        }
+        .btn-primary {
+            background-color: #1e3a8a;
+            color: white;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 4px;
+        }
+        .btn-primary:hover {
+            background-color: #1e40af;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(30, 58, 138, 0.3);
+            color: white;
+            text-decoration: none;
+        }
+        .category-section {
+            background: linear-gradient(145deg, #ffffff, #f8fafc);
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        .footer-info {
+            font-size: 12px;
+            color: #6b7280;
+            line-height: 1.4;
+        }
+        .header-gradient {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+        }
+        .slogan {
+            color: #1e3a8a;
+            font-style: italic;
+            margin-top: 8px;
+        }
+        
+        .search-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .search-box {
+            display: flex;
+            gap: 10px;
+            background: white;
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 12px 16px;
+            border: 2px solid #e1e5e9;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: #f8f9fa;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #2563eb;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .search-button, .clear-button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .search-button {
+            background: #1e40af;
+            color: white;
+        }
+
+        .search-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+        }
+
+        .clear-button {
+            background: #f8f9fa;
+            color: #6c757d;
+            border: 2px solid #e9ecef;
+        }
+
+        .clear-button:hover {
+            background: #e9ecef;
+            border-color: #dee2e6;
+        }
+
+        /* Responsividade para a barra de pesquisa */
+        @media (max-width: 768px) {
+            .search-box {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+    <!-- Header -->
+    <header class="header-gradient text-white py-12 mb-8">
+        <div class="container mx-auto px-6 relative">
+            <div class="flex justify-between items-center flex-wrap gap-5">
+                <div class="flex-1 min-w-300">
+                    <h1 class="text-4xl font-bold mb-2">
+                        <i class="fas fa-hospital mr-3"></i>
+                        Ferramentas Administrativas
+                    </h1>
+                    <h2 class="text-2xl font-semibold mb-2">Distrito Sanitário Eldorado</h2>
+                    <p class="text-lg font-semibold mb-2">Designe Moderno, com botões de comandos que levam direto para os links</p>
+                </div>
+                <div class="flex flex-col items-end gap-1">
+                    <div class="text-sm opacity-90 text-right">
+                        <div>Página criada por Ana P. A. Silva</div>
+                        <div>Suporte Vivver/Distrito Sanitário Eldorado</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Barra de Pesquisa -->
+    <div class="search-container">
+        <div class="search-box">
+            <input type="text" id="searchInput" class="search-input" placeholder="🔍 Pesquisar na página...">
+            <button id="searchButton" class="search-button">
+                <i class="fas fa-search"></i> Pesquisar
+            </button>
+            <button id="clearSearchButton" class="clear-button">
+                <i class="fas fa-times"></i> Limpar
+            </button>
+        </div>
+    </div>
+
+    <div class="container mx-auto px-6 max-w-6xl">
+        <!-- Gestão Clínica/Consulta Especializada e Exames -->
+        <section class="category-section">
+            <h2 class="category-title text-3xl mb-6">
+                <i class="fas fa-user-md mr-3"></i>
+                Gestão Clínica/Consulta Especializada e Exames
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <a href="resumo_fluxos.html" class="btn-primary text-center">
+                    <i class="fas fa-file-medical mr-2"></i>
+                    Resumo dos Fluxos Clique Aqui
+                </a>
+                <a href="especialidades.html" class="btn-primary text-center">
+                    <i class="fas fa-list-alt mr-2"></i>
+                    Especialidades Alta e Baixa Demanda
+                </a>
+                <a href="exames_media_complexidade.html" class="btn-primary text-center">
+                    <i class="fas fa-microscope mr-2"></i>
+                    Exames Média Complexidade
+                </a>
+                <a href="examesoftalmo.html" class="btn-primary text-center">
+                    <i class="fas fa-eye mr-2"></i>
+                    Exames Oftalmológicos
+                     </a>
+                <a href="https://docs.google.com/spreadsheets/d/1rdG5GYB9tl57CUchHd_LMAO_qftSD_S4ySH5vernoTk/edit?gid=0#gid=0" target="_blank" class="btn-primary text-center">
+                    <i class="fas fa-chart-line mr-2"></i>
+                    Relação oferta Baixa Demanda
+                     </a>
+                <a href="https://6107prd-vivace-portal.cloudmv.com.br:432/login" target="_blank" class="btn-primary text-center">
+                    <i class="fas fa-x-ray mr-2"></i>
+                    Imagens RX Upa
+                     </a>
+                <a href="https://docs.google.com/spreadsheets/d/1Xra6v8JSul5QdI5FLfnlRvPoxO7DrYvIDrWOliaL2r8/edit?pli=1&gid=0#gid=0" target="_blank" class="btn-primary text-center">
+                    <i class="fas fa-code mr-2"></i>
+                    Códigos de Autorização de AIH
+                </a>
+            </div>
+        </section>
+
+        <!-- Agendamentos -->
+        <section class="category-section">
+            <h2 class="category-title text-3xl mb-6">
+                <i class="fas fa-calendar-check mr-3"></i>
+                Agendamentos
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <a href="https://docs.google.com/forms/d/1s71qirDIpZCpHKrPux3bWBJ6k3DLjlURolLnUL-idMQ/edit" target="_blank" class="btn-primary text-center">
+                    <i class="fas fa-child mr-2"></i>
+                    Google Forms Psiquiatria Infantil
+                </a>
+                <a href="https://docs.google.com/forms/d/1QFU21I2jEIT81kfQL4jP-fNQM7VmTMIa5-8E7ZfCkho/edit" target="_blank" class="btn-primary text-center">
+                    <i class="fas fa-user mr-2"></i>
+                    Google Forms Psiquiatria Adulto
+                </a>
+                <a href="https://docs.google.com/spreadsheets/d/1Gtan6GhpDO5ViVuNMiT0AGm3F5I5iZSIYhWHVJ3ga6E/edit?pli=1&gid=404512209#gid=404512209" target="_blank" class="btn-primary text-center">
+                    <i class="fas fa-vials mr-2"></i>
+                    Agendamento de Exames Laboratoriais
+                </a>
+            </div>
+        </section>
+
+        <!-- Telefones Úteis -->
+        <section class="category-section">
+            <h2 class="category-title text-3xl mb-6">
+                <i class="fas fa-phone mr-3"></i>
+                Telefones Úteis
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <a href="telefones_distrito_eldorado.html" class="btn-primary text-center">
+                    <i class="fas fa-map-marker-alt mr-2"></i>
+                    Telefones Distrito Eldorado
+                </a>
+                <a href="telefones_todos_distritos.html" class="btn-primary text-center">
+                    <i class="fas fa-globe mr-2"></i>
+                    Telefones de todos os Distritos
+                </a>
+                <a href="telefones_unidades_saude.html" target="_blank" class="btn-primary text-center">
+                    <i class="fas fa-hospital mr-2"></i>
+                    Telefones das Unidades de Saúde
+                </a>
+                <a href="telefones_cces_outros.html" class="btn-primary text-center">
+                    <i class="fas fa-building mr-2"></i>
+                    Telefones CCES e outros
+                </a>
+                <a href="telefones_ceaps.html" class="btn-primary text-center">
+                    <i class="fas fa-clinic-medical mr-2"></i>
+                    Telefones CEAPS
+                </a>
+            </div>
+        </section>
+
+        <!-- Links Importantes -->
+        <section class="category-section">
+            <h2 class="category-title text-3xl mb-6">
+                <i class="fas fa-link mr-3"></i>
+                Links Importantes
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <a href="https://geoprocessamento.contagem.mg.gov.br/portal/apps/sites/#/geocontagem" target="_blank" class="btn-primary text-center">
+                    <i class="fas fa-mobile-alt mr-2"></i>
+                    Aplicativos Contagem
+                </a>
+                <a href="https://geoprocessamento.contagem.mg.gov.br/portal/apps/experiencebuilder/experience/?id=1cc51ed1bb7546e092ecad2935cc425d" target="_blank" class="btn-primary text-center">
+                    <i class="fas fa-pills mr-2"></i>
+                    Aqui Tem Remédio
+                </a>
+                <a href="https://portal.contagem.mg.gov.br/atencao-primaria" target="_blank" class="btn-primary text-center">
+                    <i class="fas fa-map-marked-alt mr-2"></i>
+                    Endereços das unidades
+                </a>
+                <a href="https://geoprocessamento.contagem.mg.gov.br/portal/apps/webappviewer/index.html?id=a29dd6c9d5944c51998c3ffa1efe0c70" target="_blank" class="btn-primary text-center">
+                    <i class="fas fa-tools mr-2"></i>
+                    Equipamentos da Saúde de Contagem
+                </a>
+                <a href="https://portal.contagem.mg.gov.br/nota-tecnica" target="_blank" class="btn-primary text-center">
+                    <i class="fas fa-file-alt mr-2"></i>
+                    NT´S Diretoria de Regulação
+                </a>
+                <a href="https://cadastro.saude.gov.br/segcartao/?contextType=external&username=string&contextValue=%2Foam&password=sercure_string&challenge_url=https%3A%2F%2Fcadastro.saude.gov.br%2Fsegcartao&request_id=-8519814493389994660&authn_try_count=0&locale=es_ES&resource_url" target="_blank" class="btn-primary text-center">
+                    <i class="fas fa-id-card mr-2"></i>
+                    CadWEB
+                </a>
+                <a href="https://cnesadm.datasus.gov.br/cnesadm/publico/usuarios/cadastro" target="_blank" class="btn-primary text-center">
+                    <i class="fas fa-search mr-2"></i>
+                    Pesquisa do CNS
+                </a>
+                <a href="https://c2abn462.caspio.com/dp/6c2d80009c527701e6554cedb0d2" target="_blank" class="btn-primary text-center">
+                    <i class="fas fa-search-location mr-2"></i>
+                    Pesquisa por endereço
+                </a>
+                <a href="https://portal.contagem.mg.gov.br/administracao-regional-eldorado" target="_blank" class="btn-primary text-center">
+                    <i class="fas fa-building mr-2"></i>
+                    Regional Eldorado
+                </a>
+                <a href="https://portal.contagem.mg.gov.br/" target="_blank" class="btn-primary text-center">
+                    <i class="fas fa-city mr-2"></i>
+                    Prefeitura de Contagem
+                </a>
+                <a href="https://portal.contagem.mg.gov.br/portal/paginas-dinamicas-categoria/15/" target="_blank" class="btn-primary text-center">
+                    <i class="fas fa-user-tie mr-2"></i>
+                    Portal do servidor
+                </a>
+                <a href="https://egestoraps.saude.gov.br/" target="_blank" class="btn-primary text-center">
+                    <i class="fas fa-chart-bar mr-2"></i>
+                    E Gestor
+                </a>
+                <a href="https://cnes.datasus.gov.br/pages/estabelecimentos/consulta.jsp" target="_blank" class="btn-primary text-center">
+                    <i class="fas fa-database mr-2"></i>
+                    CNES
+                </a>
+                <a href="http://sigtap.datasus.gov.br/tabela-unificada/app/sec/inicio.jsp" target="_blank" class="btn-primary text-center">
+                    <i class="fas fa-table mr-2"></i>
+                    Tabela Sigtap
+                </a>
+                <a href="https://portal.contagem.mg.gov.br/secretaria-de-saude" target="_blank" class="btn-primary text-center">
+                    <i class="fas fa-heartbeat mr-2"></i>
+                    Portal da Saúde
+                </a>
+                <a href="https://www.crmmg.org.br/" target="_blank" class="btn-primary text-center">
+                    <i class="fas fa-user-md mr-2"></i>
+                    CRM
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 mt-12 py-8 border-t-4 border-blue-800">
+        <div class="container mx-auto px-6 text-center">
+            <div class="footer-info">
+                <p class="mb-2">Central de Marcação de consultas 3198-6768</p>
+                <p class="mb-2">Agendamento de retornos CCE Ressaca: 3394-7213</p>
+                <p class="mb-2">COLONOSCOPIA/CEAPS 3198-6788</p>
+                <p class="mb-2">OFTALMOLOGIA 3198-6761</p>
+                <p class="mb-2">FLORES DO IRIA 99257-2517</p>
+                <p class="mb-2">Laboratório de Coletas Especiais: END: Rua Antônio Augusto, 115 Bairro Nossa Senhora de Fátima</p>
+                <p class="mt-4 font-semibold">Site criado por Ana P. A. Silva – Suporte Sistema Vivver – Distrito Eldorado</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for better navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add loading animation for better UX
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s ease-in-out';
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+
+        // Add hover effects to buttons
+        document.querySelectorAll('.btn-primary').forEach(button => {
+            button.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-2px)';
+            });
+            
+            button.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Funcionalidade da barra de pesquisa
+        const searchInput = document.getElementById('searchInput');
+        const searchButton = document.getElementById('searchButton');
+        const clearButton = document.getElementById('clearSearchButton');
+        let originalContent = '';
+
+        function highlightText(text, searchTerm) {
+            if (!searchTerm) return text;
+            const regex = new RegExp(`(${searchTerm})`, 'gi');
+            return text.replace(regex, '<mark style="background: linear-gradient(135deg, #ffeb3b 0%, #ffc107 100%); padding: 2px 4px; border-radius: 4px; font-weight: 600;">$1</mark>');
+        }
+
+        function performSearch() {
+            const searchTerm = searchInput.value.trim().toLowerCase();
+            
+            if (!searchTerm) {
+                alert('Por favor, digite um termo para pesquisar.');
+                return;
+            }
+
+            // Salvar conteúdo original se ainda não foi salvo
+            if (!originalContent) {
+                originalContent = document.body.innerHTML;
+            }
+
+            // Restaurar conteúdo original
+            document.body.innerHTML = originalContent;
+
+            // Encontrar todos os elementos de texto
+            const walker = document.createTreeWalker(
+                document.body,
+                NodeFilter.SHOW_TEXT,
+                null,
+                false
+            );
+
+            const textNodes = [];
+            let node;
+            while (node = walker.nextNode()) {
+                if (node.nodeValue.toLowerCase().includes(searchTerm)) {
+                    textNodes.push(node);
+                }
+            }
+
+            // Destacar termos encontrados
+            textNodes.forEach(textNode => {
+                const parent = textNode.parentNode;
+                if (parent.tagName !== 'SCRIPT' && parent.tagName !== 'STYLE') {
+                    const highlightedText = highlightText(textNode.nodeValue, searchTerm);
+                    const wrapper = document.createElement('span');
+                    wrapper.innerHTML = highlightedText;
+                    parent.replaceChild(wrapper, textNode);
+                }
+            });
+
+            // Rolar para o primeiro resultado
+            const firstHighlight = document.querySelector('mark');
+            if (firstHighlight) {
+                firstHighlight.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } else {
+                alert('Nenhum resultado encontrado para: ' + searchTerm);
+            }
+        }
+
+        function clearSearch() {
+            if (originalContent) {
+                document.body.innerHTML = originalContent;
+                originalContent = '';
+            }
+            searchInput.value = '';
+            
+            // Reativar os event listeners
+            document.getElementById('searchButton').addEventListener('click', performSearch);
+            document.getElementById('clearSearchButton').addEventListener('click', clearSearch);
+            document.getElementById('searchInput').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    performSearch();
+                }
+            });
+        }
+
+        // Event listeners
+        searchButton.addEventListener('click', performSearch);
+        clearButton.addEventListener('click', clearSearch);
+        searchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+    </script>
+</body>
+</html>
