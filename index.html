@@ -1,0 +1,691 @@
+ <!DOCTYPE html>
+ <html lang="pt-BR">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Distrito Sanitário Eldorado - Sistema de Agendamento</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .header {
+            background: #1e40af;
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            /* Removido position: fixed; */
+            /* Removido top, left, right, z-index */
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .header.hidden {
+            transform: translateY(-100%);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .header-left {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .header-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header-subtitle {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .header-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 5px;
+        }
+
+        .header-info {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            text-align: right;
+        }
+
+        .home-button {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 8px 16px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .home-button:hover {
+            background: rgba(255,255,255,0.3);
+            border-color: rgba(255,255,255,0.5);
+            transform: translateY(-2px);
+        }
+
+        .search-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            margin-top: 20px;
+            /* Removido position: fixed; */
+            /* Removido top, left, right, z-index */
+        }
+
+        .search-box {
+            display: flex;
+            gap: 10px;
+            background: white;
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 12px 16px;
+            border: 2px solid #e1e5e9;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: #f8f9fa;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #2563eb;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .search-button, .clear-button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .search-button {
+            background: #1e40af;
+            color: white;
+        }
+
+        .search-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+        }
+
+        .clear-button {
+            background: #f8f9fa;
+            color: #6c757d;
+            border: 2px solid #e9ecef;
+        }
+
+        .clear-button:hover {
+            background: #e9ecef;
+            border-color: #dee2e6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            margin-top: 20px; /* Ajustado para cabeçalho não fixo e search-container fora */
+        }
+
+        .content-section {
+            background: white;
+            margin-bottom: 30px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .section-header {
+            background: #1e40af;
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-header i {
+            font-size: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .section-content {
+            padding: 30px;
+        }
+
+        .intro-text {
+            font-size: 1.1rem;
+            color: #6c757d;
+            margin-bottom: 0;
+            line-height: 1.8;
+        }
+
+        .subsection-title {
+            color: #495057;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 25px 0 15px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e9ecef;
+        }
+
+        .demand-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin: 25px 0;
+        }
+
+        .demand-box {
+            padding: 20px;
+            border-radius: 15px;
+            border-left: 5px solid;
+        }
+
+        .high-demand {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-left-color: #2196f3;
+        }
+
+        .low-demand {
+            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+            border-left-color: #9c27b0;
+        }
+
+        .demand-title {
+            font-weight: 600;
+            color: #495057;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .demand-text {
+            color: #6c757d;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .highlight-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 8px;
+            background: rgba(37, 99, 235, 0.1);
+            transition: all 0.3s ease;
+            margin: 15px 0;
+        }
+
+        .highlight-link:hover {
+            background: rgba(37, 99, 235, 0.2);
+            transform: translateX(5px);
+        }
+
+        .highlight-link i {
+            font-size: 0.9rem;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            border: 1px solid #ffcc02;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 5px solid #ff9800;
+        }
+
+        .info-box h4 {
+            color: #e65100;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .info-box p {
+            color: #bf360c;
+            margin: 8px 0;
+            line-height: 1.6;
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #4caf50;
+        }
+
+        .contact-info strong {
+            color: #2e7d32;
+        }
+
+        .footer {
+            background: linear-gradient(135deg, #37474f 0%, #263238 100%);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 50px;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .footer i {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #81c784;
+        }
+
+        .footer p {
+            margin: 8px 0;
+            opacity: 0.9;
+        }
+
+        mark {
+            background: linear-gradient(135deg, #ffeb3b 0%, #ffc107 100%);
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+
+            .header-right {
+                align-items: center;
+            }
+
+            .header-title {
+                font-size: 1.4rem;
+            }
+
+            .demand-container {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .search-box {
+                flex-direction: column;
+            }
+
+            .container {
+                margin-top: 20px; /* Ajustado para cabeçalho não fixo e search-container fora */
+                padding: 15px;
+            }
+
+            .section-content {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-title {
+                font-size: 1.2rem;
+            }
+
+            .search-input, .search-button, .clear-button {
+                padding: 10px 15px;
+            }
+
+            .container {
+                margin-top: 20px; /* Ajustado para cabeçalho não fixo e search-container fora */
+            }
+        }</style>
+ </head>
+ <body onload="document.body.style.opacity=\'1\';">
+     <!-- Header -->
+     <div class="header" id="header">
+        <div class="header-content">
+            <div class="header-left">
+                <h1 class="header-title">Distrito Sanitário Eldorado - Resumo dos Fluxos</h1>
+                <p class="header-subtitle">Sistema de Agendamento e Procedimentos</p>
+            </div>
+            <div class="header-right">
+                <div class="header-info">
+                    <div>Página criada por Ana P. A. Silva</div>
+                    <div>Suporte Vivver/Distrito Sanitário Eldorado</div>
+                </div>
+                <a href="https://marcacaodse.github.io/distrito-eldorado-site-2/index.html" class="home-button">
+                    <i class="fas fa-home"></i> Tela Inicial
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="search-container">
+        <div class="search-box">
+            <input type="text" id="searchInput" class="search-input" placeholder="🔍 Pesquisar na página...">
+            <button id="searchButton" class="search-button">
+                <i class="fas fa-search"></i> Pesquisar
+            </button>
+            <button id="clearSearchButton" class="clear-button">
+                <i class="fas fa-times"></i> Limpar
+            </button>
+        </div>
+    </div>
+ 
+     <div class="container mx-auto px-6 max-w-6xl">
+         <!-- Gestão Clínica/Consulta Especializada e Exames -->
+         <section class="category-section">
+             <h2 class="category-title text-3xl mb-6">
+                 <i class="fas fa-user-md mr-3"></i>
+                 Gestão Clínica/Consulta Especializada e Exames
+             </h2>
+             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                 <a href="resumo_fluxos.html" class="btn-primary text-center">
+                     <i class="fas fa-file-medical mr-2"></i>
+                     Resumo dos Fluxos Clique Aqui
+                 </a>
+                 <a href="especialidades.html" class="btn-primary text-center">
+                     <i class="fas fa-list-alt mr-2"></i>
+                     Especialidades Alta e Baixa Demanda
+                 </a>
+                 <a href="exames_media_complexidade.html" class="btn-primary text-center">
+                     <i class="fas fa-microscope mr-2"></i>
+                     Exames Média Complexidade
+                 </a>
+                 <a href="examesoftalmo.html" class="btn-primary text-center">
+                     <i class="fas fa-eye mr-2"></i>
+                     Exames Oftalmológicos
+                      </a>
+                 <a href="https://docs.google.com/spreadsheets/d/1rdG5GYB9tl57CUchHd_LMAO_qftSD_S4ySH5vernoTk/edit?gid=0#gid=0" target="_blank" class="btn-primary text-center">
+                     <i class="fas fa-chart-line mr-2"></i>
+                     Relação oferta Baixa Demanda
+                      </a>
+                 <a href="https://6107prd-vivace-portal.cloudmv.com.br:432/login" target="_blank" class="btn-primary text-center">
+                     <i class="fas fa-x-ray mr-2"></i>
+                     Imagens RX Upa
+                      </a>
+                 <a href="https://docs.google.com/spreadsheets/d/1Xra6v8JSul5QdI5FLfnlRvPoxO7DrYvIDrWOliaL2r8/edit?pli=1&gid=0#gid=0" target="_blank" class="btn-primary text-center">
+                     <i class="fas fa-code mr-2"></i>
+                     Códigos de Autorização de AIH
+                 </a>
+             </div>
+         </section>
+ 
+         <!-- Agendamentos -->
+         <section class="category-section">
+             <h2 class="category-title text-3xl mb-6">
+                 <i class="fas fa-calendar-check mr-3"></i>
+                 Agendamentos
+             </h2>
+             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                 <a href="https://docs.google.com/forms/d/1s71qirDIpZCpHKrPux3bWBJ6k3DLjlURolLnUL-idMQ/edit" target="_blank" class="btn-primary text-center">
+                     <i class="fas fa-child mr-2"></i>
+                     Google Forms Psiquiatria Infantil
+                 </a>
+                 <a href="https://docs.google.com/forms/d/1QFU21I2jEIT81kfQL4jP-fNQM7VmTMIa5-8E7ZfCkho/edit" target="_blank" class="btn-primary text-center">
+                     <i class="fas fa-user mr-2"></i>
+                     Google Forms Psiquiatria Adulto
+                 </a>
+                 <a href="https://docs.google.com/spreadsheets/d/1Gtan6GhpDO5ViVuNMiT0AGm3F5I5iZSIYhWHVJ3ga6E/edit?pli=1&gid=404512209#gid=404512209" target="_blank" class="btn-primary text-center">
+                     <i class="fas fa-vials mr-2"></i>
+                     Agendamento de Exames Laboratoriais
+                 </a>
+             </div>
+         </section>
+ 
+         <!-- Telefones Úteis -->
+         <section class="category-section">
+             <h2 class="category-title text-3xl mb-6">
+                 <i class="fas fa-phone mr-3"></i>
+                 Telefones Úteis
+             </h2>
+             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                 <a href="telefones_distrito_eldorado.html" class="btn-primary text-center">
+                     <i class="fas fa-map-marker-alt mr-2"></i>
+                     Telefones Distrito Eldorado
+                 </a>
+                 <a href="telefones_todos_distritos.html" class="btn-primary text-center">
+                     <i class="fas fa-globe mr-2"></i>
+                     Telefones de todos os Distritos
+                 </a>
+                 <a href="telefones_unidades_saude.html" class="btn-primary text-center">
+                     <i class="fas fa-hospital mr-2"></i>
+                     Telefones das Unidades de Saúde
+                 </a>
+                 <a href="telefones_cces_outros.html" class="btn-primary text-center">
+                     <i class="fas fa-building mr-2"></i>
+                     Telefones CCES e outros
+                 </a>
+                 <a href="telefones_ceaps.html" class="btn-primary text-center">
+                     <i class="fas fa-clinic-medical mr-2"></i>
+                     Telefones CEAPS
+                 </a>
+             </div>
+         </section>
+ 
+         <!-- Links Importantes -->
+         <section class="category-section">
+             <h2 class="category-title text-3xl mb-6">
+                 <i class="fas fa-link mr-3"></i>
+                 Links Importantes
+             </h2>
+             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                 <a href="https://geoprocessamento.contagem.mg.gov.br/portal/apps/sites/#/geocontagem" target="_blank" class="btn-primary text-center">
+                     <i class="fas fa-mobile-alt mr-2"></i>
+                     Aplicativos Contagem
+                 </a>
+                 <a href="https://geoprocessamento.contagem.mg.gov.br/portal/apps/experiencebuilder/experience/?id=1cc51ed1bb7546e092ecad2935cc425d" target="_blank" class="btn-primary text-center">
+                     <i class="fas fa-pills mr-2"></i>
+                     Aqui Tem Remédio
+                 </a>
+                 <a href="https://portal.contagem.mg.gov.br/atencao-primaria" target="_blank" class="btn-primary text-center">
+                     <i class="fas fa-map-marked-alt mr-2"></i>
+                     Endereços das unidades
+                 </a>
+                 <a href="https://geoprocessamento.contagem.mg.gov.br/portal/apps/webappviewer/index.html?id=a29dd6c9d5944c51998c3ffa1efe0c70" target="_blank" class="btn-primary text-center">
+                     <i class="fas fa-tools mr-2"></i>
+                     Equipamentos da Saúde de Contagem
+                 </a>
+                 <a href="https://portal.contagem.mg.gov.br/nota-tecnica" target="_blank" class="btn-primary text-center">
+                     <i class="fas fa-file-alt mr-2"></i>
+                     NT´S Diretoria de Regulação
+                 </a>
+                 <a href="https://cadastro.saude.gov.br/segcartao/?contextType=external&username=string&contextValue=%2Foam&password=sercure_string&challenge_url=https%3A%2F%2Fcadastro.saude.gov.br%2Fsegcartao&request_id=-8519814493389994660&authn_try_count=0&locale=es_ES&resource_url" target="_blank" class="btn-primary text-center">
+                     <i class="fas fa-id-card mr-2"></i>
+                     CadWEB
+                 </a>
+                 <a href="https://cnesadm.datasus.gov.br/cnesadm/publico/usuarios/cadastro" target="_blank" class="btn-primary text-center">
+                     <i class="fas fa-search mr-2"></i>
+                     Pesquisa do CNS
+                 </a>
+                 <a href="https://c2abn462.caspio.com/dp/6c2d80009c527701e6554cedb0d2" target="_blank" class="btn-primary text-center">
+                     <i class="fas fa-search-location mr-2"></i>
+                     Pesquisa por endereço
+                 </a>
+                 <a href="https://portal.contagem.mg.gov.br/administracao-regional-eldorado" target="_blank" class="btn-primary text-center">
+                     <i class="fas fa-building mr-2"></i>
+                     Regional Eldorado
+                 </a>
+                 <a href="https://portal.contagem.mg.gov.br/" target="_blank" class="btn-primary text-center">
+                     <i class="fas fa-city mr-2"></i>
+                     Prefeitura de Contagem
+                 </a>
+                 <a href="https://portal.contagem.mg.gov.br/portal/paginas-dinamicas-categoria/15/" target="_blank" class="btn-primary text-center">
+                     <i class="fas fa-user-tie mr-2"></i>
+                     Portal do servidor
+                 </a>
+                 <a href="https://egestoraps.saude.gov.br/" target="_blank" class="btn-primary text-center">
+                     <i class="fas fa-chart-bar mr-2"></i>
+                     E Gestor
+                 </a>
+                 <a href="https://cnes.datasus.gov.br/pages/estabelecimentos/consulta.jsp" target="_blank" class="btn-primary text-center">
+                     <i class="fas fa-database mr-2"></i>
+                     CNES
+                 </a>
+                 <a href="http://sigtap.datasus.gov.br/tabela-unificada/app/sec/inicio.jsp" target="_blank" class="btn-primary text-center">
+                     <i class="fas fa-table mr-2"></i>
+                     Tabela Sigtap
+                 </a>
+                 <a href="https://portal.contagem.mg.gov.br/secretaria-de-saude" target="_blank" class="btn-primary text-center">
+                     <i class="fas fa-heartbeat mr-2"></i>
+                     Portal da Saúde
+                 </a>
+                 <a href="https://www.crmmg.org.br/" target="_blank" class="btn-primary text-center">
+                     <i class="fas fa-user-md mr-2"></i>
+                     CRM
+                 </a>
+             </div>
+         </section>
+     </div>
+ 
+
+ 
+     <script>
+         // Smooth scrolling for better navigation
+         document.querySelectorAll('a[href^="#"]' ).forEach(anchor => {
+             anchor.addEventListener('click', function (e) {
+                 e.preventDefault();
+                 document.querySelector(this.getAttribute('href')).scrollIntoView({
+                     behavior: 'smooth'
+                 });
+             });
+         });
+ 
+         // Add loading animation for better UX
+         window.addEventListener('load', function() {
+             document.body.style.opacity = '0';
+             document.body.style.transition = 'opacity 0.5s ease-in-out';
+             setTimeout(() => {
+                 document.body.style.opacity = '1';
+             }, 100);
+         });
+ 
+         // Add hover effects to buttons
+         document.querySelectorAll('.btn-primary').forEach(button => {
+             button.addEventListener('mouseenter', function() {
+                 this.style.transform = 'translateY(-2px)';
+             });
+             
+             button.addEventListener('mouseleave', function() {
+                 this.style.transform = 'translateY(0)';
+             });
+         });
+     </script>
+ </body>
+ </html>
+
+
+
+
+
+
+     <!-- Footer -->
+     <footer class="footer">
+         <i class="fas fa-hospital-alt"></i>
+         <p>Distrito Sanitário Eldorado</p>
+         <p>Sistema de Agendamento e Procedimentos</p>
+         <p>Página criada por Ana P. A. Silva - Suporte Vivver/Distrito Sanitário Eldorado</p>
+         <p>&copy; 2024 - Todos os direitos reservados</p>
+     </footer>
+
+
+     <script>
+         document.addEventListener("DOMContentLoaded", function() {
+             document.body.style.opacity = "1";
+
+             const searchInput = document.getElementById("searchInput");
+             const searchButton = document.getElementById("searchButton");
+             const clearSearchButton = document.getElementById("clearSearchButton");
+             const contentSections = document.querySelectorAll(".content-section");
+
+             function performSearch() {
+                 const searchTerm = searchInput.value.toLowerCase();
+
+                 contentSections.forEach(section => {
+                     const sectionText = section.innerText.toLowerCase();
+                     if (sectionText.includes(searchTerm)) {
+                         section.style.display = "block";
+                     } else {
+                         section.style.display = "none";
+                     }
+                 });
+             }
+
+             searchButton.addEventListener("click", performSearch);
+
+             searchInput.addEventListener("keyup", function(event) {
+                 if (event.key === "Enter") {
+                     performSearch();
+                 }
+             });
+
+             clearSearchButton.addEventListener("click", function() {
+                 searchInput.value = "";
+                 contentSections.forEach(section => {
+                     section.style.display = "block";
+                 });
+             });
+
+             let lastScrollTop = 0;
+             const header = document.getElementById("header");
+             window.addEventListener("scroll", function() {
+                 let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                 if (scrollTop > lastScrollTop) {
+                     header.classList.add("hidden");
+                 } else {
+                     header.classList.remove("hidden");
+                 }
+                 lastScrollTop = scrollTop;
+             });
+         });
+     </script>
+
