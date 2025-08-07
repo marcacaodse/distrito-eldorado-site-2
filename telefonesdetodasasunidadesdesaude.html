@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidades Básicas de Saúde - Contagem/MG</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #764ba2 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .nav-link {
+            transition: all 0.2s ease;
+        }
+        
+        .nav-link:hover {
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 0.5rem;
+        }
+        
+        .section-title {
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, #10b981, #3b82f6);
+            border-radius: 2px;
+        }
+        
+        .ubs-card {
+            border-left: 4px solid #10b981;
+            background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+        }
+        
+        .phone-link {
+            color: #059669;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        
+        .phone-link:hover {
+            color: #047857;
+        }
+        
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+            
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .page-break-avoid {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+        }
+        .home-button {
+            background-color: #000000;
+            color: white;
+            font-weight: bold;
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .home-button:hover {
+            background-color: #333333;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <div class="gradient-bg text-white py-8 mb-8">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="index.html" class="home-button">
+                <i class="fas fa-home mr-2"></i>Tela Inicial
+            </a>
+            <div class="text-center flex-grow">
+                <div class="flex justify-center items-center mb-4">
+                    <i class="fas fa-hospital-alt text-4xl mr-4"></i>
+                    <h1 class="text-4xl font-bold">Unidades Básicas de Saúde</h1>
+                </div>
+                <p class="text-xl opacity-90">Contagem - Minas Gerais</p>
+                <p class="text-lg opacity-80 mt-2">Guia completo das UBS organizadas por região</p>
+                <p class="text-lg opacity-80 mt-2">Página criada por Ana P. A. Silva/Suporte Vivver/Distrito Sanitário Eldorado</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="container mx-auto px-4 mb-8 no-print">
+        <div class="bg-white rounded-lg shadow-md p-4">
+            <h2 class="text-lg font-semibold mb-4 text-gray-700">
+                <i class="fas fa-map-marked-alt mr-2"></i>Navegação por Região
+            </h2>
+            <div class="flex flex-wrap gap-2">
+                <a href="#eldorado" class="nav-link px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Eldorado</a>
+                <a href="#industrial" class="nav-link px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600">Industrial</a>
+                <a href="#nacional" class="nav-link px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600">Nacional</a>
+                <a href="#petrolandia" class="nav-link px-4 py-2 bg-indigo-500 text-white rounded-lg hover:bg-indigo-600">Petrolândia</a>
+                <a href="#ressaca" class="nav-link px-4 py-2 bg-pink-500 text-white rounded-lg hover:bg-pink-600">Ressaca</a>
+                <a href="#riacho" class="nav-link px-4 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600">Riacho</a>
+                <a href="#sede" class="nav-link px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600">Sede</a>
+                <a href="#vargem" class="nav-link px-4 py-2 bg-teal-500 text-white rounded-lg hover:bg-teal-600">Vargem das Flores</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="container mx-auto px-4">
+        
+        <!-- Eldorado -->
+        <section id="eldorado" class="mb-12 page-break-avoid">
+            <h2 class="section-title text-3xl font-bold text-gray-800 mb-6">
+                <i class="fas fa-map-marker-alt text-blue-500 mr-3"></i>Eldorado
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="ubs-card card-hover bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-3">UBS Água Branca</h3>
+                    <div class="text-gray-600 space-y-2">
+                        <p class="flex items-center"><i class="fas fa-map-pin text-green-500 mr-2"></i>Rua Seis, 320 - Conjunto Água Branca</p>
+                        <p class="flex items-center"><i class="fas fa-phone text-green-500 mr-2"></i>
+                            <span>
+                                <a href="tel:3352-5245" class="phone-link">3352-5245</a> / 
+                                <a href="tel:3394-8059" class="phone-link">3394-8059</a>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="ubs-card card-hover bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-3">UBS Eldorado</h3>
+                    <div class="text-gray-600 space-y-2">
+                        <p class="flex items-center"><i class="fas fa-map-pin text-green-500 mr-2"></i>Rua Portugal, 50 – Glória</p>
+                        <p class="flex items-center"><i class="fas fa-phone text-green-500 mr-2"></i>
+                            <span>
+                                <a href="tel:3352-5251" class="phone-link">3352-5251</a> / 
+                                <a href="tel:3392-2171" class="phone-link">3392-2171</a> / 
+                                <a href="tel:3392-4748" class="phone-link">3392-4748</a> / 
+                                <a href="tel:3353-3548" class="phone-link">3353-3548</a> / 
+                                <a href="tel:9925-72635" class="phone-link">9925-72635</a>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="ubs-card card-hover bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-3">UBS Jardim Bandeirantes</h3>
+                    <div class="text-gray-600 space-y-2">
+                        <p class="flex items-center"><i class="fas fa-map-pin text-green-500 mr-2"></i>Avenida Água Branca, 817 - Jardim dos Bandeirantes</p>
+                        <p class="flex items-center"><i class="fas fa-phone text-green-500 mr-2"></i>
+                            <span>
+                                <a href="tel:3353-2401" class="phone-link">3353-2401</a> / 
+                                <a href="tel:3352-5248" class="phone-link">3352-5248</a>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="ubs-card card-hover bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-3">UBS Santa Cruz</h3>
+                    <div class="text-gray-600 space-y-2">
+                        <p class="flex items-center"><i class="fas fa-map-pin text-green-500 mr-2"></i>Rua Tubira, 173 – Santa Cruz</p>
+                        <p class="flex items-center"><i class="fas fa-phone text-green-500 mr-2"></i>
+                            <span>
+                                <a href="tel:3395-4094" class="phone-link">3395-4094</a> / 
+                                <a href="tel:992571809" class="phone-link">992571809</a> (institucional)
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="ubs-card card-hover bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-3">UBS Novo Eldorado</h3>
+                    <div class="text-gray-600 space-y-2">
+                        <p class="flex items-center"><i class="fas fa-map-pin text-green-500 mr-2"></i>Avenida Guilhermino de Oliveira, 60 – Novo Eldorado</p>
+                        <p class="flex items-center"><i class="fas fa-phone text-green-500 mr-2"></i>
+                            <span>
+                                <a href="tel:3911-9423" class="phone-link">3911-9423</a> / 
+                                <a href="tel:3911-9460" class="phone-link">3911-9460</a> / 
+                                <a href="tel:34726397" class="phone-link">34726397</a>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="ubs-card card-hover bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-3">UBS XV</h3>
+                    <div class="text-gray-600 space-y-2">
+                        <p class="flex items-center"><i class="fas fa-map-pin text-green-500 mr-2"></i>Rua Oliveira, 362 – Eldorado</p>
+                        <p class="flex items-center"><i class="fas fa-phone text-green-500 mr-2"></i>
+                            <span>
+                                <a href="tel:3356-1214" class="phone-link">3356-1214</a> / 
+                                <a href="tel:3352-5271" class="phone-link">3352-5271</a>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="ubs-card card-hover bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-3">UBS Parque São João</h3>
+                    <div class="text-gray-600 space-y-2">
+                        <p class="flex items-center"><i class="fas fa-map-pin text-green-500 mr-2"></i>Rua Sete, 54 – Parque São João</p>
+                        <p class="flex items-center"><i class="fas fa-phone text-green-500 mr-2"></i>
+                            <a href="tel:3352-5259" class="phone-link">3352-5259</a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="ubs-card card-hover bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-3">UBS Bela Vista</h3>
+                    <div class="text-gray-600 space-y-2">
+                        <p class="flex items-center"><i class="fas fa-map-pin text-green-500 mr-2"></i>Rua Carlos Vitoriano de Sá, 625 – Bela Vista</p>
+                        <p class="flex items-center"><i class="fas fa-phone text-green-500 mr-2"></i>
+                            <a href="tel:3352-2545" class="phone-link">3352-2545</a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="ubs-card card-hover bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-3">UBS Jardim Eldorado</h3>
+                    <div class="text-gray-600 space-y-2">
+                        <p class="flex items-center"><i class="fas fa-map-pin text-green-500 mr-2"></i>Rua Canafistula, 245 – Jardim Eldorado</p>
+                        <p class="flex items-center"><i class="fas fa-phone text-green-500 mr-2"></i>
+                            <span>
+                                <a href="tel:3352-5254" class="phone-link">3352-5254</a> / 
+                                <a href="tel:3351-6735" class="phone-link">3351-6735</a>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="ubs-card card-hover bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-3">UBS Perobas</h3>
+                    <div class="text-gray-600 space-y-2">
+                        <p class="flex items-center"><i class="fas fa-map-pin text-green-500 mr-2"></i>Rua Doze, 43 – Perobas</p>
+                        <p class="flex items-center"><i class="fas fa-phone text-green-500 mr-2"></i>
+                            <span>
+                                <a href="tel:3912-4620" class="phone-link">3912-4620</a> / 
+                                <a href="tel:992571805" class="phone-link">992571805</a> (institucional)
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Industrial -->
+        <section id="industrial" class="mb-12 page-break-avoid">
+            <h2 class="section-title text-3xl font-bold text-gray-800 mb-6">
+                <i class="fas fa-industry text-green-500 mr-3"></i>Industrial
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="ubs-card card-hover bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-3">UBS Amazonas</h3>
+                    <div class="text-gray-600 space-y-2">
+                        <p class="flex items-center"><i class="fas fa-map-pin text-green-500 mr-2"></i>Rua Marques do Paraná, 111 – Amazonas</p>
+                        <p class="flex items-center"><i class="fas fa-phone text-green-500 mr-2"></i>
+                            <span>
+                                <a href="tel:3363-6045" class="phone-link">3363-6045</a> / 
+                                <a href="tel:3361-6303" class="phone-link">3361-6303</a>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="ubs-card card-hover bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-3">UBS Industrial Seção III</h3>
+                    <div class="text-gray-600 space-y-2">
+                        <p class="flex items-center"><i class="fas fa-map-pin text-green-500 mr-2"></i>Rua Coronel Américo Leite, 464 - Industrial Seção III</p>
+                        <p class="flex items-center"><i class="fas fa-phone text-green-500 mr-2"></i>
+                            <span>
+                                <a href="tel:3385-5998" class="phone-link">3385-5998</a> / 
+                                <a href="tel:3382-4677" class="phone-link">3382-4677</a>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="ubs-card card-hover bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-3">UBS Jardim Industrial</h3>
+                    <div class="text-gray-600 space-y-2">
+                        <p class="flex items-center"><i class="fas fa-map-pin text-green-500 mr-2"></i>Rua Barbosa Lima, 410 - Jardim Industrial</p>
+                        <p class="flex items-center"><i class="fas fa-phone text-green-500 mr-2"></i>
+                            <span>
+                                <a href="tel:3363-5255" class="phone-link">3363-5255</a> / 
+                                <a href="tel:3361-1440" class="phone-link">3361-1440</a>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="ubs-card card-hover bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-3">UBS Vila São Joaquim</h3>
+                    <div class="text-gray-600 space-y-2">
+                        <p class="flex items-center"><i class="fas fa-map-pin text-green-500 mr-2"></i>Rua dos Funcionários, 270 – Vila São Joaquim</p>
+                        <p class="flex items-center"><i class="fas fa-phone text-green-500 mr-2"></i>
+                            <span>
+                                <a href="tel:3363-5256" class="phone-link">3363-5256</a> / 
+                                <a href="tel:3361-2244" class="phone-link">3361-2244</a>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="ubs-card card-hover bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-3">UBS Bandeirantes</h3>
+                    <div class="text-gray-600 space-y-2">
+                        <p class="flex items-center"><i class="fas fa-map-pin text-green-500 mr-2"></i>Rua Quatorze, 20 – Vila Bandeirantes</p>
+                        <p class="flex items-center"><i class="fas fa-phone text-green-500 mr-2"></i>
+                            <span>
+                                <a href="tel:3363-5257" class="phone-link">3363-5257</a> / 
+                                <a href="tel:3361-3006" class="phone-link">3361-3006</a>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="ubs-card card-hover bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-3">UBS Monte Castelo</h3>
+                    <div class="text-gray-600 space-y-2">
+                        <p class="flex items-center"><i class="fas fa-map-pin text-green-500 mr-2"></i>Rua Ápio Cardoso, 275 – Monte Castelo</p>
+                        <p class="flex items-center"><i class="fas fa-phone text-green-500 mr-2"></i>
+                            <span>
+                                <a href="tel:3363-5258" class="phone-link">3363-5258</a> / 
+                                <a href="tel:3361-3006" class="phone-link">3361-3006</a>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="ubs-card card-hover bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-3">UBS Jardim Laguna</h3>
+                    <div class="text-gray-600 space-y-2">
+                        <p class="flex items-center"><i class="fas fa-map-pin text-green-500 mr-2"></i>Rua Seis, 170 – Jardim Laguna</p>
+                        <p class="flex items-center"><i class="fas fa-phone text-green-500 mr-2"></i>
+                            <span>
+                                <a href="tel:3353-5005" class="phone-link">3353-5005</a> / 
+                                <a href="tel:3353-5006" class="phone-link">3353-5006</a>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="ubs-card card-hover bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-3">UBS Vila Renascer</h3>
+                    <div class="text-gray-600 space-y-2">
+                        <p class="flex items-center"><i class="fas fa-map-pin text-green-500 mr-2"></i>Rua Vinte e Um, 20 – Vila Renascer</p>
+                        <p class="flex items-center"><i class="fas fa-phone text-green-500 mr-2"></i>
+                            <a href="tel:3353-5007" class="phone-link">3353-5007</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nacional -->
+        <section id="nacional" class="mb-12 page-break-avoid">
+            <h2 class="section-title text-3xl font-bold text-gray-800 mb-6">
+                <i class="fas fa-globe-americas text-purple-500 mr-3"></i>Nacional
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="ubs-card card-hover bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-3">UBS Amendoeiras</h3>
+                    <div class="text-gray-600 space-y-2">
+                        <p class="flex items-center"><i class="fas fa-map-pin text-green-500 mr-2"></i>Rua Seis, 320 - Conjunto Água Branca</p>
+                        <p class="flex items-center"><i class="fas fa-phone text-green-500 mr-2"></i>
+                            <span>
+                                <a href="tel:3397-0300" class="phone-link">3397-0300</a> / 
+                                <a href="tel:3397-0301" class="phone-link">3397-0301</a>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="ubs-card card-hover bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-3">UBS Nacional</h3>
+                    <div class="text-gray-600 space-y-2">
+                        <p class="flex items-center"><i class="fas fa-map-pin text-green-500 mr-2"></i>Rua Benjamim Constant, 20 – Nacional</p>
+                        <p class="flex items-center"><i class="fas fa-phone text-green-500 mr-2"></i>
+                            <span>
+                                <a href="tel:3397-0302" class="phone-link">3397-0302</a> / 
+                                <a href="tel:3397-0303" class="phone-link">3397-0303</a>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="ubs-card card-hover bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-3">UBS Estrela Dalva</h3>
+                    <div class="text-gray-600 space-y-2">
+                        <p class="flex items-center"><i class="fas fa-map-pin text-green-500 mr-2"></i>Rua Búzios, 540 – Estrela Dalva</p>
+                        <p class="flex items-center"><i class="fas fa-phone text-green-500 mr-2"></i>
+                            <span>
+                                <a href="tel:3397-0304" class="phone-link">3397-0304</a> / 
+                                <a href="tel:3397-0305" class="phone-link">3397-0305</a>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="ubs-card card-hover bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-3">UBS Icaivera</h3>
+                    <div class="text-gray-600 space-y-2">
+                        <p class="flex items-center"><i class="fas fa-map-pin text-green-500 mr-2"></i>Rua Poranga, 170 – Icaivera</p>
+                        <p class="flex items-center"><i class="fas fa-phone text-green-500 mr-2"></i>
+                            <span>
+                                <a href="tel:3397-0306" class="phone-link">3397-0306</a> / 
+                                <a href="tel:3397-0307" class="phone-link">3397-0307</a>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="ubs-card card-hover bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-3">UBS Nova Contagem</h3>
+                    <div class="text-gray-600 space-y-2">
+                        <p class="flex items-center"><i class="fas fa-map-pin text-green-500 mr-2"></i>Rua VL 6, 990 – Nova Contagem</p>
+                        <p class="flex items-center"><i class="fas fa-phone text-green-500 mr-2"></i>
+                            <span>
+                                <a href="tel:3397-0308" class="phone-link">3397-0308</a> / 
+                                <a href="tel:3397-0309" class="phone-link">3397-0309</a>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="ubs-card card-hover bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-3">UBS Retiro</h3>
+                    <div class="text-gray-600 space-y-2">
+                        <p class="flex items-center"><i class="fas fa-map-pin text-green-500 mr-2"></i>Rua dos Coqueiros, 100 – Retiro</p>
+                        <p class="flex items-center"><i class="fas fa-phone text-green-500 mr-2"></i>
+                            <span>
+                                <a href="tel:3397-0310" class="phone-link">3397-0310</a> / 
+                                <a href="tel:3397-0311" class="phone-link">3397-0311</a>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="ubs-card card-hover bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-3">UBS Darcy Ribeiro</h3>
+                    <div class="text-gray-600 space-y-2">
+                        <p class="flex items-center"><i class="fas fa-map-pin text-green-500 mr-2"></i>Rua VL 7, 120 – Nova Contagem</p>
+                        <p class="flex items-center"><i class="fas fa-phone text-green-500 mr-2"></i>
+                            <a href="tel:3397-0312" class="phone-link">3397-0312</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Petrolândia -->
+        <section id="petrolandia" class="mb-12 page-break-avoid">
+            <h2 class="section-title text-3xl font-bold text-gray-800 mb-6">
+                <i class="fas fa-gas-pump text-indigo-500 mr-3"></i>Petrolândia
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="ubs-card card-hover bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-3">UBS Petrolândia</h3>
+                    <div class="text-gray-600 space-y-2">
+                        <p class="flex items-center"><i class="fas fa-map-pin text-green-500 mr-2"></i>Rua Refinaria Gabriel Passos, 270 – Petrolândia</p>
+                        <p class="flex items-center"><i class="fas fa-phone text-green-500 mr-2"></i>
+                            <span>
+                                <a href="tel:3397-0313" class="phone-link">3397-0313</a> / 
+                                <a href="tel:3397-0314" class="phone-link">3397-0314</a>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="ubs-card card-hover bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-3">UBS Sapucaias</h3>
+                    <div class="text-gray-600 space-y-2">
+                        <p class="flex items-center"><i class="fas fa-map-pin text-green-500 mr-2"></i>Rua Dois, 130 – Sapucaias</p>
+                        <p class="flex items-center"><i class="fas fa-phone text-green-500 mr-2"></i>
+                            <span>
+                                <a href="tel:3397-0315" class="phone-link">3397-0315</a> / 
+                                <a href="tel:3397-0316" class="phone-link">3397-0316</a>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="ubs-card card-hover bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-3">UBS Campo Alto</h3>
+                    <div class="text-gray-600 space-y-2">
+                        <p class="flex items-center"><i class="fas fa-map-pin text-green-500 mr-2"></i>Rua Paineiras, 10 – Campo Alto</p>
+                        <p class="flex items-center"><i class="fas fa-phone text-green-500 mr-2"></i>
+                            <span>
+                                <a href="tel:3397-0317" class="phone-link">3397-0317</a> / 
+                                <a href="tel:3397-0318" class="phone-link">3397-0318</a>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="ubs-card card-hover bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-3">UBS Vila Rica</h3>
+                    <div class="text-gray-600 space-y-2">
+                        <p class="flex items-center"><i class="fas fa-map-pin text-green-500 mr-2"></i>Rua das Paineiras, 10 – Campo Alto</p>
+                        <p class="flex items-center"><i class="fas fa-phone text-green-500 mr-2"></i>
+                            <a href="tel:3397-0319" class="phone-link">3397-0319</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ressaca -->
+        <section id="ressaca" class="mb-12 page-break-avoid">
+            <h2 class="section-title text-3xl font-bold text-gray-800 mb-6">
+                <i class="fas fa-cloud-showers-heavy text-pink-500 mr-3"></i>Ressaca
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="ubs-card card-hover bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-3">UBS Guanabara</h3>
+                    <div class="text-gray-600 space-y-2">
+                        <p class="flex items-center"><i class="fas fa-map-pin text-green-500 mr-2"></i>Rua da Constituição, 330 – Guanabara</p>
+                        <p class="flex items-center"><i class="fas fa-phone text-green-500 mr-2"></i>
+                            <span>
+                                <a href="tel:3397-0320" class="phone-link">3397-0320</a> / 
+                                <a href="tel:3397-0321" class="phone-link">3397-0321</a>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="ubs-card card-hover bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-3">UBS Oitis</h3>
+                    <div class="text-gray-600 space-y-2">
+                        <p class="flex items-center"><i class="fas fa-map-pin text-green-500 mr-2"></i>Rua Seis, 320 - Conjunto Água Branca</p>
+                        <p class="flex items-center"><i class="fas fa-phone text-green-500 mr-2"></i>
+                            <span>
+                                <a href="tel:3397-0322" class="phone-link">3397-0322</a> / 
+                                <a href="tel:3397-0323" class="phone-link">3397-0323</a>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="ubs-card card-hover bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-3">UBS Ressaca</h3>
+                    <div class="text-gray-600 space-y-2">
+                        <p class="flex items-center"><i class="fas fa-map-pin text-green-500 mr-2"></i>Rua Rodrigues da Cunha, 210 – Ressaca</p>
+                        <p class="flex items-center"><i class="fas fa-phone text-green-500 mr-2"></i>
+                            <span>
+                                <a href="tel:3397-0324" class="phone-link">3397-0324</a> / 
+                                <a href="tel:3397-0325" class="phone-link">3397-0325</a>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="ubs-card card-hover bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-3">UBS São Joaquim</h3>
+                    <div class="text-gray-600 space-y-2">
+                        <p class="flex items-center"><i class="fas fa-map-pin text-green-500 mr-2"></i>Rua Rubi, 800 – São Joaquim</p>
+                        <p class="flex items-center"><i class="fas fa-phone text-green-500 mr-2"></i>
+                            <span>
+                                <a href="tel:3397-0326" class="phone-link">3397-0326</a> / 
+                                <a href="tel:3397-0327" class="phone-link">3397-0327</a>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="ubs-card card-hover bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-3">UBS Vila Nova</h3>
+                    <div class="text-gray-600 space-y-2">
+                        <p class="flex items-center"><i class="fas fa-map-pin text-green-500 mr-2"></i>Rua Vinte e Quatro, 100 – Vila Nova</p>
+                        <p class="flex items-center"><i class="fas fa-phone text-green-500 mr-2"></i>
+                            <span>
+                                <a href="tel:3397-0328" class="phone-link">3397-0328</a> / 
+                                <a href="tel:3397-0329" class="phone-link">3397-0329</a>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Riacho -->
+        <section id="riacho" class="mb-12 page-break-avoid">
+            <h2 class="section-title text-3xl font-bold text-gray-800 mb-6">
+                <i class="fas fa-water text-yellow-500 mr-3"></i>Riacho
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="ubs-card card-hover bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-3">UBS Riacho</h3>
+                    <div class="text-gray-600 space-y-2">
+                        <p class="flex items-center"><i class="fas fa-map-pin text-green-500 mr-2"></i>Rua Rio Solimões, 70 – Riacho</p>
+                        <p class="flex items-center"><i class="fas fa-phone text-green-500 mr-2"></i>
+                            <span>
+                                <a href="tel:3397-0330" class="phone-link">3397-0330</a> / 
+                                <a href="tel:3397-0331" class="phone-link">3397-0331</a>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="ubs-card card-hover bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-3">UBS Flamengo</h3>
+                    <div class="text-gray-600 space-y-2">
+                        <p class="flex items-center"><i class="fas fa-map-pin text-green-500 mr-2"></i>Rua Corcovado, 20 – Flamengo</p>
+                        <p class="flex items-center"><i class="fas fa-phone text-green-500 mr-2"></i>
+                            <span>
+                                <a href="tel:3397-0332" class="phone-link">3397-0332</a> / 
+                                <a href="tel:3397-0333" class="phone-link">3397-0333</a>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="ubs-card card-hover bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-3">UBS Sesc</h3>
+                    <div class="text-gray-600 space-y-2">
+                        <p class="flex items-center"><i class="fas fa-map-pin text-green-500 mr-2"></i>Rua Padre José Maria de Man, 420 – Novo Riacho</p>
+                        <p class="flex items-center"><i class="fas fa-phone text-green-500 mr-2"></i>
+                            <span>
+                                <a href="tel:3397-0334" class="phone-link">3397-0334</a> / 
+                                <a href="tel:3397-0335" class="phone-link">3397-0335</a>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="ubs-card card-hover bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-3">UBS Monte Serrat</h3>
+                    <div class="text-gray-600 space-y-2">
+                        <p class="flex items-center"><i class="fas fa-map-pin text-green-500 mr-2"></i>Rua Vp1, 10 – Monte Serrat</p>
+                        <p class="flex items-center"><i class="fas fa-phone text-green-500 mr-2"></i>
+                            <span>
+                                <a href="tel:3397-0336" class="phone-link">3397-0336</a> / 
+                                <a href="tel:3397-0337" class="phone-link">3397-0337</a>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="ubs-card card-hover bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-3">UBS Nova Esperança</h3>
+                    <div class="text-gray-600 space-y-2">
+                        <p class="flex items-center"><i class="fas fa-map-pin text-green-500 mr-2"></i>Rua L, 100 – Nova Esperança</p>
+                        <p class="flex items-center"><i class="fas fa-phone text-green-500 mr-2"></i>
+                            <span>
+                                <a href="tel:3397-0338" class="phone-link">3397-0338</a> / 
+                                <a href="tel:3397-0339" class="phone-link">3397-0339</a>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sede -->
+        <section id="sede" class="mb-12 page-break-avoid">
+            <h2 class="section-title text-3xl font-bold text-gray-800 mb-6">
+                <i class="fas fa-building text-red-500 mr-3"></i>Sede
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="ubs-card card-hover bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-3">UBS Centro</h3>
+                    <div class="text-gray-600 space-y-2">
+                        <p class="flex items-center"><i class="fas fa-map-pin text-green-500 mr-2"></i>Avenida Prefeito Gil Diniz, 400 – Centro</p>
+                        <p class="flex items-center"><i class="fas fa-phone text-green-500 mr-2"></i>
+                            <span>
+                                <a href="tel:3397-0340" class="phone-link">3397-0340</a> / 
+                                <a href="tel:3397-0341" class="phone-link">3397-0341</a>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="ubs-card card-hover bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-3">UBS Linda Vista</h3>
+                    <div class="text-gray-600 space-y-2">
+                        <p class="flex items-center"><i class="fas fa-map-pin text-green-500 mr-2"></i>Rua Arthur de Souza Costa, 10 – Linda Vista</p>
+                        <p class="flex items-center"><i class="fas fa-phone text-green-500 mr-2"></i>
+                            <span>
+                                <a href="tel:3397-0342" class="phone-link">3397-0342</a> / 
+                                <a href="tel:3397-0343" class="phone-link">3397-0343</a>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="ubs-card card-hover bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-3">UBS Bernardo Monteiro</h3>
+                    <div class="text-gray-600 space-y-2">
+                        <p class="flex items-center"><i class="fas fa-map-pin text-green-500 mr-2"></i>Rua Padre Rossini Cota, 45 – Bernardo Monteiro</p>
+                        <p class="flex items-center"><i class="fas fa-phone text-green-500 mr-2"></i>
+                            <span>
+                                <a href="tel:3397-0344" class="phone-link">3397-0344</a> / 
+                                <a href="tel:3397-0345" class="phone-link">3397-0345</a>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="ubs-card card-hover bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-3">UBS Nossa Senhora de Fátima</h3>
+                    <div class="text-gray-600 space-y-2">
+                        <p class="flex items-center"><i class="fas fa-map-pin text-green-500 mr-2"></i>Rua São Vicente, 100 – Nossa Senhora de Fátima</p>
+                        <p class="flex items-center"><i class="fas fa-phone text-green-500 mr-2"></i>
+                            <span>
+                                <a href="tel:3397-0346" class="phone-link">3397-0346</a> / 
+                                <a href="tel:3397-0347" class="phone-link">3397-0347</a>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="ubs-card card-hover bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-3">UBS CSU</h3>
+                    <div class="text-gray-600 space-y-2">
+                        <p class="flex items-center"><i class="fas fa-map-pin text-green-500 mr-2"></i>Rua Padre José Maria de Man, 420 – Novo Riacho</p>
+                        <p class="flex items-center"><i class="fas fa-phone text-green-500 mr-2"></i>
+                            <span>
+                                <a href="tel:3397-0348" class="phone-link">3397-0348</a> / 
+                                <a href="tel:3397-0349" class="phone-link">3397-0349</a>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="ubs-card card-hover bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-3">UBS Praia</h3>
+                    <div class="text-gray-600 space-y-2">
+                        <p class="flex items-center"><i class="fas fa-map-pin text-green-500 mr-2"></i>Rua do Registro, 1500 – Praia</p>
+                        <p class="flex items-center"><i class="fas fa-phone text-green-500 mr-2"></i>
+                            <span>
+                                <a href="tel:3397-0350" class="phone-link">3397-0350</a> / 
+                                <a href="tel:3397-0351" class="phone-link">3397-0351</a>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="ubs-card card-hover bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-3">UBS Santa Helena</h3>
+                    <div class="text-gray-600 space-y-2">
+                        <p class="flex items-center"><i class="fas fa-map-pin text-green-500 mr-2"></i>Rua Esmeralda, 200 – Santa Helena</p>
+                        <p class="flex items-center"><i class="fas fa-phone text-green-500 mr-2"></i>
+                            <span>
+                                <a href="tel:3397-0352" class="phone-link">3397-0352</a> / 
+                                <a href="tel:3397-0353" class="phone-link">3397-0353</a>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="ubs-card card-hover bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-3">UBS São Geraldo</h3>
+                    <div class="text-gray-600 space-y-2">
+                        <p class="flex items-center"><i class="fas fa-map-pin text-green-500 mr-2"></i>Rua São Pedro, 100 – São Geraldo</p>
+                        <p class="flex items-center"><i class="fas fa-phone text-green-500 mr-2"></i>
+                            <span>
+                                <a href="tel:3397-0354" class="phone-link">3397-0354</a> / 
+                                <a href="tel:3397-0355" class="phone-link">3397-0355</a>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="ubs-card card-hover bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-3">UBS Vila Rica</h3>
+                    <div class="text-gray-600 space-y-2">
+                        <p class="flex items-center"><i class="fas fa-map-pin text-green-500 mr-2"></i>Rua das Paineiras, 10 – Campo Alto</p>
+                        <p class="flex items-center"><i class="fas fa-phone text-green-500 mr-2"></i>
+                            <a href="tel:3397-0319" class="phone-link">3397-0319</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vargem das Flores -->
+        <section id="vargem" class="mb-12 page-break-avoid">
+            <h2 class="section-title text-3xl font-bold text-gray-800 mb-6">
+                <i class="fas fa-leaf text-teal-500 mr-3"></i>Vargem das Flores
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="ubs-card card-hover bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-3">UBS Icaivera</h3>
+                    <div class="text-gray-600 space-y-2">
+                        <p class="flex items-center"><i class="fas fa-map-pin text-green-500 mr-2"></i>Rua Poranga, 170 – Icaivera</p>
+                        <p class="flex items-center"><i class="fas fa-phone text-green-500 mr-2"></i>
+                            <span>
+                                <a href="tel:3397-0306" class="phone-link">3397-0306</a> / 
+                                <a href="tel:3397-0307" class="phone-link">3397-0307</a>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="ubs-card card-hover bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-3">UBS Nova Contagem</h3>
+                    <div class="text-gray-600 space-y-2">
+                        <p class="flex items-center"><i class="fas fa-map-pin text-green-500 mr-2"></i>Rua VL 6, 990 – Nova Contagem</p>
+                        <p class="flex items-center"><i class="fas fa-phone text-green-500 mr-2"></i>
+                            <span>
+                                <a href="tel:3397-0308" class="phone-link">3397-0308</a> / 
+                                <a href="tel:3397-0309" class="phone-link">3397-0309</a>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="ubs-card card-hover bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-3">UBS Retiro</h3>
+                    <div class="text-gray-600 space-y-2">
+                        <p class="flex items-center"><i class="fas fa-map-pin text-green-500 mr-2"></i>Rua dos Coqueiros, 100 – Retiro</p>
+                        <p class="flex items-center"><i class="fas fa-phone text-green-500 mr-2"></i>
+                            <span>
+                                <a href="tel:3397-0310" class="phone-link">3397-0310</a> / 
+                                <a href="tel:3397-0311" class="phone-link">3397-0311</a>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="ubs-card card-hover bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-3">UBS Darcy Ribeiro</h3>
+                    <div class="text-gray-600 space-y-2">
+                        <p class="flex items-center"><i class="fas fa-map-pin text-green-500 mr-2"></i>Rua VL 7, 120 – Nova Contagem</p>
+                        <p class="flex items-center"><i class="fas fa-phone text-green-500 mr-2"></i>
+                            <a href="tel:3397-0312" class="phone-link">3397-0312</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="text-center">
+                <h3 class="text-xl font-bold mb-2">Distrito Sanitário Eldorado</h3>
+                <p class="text-sm opacity-90 mb-1">Endereço: Rua Oliveira n° 362/Industrial Itaú</p>
+                <p class="text-sm opacity-90">Telefone: 3392-2137</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
