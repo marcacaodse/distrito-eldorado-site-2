@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distrito Sanitário Eldorado - Resumo do fluxo de Exames Oftalmológicos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
+
+        .header {
+            background: #1e40af;
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .header.hidden {
+            transform: translateY(-100%);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .header-left {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .header-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header-subtitle {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .header-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 5px;
+        }
+
+        .header-info {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            text-align: right;
+        }
+
+        .home-button {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 8px 16px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .home-button:hover {
+            background: rgba(255,255,255,0.3);
+            border-color: rgba(255,255,255,0.5);
+            transform: translateY(-2px);
+        }
+
+        .search-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .search-box {
+            display: flex;
+            gap: 10px;
+            background: white;
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 12px 16px;
+            border: 2px solid #e1e5e9;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: #f8f9fa;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #2563eb;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .search-button, .clear-button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .search-button {
+            background: #1e40af;
+            color: white;
+        }
+
+        .search-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+        }
+
+        .clear-button {
+            background: #f8f9fa;
+            color: #6c757d;
+            border: 2px solid #e9ecef;
+        }
+
+        .clear-button:hover {
+            background: #e9ecef;
+            border-color: #dee2e6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        /* Estilos específicos para a página de exames */
+        .exam-summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .summary-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            text-align: center;
+            border-left: 5px solid;
+        }
+
+        .summary-card.ceaps {
+            border-left-color: #10b981;
+        }
+
+        .summary-card.bh {
+            border-left-color: #3b82f6;
+        }
+
+        .summary-card.no-provider {
+            border-left-color: #ef4444;
+        }
+
+        .summary-card i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .summary-card.ceaps i {
+            color: #10b981;
+        }
+
+        .summary-card.bh i {
+            color: #3b82f6;
+        }
+
+        .summary-card.no-provider i {
+            color: #ef4444;
+        }
+
+        .summary-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #374151;
+        }
+
+        .summary-card .count {
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .summary-card.ceaps .count {
+            color: #10b981;
+        }
+
+        .summary-card.bh .count {
+            color: #3b82f6;
+        }
+
+        .summary-card.no-provider .count {
+            color: #ef4444;
+        }
+
+        .exam-section {
+            background: white;
+            margin-bottom: 30px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .section-header {
+            background: #1e40af;
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-header i {
+            font-size: 1.5rem;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .exam-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+            padding: 30px;
+        }
+
+        .exam-item {
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .exam-item:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+
+        .exam-item i {
+            font-size: 1.1rem;
+        }
+
+        .exam-item.ceaps i {
+            color: #10b981;
+        }
+
+        .exam-item.bh i {
+            color: #3b82f6;
+        }
+
+        .exam-item.no-provider i {
+            color: #ef4444;
+        }
+
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+
+            .header-right {
+                align-items: center;
+            }
+
+            .header-title {
+                font-size: 1.4rem;
+            }
+
+            .search-box {
+                flex-direction: column;
+            }
+
+            .container {
+                padding: 15px;
+            }
+
+            .exam-grid {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-title {
+                font-size: 1.2rem;
+            }
+
+            .search-input, .search-button, .clear-button {
+                padding: 10px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header" id="header">
+        <div class="header-content">
+            <div class="header-left">
+                <h1 class="header-title">Distrito Sanitário Eldorado - Resumo do fluxo de Exames Oftalmológicos</h1>
+                <p class="header-subtitle">Relação dos Exames Oftalmológicos</p>
+            </div>
+            <div class="header-right">
+                <div class="header-info">
+                    <div>Página criada por Ana P. A. Silva</div>
+                    <div>Suporte Vivver/Distrito Sanitário Eldorado</div>
+                </div>
+                <a href="https://marcacaodse.github.io/distrito-eldorado-site-2/index.html" class="home-button">
+                    <i class="fas fa-home"></i> Tela Inicial
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="search-container no-print">
+        <div class="search-box">
+            <input type="text" id="searchInput" class="search-input" placeholder="🔍 Digite o nome do exame para buscar...">
+            <button id="clearSearch" class="clear-button" style="display: none;">
+                <i class="fas fa-times"></i> Limpar
+            </button>
+        </div>
+    </div>
+
+    <div class="container">
+        <p style="text-align: center; color: #6c757d; margin-bottom: 30px; font-size: 1.1rem;">Lista completa de exames oftalmológicos organizados por local de marcação e disponibilidade</p>
+
+        <!-- Summary Cards -->
+        <div class="exam-summary">
+            <div class="summary-card ceaps">
+                <i class="fas fa-check-circle"></i>
+                <h3>Agendados pelo Ceaps</h3>
+                <p id="ceapsCount" class="count">26</p>
+            </div>
+            <div class="summary-card bh">
+                <i class="fas fa-hospital"></i>
+                <h3>Agendados pelo Ceaps em Belo Horizonte</h3>
+                <p id="bhCount" class="count">26</p>
+            </div>
+            <div class="summary-card no-provider">
+                <i class="fas fa-exclamation-triangle"></i>
+                <h3>Sem Prestador</h3>
+                <p id="noProviderCount" class="count">6</p>
+            </div>
+        </div>
+
+        <!-- Marcados pelo Ceaps -->
+        <div class="exam-section">
+            <div class="section-header">
+                <i class="fas fa-check-circle"></i>
+                <h2 class="section-title">Marcados pelo Ceaps</h2>
+            </div>
+            <div class="exam-grid" id="ceapsGrid">
+                <div class="exam-item ceaps">
+                    <i class="fas fa-eye"></i>Angiografia Fluorescente
+                </div>
+                <div class="exam-item ceaps">
+                    <i class="fas fa-eye"></i>Avaliação de Catarata
+                </div>
+                <div class="exam-item ceaps">
+                    <i class="fas fa-eye"></i>Avaliação de Prótese
+                </div>
+                <div class="exam-item ceaps">
+                    <i class="fas fa-eye"></i>Avaliação de Pterígio
+                </div>
+                <div class="exam-item ceaps">
+                    <i class="fas fa-eye"></i>Blefaroplastia
+                </div>
+                <div class="exam-item ceaps">
+                    <i class="fas fa-eye"></i>Campo Visual Computadorizado
+                </div>
+                <div class="exam-item ceaps">
+                    <i class="fas fa-eye"></i>Capsulotomia a Yag Laser
+                </div>
+                <div class="exam-item ceaps">
+                    <i class="fas fa-eye"></i>CDPO - Curva Diária de Pressão Ocular
+                </div>
+                <div class="exam-item ceaps">
+                    <i class="fas fa-eye"></i>Check-up de Estrabismo
+                </div>
+                <div class="exam-item ceaps">
+                    <i class="fas fa-eye"></i>Check-up de Glaucoma
+                </div>
+                <div class="exam-item ceaps">
+                    <i class="fas fa-eye"></i>Check-up de Plástica Ocular
+                </div>
+                <div class="exam-item ceaps">
+                    <i class="fas fa-eye"></i>Check-up de Pálpebra
+                </div>
+                <div class="exam-item ceaps">
+                    <i class="fas fa-eye"></i>Correção Cirurgia de Ptose
+                </div>
+                <div class="exam-item ceaps">
+                    <i class="fas fa-eye"></i>Correção de Blefarocalaze/Dermatocálaze
+                </div>
+                <div class="exam-item ceaps">
+                    <i class="fas fa-eye"></i>Correção de Entrópio e Ectrópio
+                </div>
+                <div class="exam-item ceaps">
+                    <i class="fas fa-eye"></i>Exerese de Pterígio
+                </div>
+                <div class="exam-item ceaps">
+                    <i class="fas fa-eye"></i>Exerese de Tumor de Pálpebra
+                </div>
+                <div class="exam-item ceaps">
+                    <i class="fas fa-eye"></i>Facoemulsificação com implante de LIO
+                </div>
+                <div class="exam-item ceaps">
+                    <i class="fas fa-eye"></i>Facotrabeculectomia
+                </div>
+                <div class="exam-item ceaps">
+                    <i class="fas fa-eye"></i>Fotocoagulação a Laser
+                </div>
+                <div class="exam-item ceaps">
+                    <i class="fas fa-eye"></i>Iridotomia a Laser
+                </div>
+                <div class="exam-item ceaps">
+                    <i class="fas fa-eye"></i>Mapeamento de Retina
+                </div>
+                <div class="exam-item ceaps">
+                    <i class="fas fa-eye"></i>Paquimetria
+                </div>
+                <div class="exam-item ceaps">
+                    <i class="fas fa-eye"></i>Trabeculectomia
+                </div>
+                <div class="exam-item ceaps">
+                    <i class="fas fa-eye"></i>Trec
+                </div>
+                <div class="exam-item ceaps">
+                    <i class="fas fa-eye"></i>Triquiase
+                </div>
+            </div>
+        </div>
+
+        <!-- Marcados em Belo Horizonte -->
+        <div class="exam-section">
+            <div class="section-header">
+                <i class="fas fa-hospital"></i>
+                <h2 class="section-title">Marcados em Belo Horizonte</h2>
+            </div>
+            <div class="exam-grid" id="bhGrid">
+                <div class="exam-item bh">
+                    <i class="fas fa-eye"></i>Campo Visual Manual
+                </div>
+                <div class="exam-item bh">
+                    <i class="fas fa-eye"></i>Check-up Córnea
+                </div>
+                <div class="exam-item bh">
+                    <i class="fas fa-eye"></i>Correção Cirúrgica de Estrabismo
+                </div>
+                <div class="exam-item bh">
+                    <i class="fas fa-eye"></i>Dacriocistografia
+                </div>
+                <div class="exam-item bh">
+                    <i class="fas fa-eye"></i>Dacriocistorrinostomia
+                </div>
+                <div class="exam-item bh">
+                    <i class="fas fa-eye"></i>Ecografia B
+                </div>
+                <div class="exam-item bh">
+                    <i class="fas fa-eye"></i>Epilação à Laser
+                </div>
+                <div class="exam-item bh">
+                    <i class="fas fa-eye"></i>Exames sob sedação
+                </div>
+                <div class="exam-item bh">
+                    <i class="fas fa-eye"></i>Facectomia com implante de LIO
+                </div>
+                <div class="exam-item bh">
+                    <i class="fas fa-eye"></i>FDT
+                </div>
+                <div class="exam-item bh">
+                    <i class="fas fa-eye"></i>Gonioscopia
+                </div>
+                <div class="exam-item bh">
+                    <i class="fas fa-eye"></i>Implante secundário de LIO
+                </div>
+                <div class="exam-item bh">
+                    <i class="fas fa-eye"></i>Injeção Retrobulbar
+                </div>
+                <div class="exam-item bh">
+                    <i class="fas fa-eye"></i>Microscopia Especular
+                </div>
+                <div class="exam-item bh">
+                    <i class="fas fa-eye"></i>Neurooftalmologia
+                </div>
+                <div class="exam-item bh">
+                    <i class="fas fa-eye"></i>Reconstrução de Cavidade
+                </div>
+                <div class="exam-item bh">
+                    <i class="fas fa-eye"></i>Retinografia Colorida
+                </div>
+                <div class="exam-item bh">
+                    <i class="fas fa-eye"></i>Sondagem das Vias Lacrimais
+                </div>
+                <div class="exam-item bh">
+                    <i class="fas fa-eye"></i>Sondagem das Vias Lacrimais c/ sedação
+                </div>
+                <div class="exam-item bh">
+                    <i class="fas fa-eye"></i>Teste de sensibilidade ao contraste
+                </div>
+                <div class="exam-item bh">
+                    <i class="fas fa-eye"></i>Teste de Visão de Cores
+                </div>
+                <div class="exam-item bh">
+                    <i class="fas fa-eye"></i>Teste Lente de Contato
+                </div>
+                <div class="exam-item bh">
+                    <i class="fas fa-eye"></i>Topografia Corneana
+                </div>
+                <div class="exam-item bh">
+                    <i class="fas fa-eye"></i>Uveíte
+                </div>
+                <div class="exam-item bh">
+                    <i class="fas fa-eye"></i>Visão sub-Norma
+                </div>
+                <div class="exam-item bh">
+                    <i class="fas fa-eye"></i>Vitrectomia
+                </div>
+            </div>
+        </div>
+
+        <!-- Sem Prestador -->
+        <div class="exam-section">
+            <div class="section-header">
+                <i class="fas fa-exclamation-triangle"></i>
+                <h2 class="section-title">Sem Prestador</h2>
+            </div>
+            <div class="exam-grid" id="noProviderGrid">
+                <div class="exam-item no-provider">
+                    <i class="fas fa-eye"></i>EOG - Eletrooculograma
+                </div>
+                <div class="exam-item no-provider">
+                    <i class="fas fa-eye"></i>ERG - Eletrorretinografia
+                </div>
+                <div class="exam-item no-provider">
+                    <i class="fas fa-eye"></i>Exerese Calázio
+                </div>
+                <div class="exam-item no-provider">
+                    <i class="fas fa-eye"></i>Potencial de Acuidade
+                </div>
+                <div class="exam-item no-provider">
+                    <i class="fas fa-eye"></i>Potencial Visual Evocado ou PVE
+                </div>
+                <div class="exam-item no-provider">
+                    <i class="fas fa-eye"></i>OCT
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Funcionalidade de busca
+        document.getElementById('searchInput').addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            const examItems = document.querySelectorAll('.exam-item');
+            const clearButton = document.getElementById('clearSearch');
+            
+            if (searchTerm) {
+                clearButton.style.display = 'block';
+            } else {
+                clearButton.style.display = 'none';
+            }
+            
+            examItems.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                if (text.includes(searchTerm)) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+
+        document.getElementById('clearSearch').addEventListener('click', function() {
+            document.getElementById('searchInput').value = '';
+            const examItems = document.querySelectorAll('.exam-item');
+            examItems.forEach(item => {
+                item.style.display = 'flex';
+            });
+            this.style.display = 'none';
+        });
+
+        // Animação de entrada
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '1';
+        });
+    </script>
+</body>
+</html>
+
