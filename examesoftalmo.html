@@ -631,7 +631,7 @@
             document.getElementById('searchInput').value = '';
             const examItems = document.querySelectorAll('.exam-item');
             examItems.forEach(item => {
-                item.style.display = 'flex';
+                item.style.display = 'flex'; // Ensure all items are displayed
             });
             this.style.display = 'none';
         });
@@ -643,4 +643,3 @@
     </script>
 </body>
 </html>
-
