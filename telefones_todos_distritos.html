@@ -26,42 +26,52 @@
             transform: scale(1.02);
         }
         .home-button {
-            background-color: #000000; /* Preto */
-            color: white;
+            background-color: #ffffff;
+            color: #1e3a8a;
             font-weight: bold;
             padding: 8px 16px;
             border-radius: 8px;
             text-decoration: none;
-            transition: background-color 0.3s ease;
+            transition: all 0.3s ease;
+            border: 2px solid #ffffff;
         }
         .home-button:hover {
-            background-color: #333333; /* Preto mais escuro no hover */
+            background-color: #f1f5f9;
+            transform: translateY(-1px);
+        }
+        .header-section {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+            padding: 3rem 0;
+            margin-bottom: 3rem;
         }
     </style>
 </head>
 <body class="bg-white min-h-screen">
-    <div class="container mx-auto px-4 py-8 max-w-6xl">
-        <!-- Header -->
-        <div class="text-center mb-12 relative">
-            <div class="absolute top-0 left-0">
-                <a href="index.html" class="home-button">
-                    <i class="fas fa-home mr-2"></i>Tela Inicial
-                </a>
+    <!-- Header com fundo azul escuro -->
+    <div class="header-section">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="text-center relative">
+                <div class="absolute top-0 left-0">
+                    <a href="https://compartilhaeldorado-bit.github.io/distrito-petrol-ndia/" class="home-button">
+                        <i class="fas fa-home mr-2"></i>Tela Inicial
+                    </a>
+                </div>
+                <h1 class="text-4xl font-bold text-white mb-4 pt-8">
+                    <i class="fas fa-map-marker-alt text-blue-300 mr-3"></i>
+                    Distrito Sanitário Eldorado - Informações de Contato/todos os Distritos
+                </h1>
+                <p class="text-lg text-blue-100 max-w-2xl mx-auto mb-2">
+                    Encontre os números de telefone para contato com os diferentes distritos da região.
+                </p>
+                <p class="text-sm text-blue-200 max-w-2xl mx-auto mb-6">
+                    Página criada por Ana P. A. Silva Matr.201704/Suporte Vivver Distrito Eldorado
+                </p>
+                <div class="w-24 h-1 bg-blue-300 mx-auto rounded-full"></div>
             </div>
-            <h1 class="text-4xl font-bold text-gray-800 mb-4">
-                <i class="fas fa-map-marker-alt text-blue-600 mr-3"></i>
-                Distrito Sanitário Eldorado - Informações de Contato/todos os Distritos
-            </h1>
-            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-                Encontre os números de telefone para contato com os diferentes distritos da região.
-            </p>
-          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-                Página criada por Ana P. A. Silva Matr.201704/Suporte Vivver Distrito Eldorado
-            </p>
-            <div class="w-24 h-1 bg-blue-600 mx-auto mt-4 rounded-full"></div>
-
         </div>
+    </div>
 
+    <div class="container mx-auto px-4 max-w-6xl">
         <!-- Districts Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <!-- Distrito Eldorado -->
@@ -195,11 +205,10 @@
         <div class="container mx-auto px-6">
             <div class="text-center">
                 <h3 class="text-xl font-bold mb-2">Distrito Sanitário Eldorado</h3>
-                <p class="text-sm opacity-90 mb-1">Endereço: Rua Oliveira n° 362/Industrial Itaú</p>
+                <p class="text-sm opacity-90 mb-1">Endereço: Rua Oliveira numero 362 - Bairro Industrial Itaú</p>
                 <p class="text-sm opacity-90">Telefone: 3392-2137</p>
             </div>
         </div>
     </footer>
 </body>
 </html>
-
