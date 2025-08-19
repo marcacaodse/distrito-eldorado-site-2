@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distrito Sanitário Eldorado - Telefones RH e Outros</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        .phone-highlight { color: #059669; font-weight: 600; }
+        .hidden-row { display: none; }
+        .section-header { background-color: #1e40af; color: white; font-weight: bold; }
+        .table-row:hover { background-color: #f1f5f9; }
+        @media print { .no-print { display: none !important; } }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Cabeçalho Padrão -->
+    <header class="bg-blue-900 text-white shadow-lg no-print">
+        <div class="container mx-auto px-4 py-6 flex items-center justify-between">
+            <!-- Botão Tela Inicial -->
+            <a href="index.html" class="bg-black text-white font-bold py-2 px-4 rounded-lg hover:bg-gray-800 transition-colors flex items-center">
+                <i class="fas fa-home mr-2"></i>
+                Tela Inicial
+            </a>
+            
+            <!-- Conteúdo Central do Cabeçalho -->
+            <div class="text-center flex-grow">
+                <h1 class="text-2xl md:text-3xl font-bold">
+                    <i class="fas fa-phone mr-2"></i>
+                    TELEFONES ÚTEIS / SETOR RH
+                </h1>
+                <p class="text-lg text-blue-100">Distrito Sanitário Eldorado</p>
+            </div>
+            <!-- Espaço reservado para manter o título centralizado -->
+            <div class="w-32"></div>
+        </div>
+    </header>
+
+    <div class="container mx-auto px-4 py-6">
+        <!-- Search -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-6 no-print">
+            <div class="flex flex-col md:flex-row gap-4 items-center">
+                <div class="flex-1 relative">
+                    <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                    <input type="text" id="searchInput" placeholder="Pesquisar por setor, telefone ou responsável..." class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                </div>
+                <button onclick="clearSearch( )" class="bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-lg flex items-center">
+                    <i class="fas fa-times mr-2"></i>
+                    Limpar
+                </button>
+            </div>
+        </div>
+
+        <!-- Tabela -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div class="overflow-x-auto">
+                <table class="w-full">
+                    <thead class="bg-blue-900 text-white">
+                        <tr>
+                            <th class="px-4 py-4 text-left font-semibold"><i class="fas fa-building mr-2"></i>SETOR/UNIDADE</th>
+                            <th class="px-4 py-4 text-left font-semibold"><i class="fas fa-phone mr-2"></i>TELEFONE</th>
+                            <th class="px-4 py-4 text-left font-semibold"><i class="fas fa-user mr-2"></i>RESPONSÁVEL/ENDEREÇO</th>
+                        </tr>
+                    </thead>
+                    <tbody id="contactsTable" class="divide-y divide-gray-200">
+                        <tr class="section-header"><td colspan="3" class="px-4 py-3 text-center font-semibold">PMC / SMS</td></tr>
+                        <tr class="table-row"><td class="px-4 py-4 font-medium text-gray-900">PROTOCOLO GERAL</td><td class="px-4 py-4 phone-highlight">3472-6314</td><td class="px-4 py-4 text-gray-700">-</td></tr>
+                        <tr class="table-row"><td class="px-4 py-4 font-medium text-gray-900">PAGAMENTO</td><td class="px-4 py-4 phone-highlight">3472-6379</td><td class="px-4 py-4 text-gray-700">-</td></tr>
+                        <tr class="table-row"><td class="px-4 py-4 font-medium text-gray-900">HORUS</td><td class="px-4 py-4 phone-highlight">2535-4170</td><td class="px-4 py-4 text-gray-700">-</td></tr>
+                        <tr class="table-row"><td class="px-4 py-4 font-medium text-gray-900">ADMISSÃO</td><td class="px-4 py-4 phone-highlight">3472-6374</td><td class="px-4 py-4 text-gray-700">PAULA</td></tr>
+                        <tr class="table-row"><td class="px-4 py-4 font-medium text-gray-900">TRANSFERÊNCIA</td><td class="px-4 py-4 phone-highlight">3472-6374</td><td class="px-4 py-4 text-gray-700">SARAH</td></tr>
+                        <tr class="table-row"><td class="px-4 py-4 font-medium text-gray-900">CEREST</td><td class="px-4 py-4 phone-highlight">(31) 9-9257-0569</td><td class="px-4 py-4 text-gray-700">JEANET</td></tr>
+                        <tr class="table-row"><td class="px-4 py-4 font-medium text-gray-900">GABINETE</td><td class="px-4 py-4 phone-highlight">3472-6270 / 3472-6268</td><td class="px-4 py-4 text-gray-700">-</td></tr>
+                        <tr class="table-row"><td class="px-4 py-4 font-medium text-gray-900">NDH</td><td class="px-4 py-4 phone-highlight">3472-6375 / 3472-6370 / 3472-6372 / 3472-6368</td><td class="px-4 py-4 text-gray-700">-</td></tr>
+                        <tr class="table-row"><td class="px-4 py-4 font-medium text-gray-900">NDH</td><td class="px-4 py-4 phone-highlight">3472-6371 / 3472-6369</td><td class="px-4 py-4 text-gray-700">GLAUCIA</td></tr>
+                        <tr class="table-row"><td class="px-4 py-4 font-medium text-gray-900">SAÚDE MENTAL</td><td class="px-4 py-4 phone-highlight">3472-6341 / 3472-6331</td><td class="px-4 py-4 text-gray-700">-</td></tr>
+                        <tr class="table-row"><td class="px-4 py-4 font-medium text-gray-900">SAS</td><td class="px-4 py-4 phone-highlight">3472-6326</td><td class="px-4 py-4 text-gray-700">ASSESSORIA</td></tr>
+                        <tr class="table-row"><td class="px-4 py-4 font-medium text-gray-900">SAS</td><td class="px-4 py-4 phone-highlight">3472-6329</td><td class="px-4 py-4 text-gray-700">-</td></tr>
+                        <tr class="table-row"><td class="px-4 py-4 font-medium text-gray-900">SAS</td><td class="px-4 py-4 phone-highlight">3472-6328</td><td class="px-4 py-4 text-gray-700">-</td></tr>
+                        <tr class="table-row"><td class="px-4 py-4 font-medium text-gray-900">ATENÇÃO BÁSICA</td><td class="px-4 py-4 phone-highlight">3472-6330 / 3472-6334</td><td class="px-4 py-4 text-gray-700">-</td></tr>
+                        <tr class="table-row"><td class="px-4 py-4 font-medium text-gray-900">OUVIDORIA</td><td class="px-4 py-4 phone-highlight">3472-6274</td><td class="px-4 py-4 text-gray-700">-</td></tr>
+                        
+                        <tr class="section-header"><td colspan="3" class="px-4 py-3 text-center font-semibold">PMC - RECURSOS HUMANOS</td></tr>
+                        <tr class="table-row"><td class="px-4 py-4 font-medium text-gray-900">PMC - RH</td><td class="px-4 py-4 phone-highlight">3352-5095 / 5087 / 5128</td><td class="px-4 py-4 text-gray-700">GEFOP PAGAMENTO</td></tr>
+                        <tr class="table-row"><td class="px-4 py-4 font-medium text-gray-900">PMC - RH</td><td class="px-4 py-4 phone-highlight">5058 / 5155 / 5058</td><td class="px-4 py-4 text-gray-700">GEAC ADMISSÃO</td></tr>
+                        <tr class="table-row"><td class="px-4 py-4 font-medium text-gray-900">PMC - RH</td><td class="px-4 py-4 phone-highlight">3352-5102</td><td class="px-4 py-4 text-gray-700">PROTOCOLO GERAL</td></tr>
+                        <tr class="table-row"><td class="px-4 py-4 font-medium text-gray-900">PMC - RH</td><td class="px-4 py-4 phone-highlight">(31) 9-9257-2068</td><td class="px-4 py-4 text-gray-700">FÉRIAS PRÊMIO</td></tr>
+                        <tr class="table-row"><td class="px-4 py-4 font-medium text-gray-900">PMC - RH</td><td class="px-4 py-4 phone-highlight">3352-5122</td><td class="px-4 py-4 text-gray-700">REGISTRO FUNCIONAL</td></tr>
+                        <tr class="table-row"><td class="px-4 py-4 font-medium text-gray-900">PMC - RH</td><td class="px-4 py-4 phone-highlight">3392-4873</td><td class="px-4 py-4 text-gray-700">GEREP BENEFÍCIO</td></tr>
+
+                        <tr class="section-header"><td colspan="3" class="px-4 py-3 text-center font-semibold">SINDICATOS E ENTIDADES</td></tr>
+                        <tr class="table-row"><td class="px-4 py-4 font-medium text-gray-900">SINDISCON</td><td class="px-4 py-4 phone-highlight">3399-3000</td><td class="px-4 py-4 text-gray-700">Rua Paulo de Barros Baia, nº 30 - 4º andar FONTE GRANDE</td></tr>
+                        <tr class="table-row"><td class="px-4 py-4 font-medium text-gray-900">SIND-SAÚDE</td><td class="px-4 py-4 phone-highlight">2559-6670</td><td class="px-4 py-4 text-gray-700">-</td></tr>
+                        <tr class="table-row"><td class="px-4 py-4 font-medium text-gray-900">PREVICON</td><td class="px-4 py-4 phone-highlight">3912-3449 / 3912-4345</td><td class="px-4 py-4 text-gray-700">Rua Paulo de Barros Baia, nº 30 - 4º andar FONTE GRANDE</td></tr>
+
+                        <tr class="section-header"><td colspan="3" class="px-4 py-3 text-center font-semibold">MEDICINA E SEGURANÇA DO TRABALHO</td></tr>
+                        <tr class="table-row"><td class="px-4 py-4 font-medium text-gray-900">MEDICINA DO TRABALHO SUPERINTENDÊNCIA</td><td class="px-4 py-4 phone-highlight">3395-2530 / 3395-2568 / 3395-2622 / 3395-2684</td><td class="px-4 py-4 text-gray-700">Rua Paulo de Barros Baia, nº 30 - 4º andar FONTE GRANDE</td></tr>
+                        <tr class="table-row"><td class="px-4 py-4 font-medium text-gray-900">SEGURANÇA DO TRABALHO</td><td class="px-4 py-4 phone-highlight">3395-2054 / 3395-2672 / 3615 / 0436</td><td class="px-4 py-4 text-gray-700">Helen - Rua Paulo de Barros Baia, nº 30 - 4º andar FONTE GRANDE</td></tr>
+
+                        <tr class="section-header"><td colspan="3" class="px-4 py-3 text-center font-semibold">SERVIÇOS MÉDICOS</td></tr>
+                        <tr class="table-row"><td class="px-4 py-4 font-medium text-gray-900">MED WORK / BH</td><td class="px-4 py-4 phone-highlight">3291-8686</td><td class="px-4 py-4 text-gray-700">Av. Amazonas, 2285</td></tr>
+                        <tr class="table-row"><td class="px-4 py-4 font-medium text-gray-900">MED WORK / CONTAGEM</td><td class="px-4 py-4 phone-highlight">3398-6763</td><td class="px-4 py-4 text-gray-700">R. Bernardo Monteiro, 680</td></tr>
+                        <
